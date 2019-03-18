@@ -1,0 +1,197 @@
+\hypertarget{class_graph_library_1_1_abstract_graph_labeling}{}\section{Graph\+Library.\+Abstract\+Graph\+Labeling$<$ T $>$ Class Template Reference}
+\label{class_graph_library_1_1_abstract_graph_labeling}\index{Graph\+Library.\+Abstract\+Graph\+Labeling$<$ T $>$@{Graph\+Library.\+Abstract\+Graph\+Labeling$<$ T $>$}}
+
+
+This class holds the labels for a specific type of elements (edge , nodes, graphs ) of a graph. I use two dictionaries for both mapping to gain in query speed. This class gives the opportunity that diffrent graph clients can assign diffrent labels to the graph nodes, edges etc. The graph client ( contructor ) creates a subclass of Abstract\+Graph\+Labeling$<$\+T$>$ and assigns labels nodes. The instance of this class exists inside the \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class and the client can add a new labeling of graph elements through the Add\+Graph\+Node\+Labelling() method.  
+
+
+Inheritance diagram for Graph\+Library.\+Abstract\+Graph\+Labeling$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_abstract_graph_labeling}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graph_library_1_1_abstract_graph_labeling_ad93f87ff155880c3666c1da9541a4766}{}{\bfseries Abstract\+Graph\+Labeling} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} graph)\label{class_graph_library_1_1_abstract_graph_labeling_ad93f87ff155880c3666c1da9541a4766}
+
+\item 
+virtual string \hyperlink{class_graph_library_1_1_abstract_graph_labeling_a496a92bed9a3b4719d6b8305c8faa7fc}{Label} (T element)
+\begin{DoxyCompactList}\small\item\em Labels the specified element. \end{DoxyCompactList}\item 
+virtual string \hyperlink{class_graph_library_1_1_abstract_graph_labeling_a88b33d453be1ca7b7625c9cb253fdd3a}{Label} (int serial\+Number)
+\begin{DoxyCompactList}\small\item\em Labels the element with the specified serial\+Number. \end{DoxyCompactList}\item 
+virtual T \hyperlink{class_graph_library_1_1_abstract_graph_labeling_afee7a68424e1db807c738f9c0647200c}{Element} (string label)
+\begin{DoxyCompactList}\small\item\em Returns the element that is labelled with the given label \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \hyperlink{class_graph_library_1_1_abstract_graph_labeling_affb3beda64dae20ffc9cdce8dd39e5b4}{Label\+Elements} ()
+\begin{DoxyCompactList}\small\item\em Gives the initial mapping of labels to elements. Called by the constructor. Must be defined in subclasses \end{DoxyCompactList}\item 
+virtual void \hyperlink{class_graph_library_1_1_abstract_graph_labeling_ab10cb68784faa04dffb774dd76d709b8}{Relabel\+Elements} ()
+\begin{DoxyCompactList}\small\item\em Relabels the elements according to some algorithm. This version does nothing \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} \hyperlink{class_graph_library_1_1_abstract_graph_labeling_a1e6a6965cad4151fc87e0dd1c3ceb3bf}{m\+Graph}
+\begin{DoxyCompactList}\small\item\em The graph to which the nodes are labeled \end{DoxyCompactList}\item 
+Dictionary$<$ T, string $>$ \hyperlink{class_graph_library_1_1_abstract_graph_labeling_aabc5cd0829948a4a760852dd60b3fc2d}{m\+\_\+\+Labels\+Indexed\+By\+Elements}
+\begin{DoxyCompactList}\small\item\em The mapping of elements to labels is represented by the dictionary variable m\+\_\+\+Element\+Labels \end{DoxyCompactList}\item 
+Dictionary$<$ string, T $>$ \hyperlink{class_graph_library_1_1_abstract_graph_labeling_ae28de1e7750fad591ff317f9d51e88bb}{m\+\_\+\+Elements\+Indexed\+By\+Labels}
+\begin{DoxyCompactList}\small\item\em The mapping of labels to elements is represented by the dictionary variable \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class holds the labels for a specific type of elements (edge , nodes, graphs ) of a graph. I use two dictionaries for both mapping to gain in query speed. This class gives the opportunity that diffrent graph clients can assign diffrent labels to the graph nodes, edges etc. The graph client ( contructor ) creates a subclass of Abstract\+Graph\+Labeling$<$\+T$>$ and assigns labels nodes. The instance of this class exists inside the \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class and the client can add a new labeling of graph elements through the Add\+Graph\+Node\+Labelling() method. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & \\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+Graph\+Library.\+I\+Graph\+Labeling$<$\+T$>$
+
+
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em \hyperlink{interface_graph_library_1_1_i_graph_primitive}{I\+Graph\+Primitive}}]\end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_abstract_graph_labeling_afee7a68424e1db807c738f9c0647200c}{}\index{Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}!Element@{Element}}
+\index{Element@{Element}!Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}}
+\subsubsection[{Element(string label)}]{\setlength{\rightskip}{0pt plus 5cm}virtual T {\bf Graph\+Library.\+Abstract\+Graph\+Labeling}$<$ T $>$.Element (
+\begin{DoxyParamCaption}
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_abstract_graph_labeling_afee7a68424e1db807c738f9c0647200c}
+
+
+Returns the element that is labelled with the given label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The label\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Collections.\+Generic.\+Key\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{interface_graph_library_1_1_i_graph_labeling_a155203509c4489593811ec7520e72a13}{Graph\+Library.\+I\+Graph\+Labeling$<$ T $>$}.
+
+\hypertarget{class_graph_library_1_1_abstract_graph_labeling_a496a92bed9a3b4719d6b8305c8faa7fc}{}\index{Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}!Label@{Label}}
+\index{Label@{Label}!Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}}
+\subsubsection[{Label(\+T element)}]{\setlength{\rightskip}{0pt plus 5cm}virtual string {\bf Graph\+Library.\+Abstract\+Graph\+Labeling}$<$ T $>$.Label (
+\begin{DoxyParamCaption}
+\item[{T}]{element}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_abstract_graph_labeling_a496a92bed9a3b4719d6b8305c8faa7fc}
+
+
+Labels the specified element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The labeled element\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The label 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_graph_library_1_1_i_graph_labeling_a72391788639c686dbb02bc135b4d2b68}{Graph\+Library.\+I\+Graph\+Labeling$<$ T $>$}.
+
+\hypertarget{class_graph_library_1_1_abstract_graph_labeling_a88b33d453be1ca7b7625c9cb253fdd3a}{}\index{Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}!Label@{Label}}
+\index{Label@{Label}!Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}}
+\subsubsection[{Label(int serial\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}virtual string {\bf Graph\+Library.\+Abstract\+Graph\+Labeling}$<$ T $>$.Label (
+\begin{DoxyParamCaption}
+\item[{int}]{serial\+Number}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_abstract_graph_labeling_a88b33d453be1ca7b7625c9cb253fdd3a}
+
+
+Labels the element with the specified serial\+Number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial\+Number} & The serial number of the labeled element\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The label 
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Collections.\+Generic.\+Key\+Not\+Found\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{interface_graph_library_1_1_i_graph_labeling_aa889d08a24d32a78bd464f4c98b53344}{Graph\+Library.\+I\+Graph\+Labeling$<$ T $>$}.
+
+\hypertarget{class_graph_library_1_1_abstract_graph_labeling_affb3beda64dae20ffc9cdce8dd39e5b4}{}\index{Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}!Label\+Elements@{Label\+Elements}}
+\index{Label\+Elements@{Label\+Elements}!Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}}
+\subsubsection[{Label\+Elements()}]{\setlength{\rightskip}{0pt plus 5cm}abstract void {\bf Graph\+Library.\+Abstract\+Graph\+Labeling}$<$ T $>$.Label\+Elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [pure virtual]}}\label{class_graph_library_1_1_abstract_graph_labeling_affb3beda64dae20ffc9cdce8dd39e5b4}
+
+
+Gives the initial mapping of labels to elements. Called by the constructor. Must be defined in subclasses 
+
+
+
+Implemented in \hyperlink{class_graph_library_1_1_graph_viz_node_labeling_a8688ea6cf0ebe28a03fbce39c703d147}{Graph\+Library.\+Graph\+Viz\+Node\+Labeling}.
+
+\hypertarget{class_graph_library_1_1_abstract_graph_labeling_ab10cb68784faa04dffb774dd76d709b8}{}\index{Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}!Relabel\+Elements@{Relabel\+Elements}}
+\index{Relabel\+Elements@{Relabel\+Elements}!Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}}
+\subsubsection[{Relabel\+Elements()}]{\setlength{\rightskip}{0pt plus 5cm}virtual void {\bf Graph\+Library.\+Abstract\+Graph\+Labeling}$<$ T $>$.Relabel\+Elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_graph_library_1_1_abstract_graph_labeling_ab10cb68784faa04dffb774dd76d709b8}
+
+
+Relabels the elements according to some algorithm. This version does nothing 
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_graph_library_1_1_abstract_graph_labeling_ae28de1e7750fad591ff317f9d51e88bb}{}\index{Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}!m\+\_\+\+Elements\+Indexed\+By\+Labels@{m\+\_\+\+Elements\+Indexed\+By\+Labels}}
+\index{m\+\_\+\+Elements\+Indexed\+By\+Labels@{m\+\_\+\+Elements\+Indexed\+By\+Labels}!Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}}
+\subsubsection[{m\+\_\+\+Elements\+Indexed\+By\+Labels}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$string, T$>$ {\bf Graph\+Library.\+Abstract\+Graph\+Labeling}$<$ T $>$.m\+\_\+\+Elements\+Indexed\+By\+Labels\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_abstract_graph_labeling_ae28de1e7750fad591ff317f9d51e88bb}
+
+
+The mapping of labels to elements is represented by the dictionary variable 
+
+\hypertarget{class_graph_library_1_1_abstract_graph_labeling_aabc5cd0829948a4a760852dd60b3fc2d}{}\index{Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}!m\+\_\+\+Labels\+Indexed\+By\+Elements@{m\+\_\+\+Labels\+Indexed\+By\+Elements}}
+\index{m\+\_\+\+Labels\+Indexed\+By\+Elements@{m\+\_\+\+Labels\+Indexed\+By\+Elements}!Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}}
+\subsubsection[{m\+\_\+\+Labels\+Indexed\+By\+Elements}]{\setlength{\rightskip}{0pt plus 5cm}Dictionary$<$T, string$>$ {\bf Graph\+Library.\+Abstract\+Graph\+Labeling}$<$ T $>$.m\+\_\+\+Labels\+Indexed\+By\+Elements\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_abstract_graph_labeling_aabc5cd0829948a4a760852dd60b3fc2d}
+
+
+The mapping of elements to labels is represented by the dictionary variable m\+\_\+\+Element\+Labels 
+
+\hypertarget{class_graph_library_1_1_abstract_graph_labeling_a1e6a6965cad4151fc87e0dd1c3ceb3bf}{}\index{Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}!m\+Graph@{m\+Graph}}
+\index{m\+Graph@{m\+Graph}!Graph\+Library\+::\+Abstract\+Graph\+Labeling@{Graph\+Library\+::\+Abstract\+Graph\+Labeling}}
+\subsubsection[{m\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph} {\bf Graph\+Library.\+Abstract\+Graph\+Labeling}$<$ T $>$.m\+Graph\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_abstract_graph_labeling_a1e6a6965cad4151fc87e0dd1c3ceb3bf}
+
+
+The graph to which the nodes are labeled 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/Graph\+Labeling.\+cs\end{DoxyCompactItemize}

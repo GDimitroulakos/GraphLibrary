@@ -1,0 +1,121 @@
+\hypertarget{class_graph_library_1_1_c_node_port}{}\section{Graph\+Library.\+C\+Node\+Port Class Reference}
+\label{class_graph_library_1_1_c_node_port}\index{Graph\+Library.\+C\+Node\+Port@{Graph\+Library.\+C\+Node\+Port}}
+
+
+An node port is attacted to a node class and is the start or endpoint of an edge. Quick access to the connected node, edge or port can be given from the M\+\_\+\+Connected\+Node, M\+\_\+\+Connected\+Edge, M\+\_\+\+Connected\+Port properties  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_c_node_port_a49f34a571bc273a2ad1360d67734e602}{C\+Node\+Port} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} m\+Node, \hyperlink{namespace_graph_library_a31c4a22c3817f16aa24bafc1c822c3a4}{Port\+Mode} m\+Port\+Mode)
+\begin{DoxyCompactList}\small\item\em Constructor \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_node_port_ac1eff0d499611bc85bd8a063f055a9a0}{Set\+Edge} (\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} edge)
+\begin{DoxyCompactList}\small\item\em Connects an edge to the port. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_graph_library_a31c4a22c3817f16aa24bafc1c822c3a4}{Port\+Mode} \hyperlink{class_graph_library_1_1_c_node_port_a2cb7f035efed2fe8374be94bd354529a}{M\+\_\+\+I\+O\+Mode}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the m\+\_\+ io mode. It can take the following values P\+M\+\_\+\+S\+O\+U\+R\+C\+E (directed graph only), P\+M\+\_\+\+T\+A\+R\+G\+E\+T (directed graph only), P\+M\+\_\+\+T\+W\+O\+W\+A\+Y (undirected graph) \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_node_port_a00cabaca834e49fe3c5d057e8122bea9}{M\+\_\+\+Connected\+Node}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the node at the opposite side of the edge connecting to the port \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \hyperlink{class_graph_library_1_1_c_node_port_a779a49381130c23c2dce8ccb0185eebe}{M\+\_\+\+Connected\+Edge}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the edge connected to the port. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_node_port}{C\+Node\+Port} \hyperlink{class_graph_library_1_1_c_node_port_a2ed73460c9543943fe37b19c57813a4a}{M\+\_\+\+Connected\+Port}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the port at the opposite side of the edge. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_node_port_ade5210cf6e28999f415591d5d4a02cdf}{M\+\_\+\+Owner\+Node}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the node owning the port \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+An node port is attacted to a node class and is the start or endpoint of an edge. Quick access to the connected node, edge or port can be given from the M\+\_\+\+Connected\+Node, M\+\_\+\+Connected\+Edge, M\+\_\+\+Connected\+Port properties 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_library_1_1_c_node_port_a49f34a571bc273a2ad1360d67734e602}{}\index{Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}!C\+Node\+Port@{C\+Node\+Port}}
+\index{C\+Node\+Port@{C\+Node\+Port}!Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}}
+\subsubsection[{C\+Node\+Port(\+C\+Graph\+Node m\+Node, Port\+Mode m\+Port\+Mode)}]{\setlength{\rightskip}{0pt plus 5cm}Graph\+Library.\+C\+Node\+Port.\+C\+Node\+Port (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{m\+Node, }
+\item[{{\bf Port\+Mode}}]{m\+Port\+Mode}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_node_port_a49f34a571bc273a2ad1360d67734e602}
+
+
+Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m\+Node} & Points to the node owning the port\\
+\hline
+{\em m\+Port\+Mode} & In case of direct graph it indicates whether it is source or target edgepoint In case of an undirected graph it indicates that it supports both directions ( T\+W\+O\+W\+A\+Y )\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Null\+Reference\+Exception} & Reference to node is null\\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_c_node_port_ac1eff0d499611bc85bd8a063f055a9a0}{}\index{Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}!Set\+Edge@{Set\+Edge}}
+\index{Set\+Edge@{Set\+Edge}!Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}}
+\subsubsection[{Set\+Edge(\+C\+Graph\+Edge edge)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Node\+Port.\+Set\+Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Edge}}]{edge}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_node_port_ac1eff0d499611bc85bd8a063f055a9a0}
+
+
+Connects an edge to the port. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge connecting to the port\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{class_graph_library_1_1_c_node_port_a779a49381130c23c2dce8ccb0185eebe}{}\index{Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}!M\+\_\+\+Connected\+Edge@{M\+\_\+\+Connected\+Edge}}
+\index{M\+\_\+\+Connected\+Edge@{M\+\_\+\+Connected\+Edge}!Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}}
+\subsubsection[{M\+\_\+\+Connected\+Edge}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Edge} Graph\+Library.\+C\+Node\+Port.\+M\+\_\+\+Connected\+Edge\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_node_port_a779a49381130c23c2dce8ccb0185eebe}
+
+
+Gets the edge connected to the port. 
+
+A reference to the edge \hypertarget{class_graph_library_1_1_c_node_port_a00cabaca834e49fe3c5d057e8122bea9}{}\index{Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}!M\+\_\+\+Connected\+Node@{M\+\_\+\+Connected\+Node}}
+\index{M\+\_\+\+Connected\+Node@{M\+\_\+\+Connected\+Node}!Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}}
+\subsubsection[{M\+\_\+\+Connected\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Node} Graph\+Library.\+C\+Node\+Port.\+M\+\_\+\+Connected\+Node\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_node_port_a00cabaca834e49fe3c5d057e8122bea9}
+
+
+Represents the node at the opposite side of the edge connecting to the port 
+
+A reference to the node at the opposite side of the edge that connects to the port \hypertarget{class_graph_library_1_1_c_node_port_a2ed73460c9543943fe37b19c57813a4a}{}\index{Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}!M\+\_\+\+Connected\+Port@{M\+\_\+\+Connected\+Port}}
+\index{M\+\_\+\+Connected\+Port@{M\+\_\+\+Connected\+Port}!Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}}
+\subsubsection[{M\+\_\+\+Connected\+Port}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Node\+Port} Graph\+Library.\+C\+Node\+Port.\+M\+\_\+\+Connected\+Port\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_node_port_a2ed73460c9543943fe37b19c57813a4a}
+
+
+Gets the port at the opposite side of the edge. 
+
+A reference to the port object \hypertarget{class_graph_library_1_1_c_node_port_a2cb7f035efed2fe8374be94bd354529a}{}\index{Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}!M\+\_\+\+I\+O\+Mode@{M\+\_\+\+I\+O\+Mode}}
+\index{M\+\_\+\+I\+O\+Mode@{M\+\_\+\+I\+O\+Mode}!Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}}
+\subsubsection[{M\+\_\+\+I\+O\+Mode}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Port\+Mode} Graph\+Library.\+C\+Node\+Port.\+M\+\_\+\+I\+O\+Mode\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_node_port_a2cb7f035efed2fe8374be94bd354529a}
+
+
+Gets the m\+\_\+ io mode. It can take the following values P\+M\+\_\+\+S\+O\+U\+R\+C\+E (directed graph only), P\+M\+\_\+\+T\+A\+R\+G\+E\+T (directed graph only), P\+M\+\_\+\+T\+W\+O\+W\+A\+Y (undirected graph) 
+
+The m\+\_\+ io mode. \hypertarget{class_graph_library_1_1_c_node_port_ade5210cf6e28999f415591d5d4a02cdf}{}\index{Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}!M\+\_\+\+Owner\+Node@{M\+\_\+\+Owner\+Node}}
+\index{M\+\_\+\+Owner\+Node@{M\+\_\+\+Owner\+Node}!Graph\+Library\+::\+C\+Node\+Port@{Graph\+Library\+::\+C\+Node\+Port}}
+\subsubsection[{M\+\_\+\+Owner\+Node}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Node} Graph\+Library.\+C\+Node\+Port.\+M\+\_\+\+Owner\+Node\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_node_port_ade5210cf6e28999f415591d5d4a02cdf}
+
+
+Represents the node owning the port 
+
+Returns a reference to the node owning the port 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/Graph\+Elements.\+cs\end{DoxyCompactItemize}

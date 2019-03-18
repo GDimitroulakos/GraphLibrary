@@ -1,0 +1,340 @@
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm}{}\section{Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm$<$ T, T\+Node, T\+Edge, T\+Graph $>$ Class Template Reference}
+\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm}\index{Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm$<$ T, T\+Node, T\+Edge, T\+Graph $>$@{Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm$<$ T, T\+Node, T\+Edge, T\+Graph $>$}}
+
+
+The abstract base class of the algorithms applied on graphs  
+
+
+Inheritance diagram for Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm$<$ T, T\+Node, T\+Edge, T\+Graph $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract void \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a0e98ca6c259123c6975b20857c4af7be}{Init} ()
+\begin{DoxyCompactList}\small\item\em Initializes the algorithm. The client writes code in this function in the subclasses to initialize the algorithm \end{DoxyCompactList}\item 
+virtual T \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a08ce42bc60d311959bc5d1293d3c63da}{Visit} (T\+Node node)
+\begin{DoxyCompactList}\small\item\em The Visit method refers to the action the algorithm performs to a specific node This function can be called either recursively or iteratively \end{DoxyCompactList}\item 
+virtual T \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_ad40868c545ebd337122c84f02238b2db}{Visit} (T\+Edge edge)
+\begin{DoxyCompactList}\small\item\em Visits the specified edge and performs the algorithmic action on it. \end{DoxyCompactList}\item 
+abstract object \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_afe8f7c1f5bf5085b31a59139d6034eba}{Visit\+Children} (T\+Node node)
+\begin{DoxyCompactList}\small\item\em Visits the children of the specified node. Call this function if nothing is necessesary to be done in the current node apart from visiting its children \end{DoxyCompactList}\item 
+object \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a229680ade697cc543951b56f2d7857b2}{Info} (T\+Node node, object key=null)
+\begin{DoxyCompactList}\small\item\em Returns information concerning a node or a graph ( derives from node) Since the graph derives from \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} it stores the information at the same collection as node. So the function to retrieve the information is common in both elements \end{DoxyCompactList}\item 
+object \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a058caf0df4003a1336385f5d0c483023}{Info} (T\+Edge edge, object key=null)
+\begin{DoxyCompactList}\small\item\em Returns the information of the specified edge \end{DoxyCompactList}\item 
+object \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a5e7832df95cf65108e8a1006b83251a0}{Info} (T\+Node source, T\+Node target, object key=null)
+\begin{DoxyCompactList}\small\item\em Returns the information of the edge between the given source and target nodes. \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a2eae65a9111672ba14a6f992659ad47e}{Create\+Info} (T\+Node node, object info, object key=null)
+\begin{DoxyCompactList}\small\item\em Stores the information at the specified node or graph. If information already exists, it is overwritten \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a17ed5f51aeb7550e989279f60875a3ee}{Create\+Info} (T\+Edge edge, object info, object key=null)
+\begin{DoxyCompactList}\small\item\em Stores the information at the specified edge. If information already exists, it is overwritten \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a1c1e9c16c3303fd647af598cc1bbecb8}{Create\+Info} (T\+Node source, T\+Node target, object info, object key=null)
+\begin{DoxyCompactList}\small\item\em Stores the information at the specified edge. If information already exists, it is overwritten \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_aeff19bab0aa2fd277ad17190ac826472}{Abstract\+Graph\+Algorithm} (T\+Graph graph, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info}{Abstract\+Graph\+Query\+Info}$<$ T\+Node, T\+Edge, T\+Graph $>$ info, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory}{Abstract\+Graph\+Iterator\+Factory}$<$ T\+Node, T\+Edge, T\+Graph $>$ iterator\+Factory)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_aeff19bab0aa2fd277ad17190ac826472}{Abstract\+Graph\+Algorithm$<$\+T$>$} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T\+Graph \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a11916e5c10f7a5b827c3ad8425becdf3}{m\+\_\+\+Graph}
+\begin{DoxyCompactList}\small\item\em A reference to the graph to which the algorithm is applied \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info}{Abstract\+Graph\+Query\+Info}$<$ T\+Node, T\+Edge, T\+Graph $>$ \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_ad93dc80869889f95dd6588d6a07703d7}{m\+\_\+\+Info}
+\begin{DoxyCompactList}\small\item\em The mediator which provides the information (of nodes, edges, graph) to the algorithm from where it is stored. It is based on the bridge design pattern. The purpose of this class is to separate the implementation of the graph from the algorithm. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory}{Abstract\+Graph\+Iterator\+Factory}$<$ T\+Node, T\+Edge, T\+Graph $>$ \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a1f64fc66f6f6ccef709df92d3e6081b2}{m\+\_\+\+Iterator\+Factory}
+\begin{DoxyCompactList}\small\item\em The iterator factory \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The abstract base class of the algorithms applied on graphs 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Visit function retured type\\
+\hline
+{\em Node} & The type of the node.\\
+\hline
+{\em Edge} & The type of the edge.\\
+\hline
+{\em Graph} & The type of the Graph.\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+Graph\+Library.\+Generics.\+I\+Graph\+Algorithm$<$\+T,\+Node$>$, I\+Graph\+Algorithm$<$\+T,\+Node$>$, I\+Graph\+Algorithm$<$\+T,\+Node$>$
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_aeff19bab0aa2fd277ad17190ac826472}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Abstract\+Graph\+Algorithm@{Abstract\+Graph\+Algorithm}}
+\index{Abstract\+Graph\+Algorithm@{Abstract\+Graph\+Algorithm}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Abstract\+Graph\+Algorithm(\+T\+Graph graph, Abstract\+Graph\+Query\+Info$<$ T\+Node, T\+Edge, T\+Graph $>$ info, Abstract\+Graph\+Iterator\+Factory$<$ T\+Node, T\+Edge, T\+Graph $>$ iterator\+Factory)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.{\bf Abstract\+Graph\+Algorithm} (
+\begin{DoxyParamCaption}
+\item[{T\+Graph}]{graph, }
+\item[{{\bf Abstract\+Graph\+Query\+Info}$<$ T\+Node, T\+Edge, T\+Graph $>$}]{info, }
+\item[{{\bf Abstract\+Graph\+Iterator\+Factory}$<$ T\+Node, T\+Edge, T\+Graph $>$}]{iterator\+Factory}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_aeff19bab0aa2fd277ad17190ac826472}
+
+
+Initializes a new instance of the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_aeff19bab0aa2fd277ad17190ac826472}{Abstract\+Graph\+Algorithm$<$\+T$>$} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & The graph.\\
+\hline
+{\em info} & The information object.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a2eae65a9111672ba14a6f992659ad47e}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Create\+Info@{Create\+Info}}
+\index{Create\+Info@{Create\+Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Create\+Info(\+T\+Node node, object info, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.Create\+Info (
+\begin{DoxyParamCaption}
+\item[{T\+Node}]{node, }
+\item[{object}]{info, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a2eae65a9111672ba14a6f992659ad47e}
+
+
+Stores the information at the specified node or graph. If information already exists, it is overwritten 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+{\em info} & The information object\\
+\hline
+{\em key} & The key to the edge information. Can be algorithm, iterator etc.\\
+\hline
+\end{DoxyParams}
+example \+: A D\+F\+S graph algorithm \char`\"{}this\char`\"{} can assign a information record \char`\"{}info\char`\"{} to a \char`\"{}node\char`\"{} example \+: Create\+Info(itg.\+M\+\_\+\+Current\+Item,new Edge\+Info\+\_\+\+D\+F\+S(0),this); \hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a17ed5f51aeb7550e989279f60875a3ee}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Create\+Info@{Create\+Info}}
+\index{Create\+Info@{Create\+Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Create\+Info(\+T\+Edge edge, object info, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.Create\+Info (
+\begin{DoxyParamCaption}
+\item[{T\+Edge}]{edge, }
+\item[{object}]{info, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a17ed5f51aeb7550e989279f60875a3ee}
+
+
+Stores the information at the specified edge. If information already exists, it is overwritten 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge.\\
+\hline
+{\em info} & The information object\\
+\hline
+{\em key} & The key to the edge information. Can be algorithm, iterator etc.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a1c1e9c16c3303fd647af598cc1bbecb8}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Create\+Info@{Create\+Info}}
+\index{Create\+Info@{Create\+Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Create\+Info(\+T\+Node source, T\+Node target, object info, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.Create\+Info (
+\begin{DoxyParamCaption}
+\item[{T\+Node}]{source, }
+\item[{T\+Node}]{target, }
+\item[{object}]{info, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a1c1e9c16c3303fd647af598cc1bbecb8}
+
+
+Stores the information at the specified edge. If information already exists, it is overwritten 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source node.\\
+\hline
+{\em target} & The target node.\\
+\hline
+{\em info} & The information object\\
+\hline
+{\em key} & The key to the edge information. Can be algorithm, iterator etc.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a229680ade697cc543951b56f2d7857b2}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Info@{Info}}
+\index{Info@{Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Info(\+T\+Node node, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}object {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.Info (
+\begin{DoxyParamCaption}
+\item[{T\+Node}]{node, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a229680ade697cc543951b56f2d7857b2}
+
+
+Returns information concerning a node or a graph ( derives from node) Since the graph derives from \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} it stores the information at the same collection as node. So the function to retrieve the information is common in both elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+{\em key} & The key to the node information. Can be algorithm, iterator etc.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The information object
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a058caf0df4003a1336385f5d0c483023}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Info@{Info}}
+\index{Info@{Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Info(\+T\+Edge edge, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}object {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.Info (
+\begin{DoxyParamCaption}
+\item[{T\+Edge}]{edge, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a058caf0df4003a1336385f5d0c483023}
+
+
+Returns the information of the specified edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge.\\
+\hline
+{\em key} & The key to the edge information. Can be algorithm, iterator etc.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The information object
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a5e7832df95cf65108e8a1006b83251a0}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Info@{Info}}
+\index{Info@{Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Info(\+T\+Node source, T\+Node target, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}object {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.Info (
+\begin{DoxyParamCaption}
+\item[{T\+Node}]{source, }
+\item[{T\+Node}]{target, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a5e7832df95cf65108e8a1006b83251a0}
+
+
+Returns the information of the edge between the given source and target nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source.\\
+\hline
+{\em target} & The target.\\
+\hline
+{\em key} & The key to the edge information. Can be algorithm, iterator etc.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The information object
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a0e98ca6c259123c6975b20857c4af7be}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Init@{Init}}
+\index{Init@{Init}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Init()}]{\setlength{\rightskip}{0pt plus 5cm}abstract void {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.Init (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a0e98ca6c259123c6975b20857c4af7be}
+
+
+Initializes the algorithm. The client writes code in this function in the subclasses to initialize the algorithm 
+
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a08ce42bc60d311959bc5d1293d3c63da}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Visit@{Visit}}
+\index{Visit@{Visit}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Visit(\+T\+Node node)}]{\setlength{\rightskip}{0pt plus 5cm}virtual T {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.Visit (
+\begin{DoxyParamCaption}
+\item[{T\+Node}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a08ce42bc60d311959bc5d1293d3c63da}
+
+
+The Visit method refers to the action the algorithm performs to a specific node This function can be called either recursively or iteratively 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to which the algorithm acts.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parameter refers to the type of the return result 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_algorithm_a8bc65da7e1004a5c55f75b57872fad31}{Graph\+Library.\+Generics.\+I\+Graph\+Algorithm$<$ T, T\+Node $>$}.
+
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_ad40868c545ebd337122c84f02238b2db}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Visit@{Visit}}
+\index{Visit@{Visit}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Visit(\+T\+Edge edge)}]{\setlength{\rightskip}{0pt plus 5cm}virtual T {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.Visit (
+\begin{DoxyParamCaption}
+\item[{T\+Edge}]{edge}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_ad40868c545ebd337122c84f02238b2db}
+
+
+Visits the specified edge and performs the algorithmic action on it. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge to which the algorithm acts\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_afe8f7c1f5bf5085b31a59139d6034eba}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!Visit\+Children@{Visit\+Children}}
+\index{Visit\+Children@{Visit\+Children}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Visit\+Children(\+T\+Node node)}]{\setlength{\rightskip}{0pt plus 5cm}abstract object {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.Visit\+Children (
+\begin{DoxyParamCaption}
+\item[{T\+Node}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_afe8f7c1f5bf5085b31a59139d6034eba}
+
+
+Visits the children of the specified node. Call this function if nothing is necessesary to be done in the current node apart from visiting its children 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to which the children is visited\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The default version returns null 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_algorithm_aa8576b6860d0047bfd491c3101e876cc}{Graph\+Library.\+Generics.\+I\+Graph\+Algorithm$<$ T, T\+Node $>$}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a11916e5c10f7a5b827c3ad8425becdf3}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!m\+\_\+\+Graph@{m\+\_\+\+Graph}}
+\index{m\+\_\+\+Graph@{m\+\_\+\+Graph}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{m\+\_\+\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}T\+Graph {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.m\+\_\+\+Graph\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a11916e5c10f7a5b827c3ad8425becdf3}
+
+
+A reference to the graph to which the algorithm is applied 
+
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_ad93dc80869889f95dd6588d6a07703d7}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!m\+\_\+\+Info@{m\+\_\+\+Info}}
+\index{m\+\_\+\+Info@{m\+\_\+\+Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{m\+\_\+\+Info}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\+Graph\+Query\+Info}$<$T\+Node,T\+Edge,T\+Graph$>$ {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.m\+\_\+\+Info\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_ad93dc80869889f95dd6588d6a07703d7}
+
+
+The mediator which provides the information (of nodes, edges, graph) to the algorithm from where it is stored. It is based on the bridge design pattern. The purpose of this class is to separate the implementation of the graph from the algorithm. 
+
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a1f64fc66f6f6ccef709df92d3e6081b2}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}!m\+\_\+\+Iterator\+Factory@{m\+\_\+\+Iterator\+Factory}}
+\index{m\+\_\+\+Iterator\+Factory@{m\+\_\+\+Iterator\+Factory}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{m\+\_\+\+Iterator\+Factory}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Abstract\+Graph\+Iterator\+Factory}$<$T\+Node, T\+Edge, T\+Graph$>$ {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Algorithm}$<$ T, T\+Node, T\+Edge, T\+Graph $>$.m\+\_\+\+Iterator\+Factory\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm_a1f64fc66f6f6ccef709df92d3e6081b2}
+
+
+The iterator factory 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/\+Generics/Abstract\+Graph\+Algorithm.\+cs\end{DoxyCompactItemize}

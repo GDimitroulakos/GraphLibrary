@@ -1,0 +1,24 @@
+Graph Processing Language Internal DSL Use] Cases
+
+
+
+1) Chaining To algorithms
+
+Algorithm1( initialize algorithm with name function arguments).
+After().
+Aglorithm2(initialize algorithm with name function arguments)
+
+Example 
+Subset Construction  E-Closure(Move(q,c))
+
+AMove(Graph = g, Transitions=key, Node = q, Char = c).
+After().
+AEclosure(Set = , Graph = g, Transitions = key)
+
+
+AMove algorithms requires:
+1) The graph
+2) The Transition edges and their characters
+3) A Node to apply the move operation
+4) A alphabet character
+

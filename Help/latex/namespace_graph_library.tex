@@ -1,0 +1,61 @@
+\hypertarget{namespace_graph_library}{}\section{Graph\+Library Namespace Reference}
+\label{namespace_graph_library}\index{Graph\+Library@{Graph\+Library}}
+
+
+Defines 5 things\+: 1) Port Mode Enumeration \+: Its an enumeration that describes the node port direction It has 3 distinct values S\+O\+U\+R\+C\+E, T\+A\+R\+G\+E\+T (directed graphs ) and T\+W\+O\+W\+A\+Y (undirected graphs ) 2) \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} class \+: The base class for graph node modelling. 3) C\+Node\+Port class \+: The base class for port modelling 4) \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \+: The base class for edge modelling 5) \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} \+: The base class for graph modelling  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \hyperlink{namespace_graph_library_1_1_aglorithms}{Aglorithms}
+\item 
+namespace \hyperlink{namespace_graph_library_1_1_generics}{Generics}
+\item 
+namespace \hyperlink{namespace_graph_library_1_1_printers}{Printers}
+\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}
+\begin{DoxyCompactList}\small\item\em The Graph holds the list of nodes and the list of edges as well as the type of graph ( directed / undirected ) \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_graph_algorithm}{C\+Graph\+Algorithm}
+\begin{DoxyCompactList}\small\item\em This is an abstract class that represents algorithms that run on graphs with the following types of elements 1) \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} for nodes 2) \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} for edges 3) \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} for graphs \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge}
+\begin{DoxyCompactList}\small\item\em A graph edges interconnects to Nodes ports that in sequence belong to a node The \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} class stores a reference to the source and target ports. And can provide through properties the source and target ports and nodes. It also provides given the port or node at the one side of the edge the corresponding port or node at the side. \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_graph_iterators_factory}{C\+Graph\+Iterators\+Factory}
+\item 
+class \hyperlink{class_graph_library_1_1_c_graph_labeling}{C\+Graph\+Labeling}
+\begin{DoxyCompactList}\small\item\em This class provides general graph labelling capabilities. It doesn\textquotesingle{}t follow a specific strategy to label nodes/edges. It just implements the default version of Set\+Label methods for the class \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}. (This class is specific to \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class) \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node}
+\begin{DoxyCompactList}\small\item\em Represents a graph node . \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_graph_printer}{C\+Graph\+Printer}
+\begin{DoxyCompactList}\small\item\em This class is the parent class of all classes that print \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} objects Hence the class know the interface of \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}. (Its build for \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}). This class heirarchy is based on the Builder design pattern. \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_graph_query_info}{C\+Graph\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em Query info from the \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_graph_viz_printer}{C\+Graph\+Viz\+Printer}
+\begin{DoxyCompactList}\small\item\em This class exports the graph in graphviz form. It accepts the graph and optionally a class that defined the labelling of nodes. If the client doen\textquotesingle{}t provide a labelling class a default class (Graph\+Viz\+Node\+Labeling) takes over the labelling of nodes \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_it___graph_b_f_s}{C\+It\+\_\+\+Graph\+B\+F\+S}
+\begin{DoxyCompactList}\small\item\em Iterates over the nodes of a graph using Breadth First Traversal The graph can be directed or undirected \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s}{C\+It\+\_\+\+Graph\+D\+F\+S}
+\begin{DoxyCompactList}\small\item\em Iterates over the nodes of a graph using Depth First Traversal The graph can be directed or undirected \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_it___graph_edges}{C\+It\+\_\+\+Graph\+Edges}
+\begin{DoxyCompactList}\small\item\em Iterates over the graph edges \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_it___graph_leaf_nodes}{C\+It\+\_\+\+Graph\+Leaf\+Nodes}
+\begin{DoxyCompactList}\small\item\em Iterates over the graph\textquotesingle{}s nodes not having successors \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_it___graph_nodes}{C\+It\+\_\+\+Graph\+Nodes}
+\begin{DoxyCompactList}\small\item\em Iterates over the graph nodes \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes}{C\+It\+\_\+\+Graph\+Root\+Nodes}
+\begin{DoxyCompactList}\small\item\em Iterates over the graph\textquotesingle{}s nodes not having predecessors \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_it___predecessors}{C\+It\+\_\+\+Predecessors}
+\begin{DoxyCompactList}\small\item\em Iterates over the predecessor nodes of a node \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_c_it___successors}{C\+It\+\_\+\+Successors}
+\begin{DoxyCompactList}\small\item\em Iterates over the native successor nodes of a node \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines 5 things\+: 1) Port Mode Enumeration \+: Its an enumeration that describes the node port direction It has 3 distinct values S\+O\+U\+R\+C\+E, T\+A\+R\+G\+E\+T (directed graphs ) and T\+W\+O\+W\+A\+Y (undirected graphs ) 2) \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} class \+: The base class for graph node modelling. 3) C\+Node\+Port class \+: The base class for port modelling 4) \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \+: The base class for edge modelling 5) \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} \+: The base class for graph modelling 
+
+Glossary\+: Native Edges\+: Edges that belong to the same graph Foreign Edges\+: Edges that connect nodes that belogn to diffrent graphs
+
+T\+O\+D\+O (1)\+: T\+Y\+P\+E\+D N\+O\+D\+E\+S T\+O\+D\+O (1)\+: What extension do we need to support typed nodes. As I understand we need some T\+O\+D\+O (1)\+: kind of member representing the type of node. This member variable has an impact T\+O\+D\+O (1)\+: on the Accept method. Depending on the type the appropriate Visit method must be T\+O\+D\+O (1)\+: called. Thus we need a function to identify the node type an call the appropriate T\+O\+D\+O (1)\+: Visit() method. Thus the interface must also contain an Accept function that will T\+O\+D\+O (1)\+: override the base function

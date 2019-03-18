@@ -1,0 +1,93 @@
+\hypertarget{class_graph_library_1_1_c_it___graph_root_nodes}{}\section{Graph\+Library.\+C\+It\+\_\+\+Graph\+Root\+Nodes Class Reference}
+\label{class_graph_library_1_1_c_it___graph_root_nodes}\index{Graph\+Library.\+C\+It\+\_\+\+Graph\+Root\+Nodes@{Graph\+Library.\+C\+It\+\_\+\+Graph\+Root\+Nodes}}
+
+
+Iterates over the graph\textquotesingle{}s nodes not having predecessors  
+
+
+Inheritance diagram for Graph\+Library.\+C\+It\+\_\+\+Graph\+Root\+Nodes\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_c_it___graph_root_nodes}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graph_library_1_1_c_it___graph_root_nodes_a67dfd1fbc6fd3de58b1084703f29590f}{}{\bfseries C\+It\+\_\+\+Graph\+Root\+Nodes} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} m\+Graph)\label{class_graph_library_1_1_c_it___graph_root_nodes_a67dfd1fbc6fd3de58b1084703f29590f}
+
+\item 
+override \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a582dd6795006075f6f81fef42d1de1ba}{Begin} ()
+\begin{DoxyCompactList}\small\item\em Executes once at the start of the iteration and before the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End()} method Initializes the iterator variable ( realized in the subclasses ) and the m\+\_\+current\+Item to point to the first element of the item set. If the set is empty the m\+\_\+current\+Item points to null. After the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a582dd6795006075f6f81fef42d1de1ba}{Begin()} method the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End()} method executes before going into the loop body. Thus the loop terminates if the item set is empty before ever running the loop body The transition logic for finding the first item in the items set is implemented in the subclasses \end{DoxyCompactList}\item 
+override bool \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End} ()
+\begin{DoxyCompactList}\small\item\em Executes after the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a582dd6795006075f6f81fef42d1de1ba}{Begin()} or \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a4606ecd1ef26c19634171ccd81e18816}{Next()} methods and before the Loop Body Returns true if the m\+\_\+current\+Item is null. This case arises in the following scenarios\+: 1) The item set is empty thus, after the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a582dd6795006075f6f81fef42d1de1ba}{Begin()} method call the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End()} identifies that m\+\_\+current\+Item points to null 2) The item set is not empty and the iterator went outside the boundaries of the item set after the call to \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a4606ecd1ef26c19634171ccd81e18816}{Next()} method (\hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a4606ecd1ef26c19634171ccd81e18816}{Next()} method set m\+\_\+current\+Item to null) \end{DoxyCompactList}\item 
+override \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a4606ecd1ef26c19634171ccd81e18816}{Next} ()
+\begin{DoxyCompactList}\small\item\em Executes after the execution of the loop body and before the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End()} method Increases the iteration variable and set the m\+\_\+current\+Item to point to the current item of the item set. In case where the end of the item set is reached the m\+\_\+current\+Item points to null which is identified by the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End()} methods that is executed next. The transition logic from item to item is implemented from the subclasses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Iterates over the graph\textquotesingle{}s nodes not having predecessors 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_c_it___graph_root_nodes_a582dd6795006075f6f81fef42d1de1ba}{}\index{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes}!Begin@{Begin}}
+\index{Begin@{Begin}!Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes}}
+\subsubsection[{Begin()}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf C\+Graph\+Node} Graph\+Library.\+C\+It\+\_\+\+Graph\+Root\+Nodes.\+Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_c_it___graph_root_nodes_a582dd6795006075f6f81fef42d1de1ba}
+
+
+Executes once at the start of the iteration and before the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End()} method Initializes the iterator variable ( realized in the subclasses ) and the m\+\_\+current\+Item to point to the first element of the item set. If the set is empty the m\+\_\+current\+Item points to null. After the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a582dd6795006075f6f81fef42d1de1ba}{Begin()} method the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End()} method executes before going into the loop body. Thus the loop terminates if the item set is empty before ever running the loop body The transition logic for finding the first item in the items set is implemented in the subclasses 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator$<$ C\+Graph\+Node $>$}.
+
+\hypertarget{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{}\index{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes}!End@{End}}
+\index{End@{End}!Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes}}
+\subsubsection[{End()}]{\setlength{\rightskip}{0pt plus 5cm}override bool Graph\+Library.\+C\+It\+\_\+\+Graph\+Root\+Nodes.\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}
+
+
+Executes after the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a582dd6795006075f6f81fef42d1de1ba}{Begin()} or \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a4606ecd1ef26c19634171ccd81e18816}{Next()} methods and before the Loop Body Returns true if the m\+\_\+current\+Item is null. This case arises in the following scenarios\+: 1) The item set is empty thus, after the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a582dd6795006075f6f81fef42d1de1ba}{Begin()} method call the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End()} identifies that m\+\_\+current\+Item points to null 2) The item set is not empty and the iterator went outside the boundaries of the item set after the call to \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a4606ecd1ef26c19634171ccd81e18816}{Next()} method (\hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a4606ecd1ef26c19634171ccd81e18816}{Next()} method set m\+\_\+current\+Item to null) 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator$<$ C\+Graph\+Node $>$}.
+
+\hypertarget{class_graph_library_1_1_c_it___graph_root_nodes_a4606ecd1ef26c19634171ccd81e18816}{}\index{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes}!Next@{Next}}
+\index{Next@{Next}!Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+Root\+Nodes}}
+\subsubsection[{Next()}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf C\+Graph\+Node} Graph\+Library.\+C\+It\+\_\+\+Graph\+Root\+Nodes.\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_c_it___graph_root_nodes_a4606ecd1ef26c19634171ccd81e18816}
+
+
+Executes after the execution of the loop body and before the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End()} method Increases the iteration variable and set the m\+\_\+current\+Item to point to the current item of the item set. In case where the end of the item set is reached the m\+\_\+current\+Item points to null which is identified by the \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{End()} methods that is executed next. The transition logic from item to item is implemented from the subclasses. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator$<$ C\+Graph\+Node $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/Graph\+Iterators.\+cs\end{DoxyCompactItemize}

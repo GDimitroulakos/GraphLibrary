@@ -1,0 +1,140 @@
+\hypertarget{interface_graph_library_1_1_generics_1_1_i_graph_labeling}{}\section{Graph\+Library.\+Generics.\+I\+Graph\+Labeling$<$ T $>$ Interface Template Reference}
+\label{interface_graph_library_1_1_generics_1_1_i_graph_labeling}\index{Graph\+Library.\+Generics.\+I\+Graph\+Labeling$<$ T $>$@{Graph\+Library.\+Generics.\+I\+Graph\+Labeling$<$ T $>$}}
+
+
+Provides a generic interface for retrieving the label of a graph element of type T ( edge, node, whatever... ). Thus this class applies to all types of graph elements.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a2904d32c62f983b7afd6703ba8922a7b}{Label} (T element)
+\begin{DoxyCompactList}\small\item\em Returns the Label of the specified element. \end{DoxyCompactList}\item 
+string \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a9f5aa9fd0ae47e9ba13845eb3ca71fe3}{Label} (int serial\+Number)
+\begin{DoxyCompactList}\small\item\em Returns the Label of the element with the given serial number. \end{DoxyCompactList}\item 
+T \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a4d45b0ba9ac709dcabadab1d69cef8f1}{Element} (string label)
+\begin{DoxyCompactList}\small\item\em Returns the element that is labelled with the given label \end{DoxyCompactList}\item 
+void \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a46bec4e7f765d5e6ede5e758cee4145a}{Set\+Label} (T element, string label)
+\begin{DoxyCompactList}\small\item\em Sets the label of the given element. The element must exist in the graph and the label must not be already used by another element of the same type (node, edge) \end{DoxyCompactList}\item 
+void \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_labeling_ab5abcba5824c65ffb695aba813b06a8e}{Set\+Label} (int serial\+Number, \hyperlink{namespace_graph_library_1_1_generics_a919a165f16deccdd1b3d7e8a93423fbc}{Graph\+Element\+Type} element\+Type, string label)
+\begin{DoxyCompactList}\small\item\em Sets the label of the element with the given serialnumber and type. The element must exist in the graph and the label must not be already used by another element of the same type (node, edge) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides a generic interface for retrieving the label of a graph element of type T ( edge, node, whatever... ). Thus this class applies to all types of graph elements. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of graph element\\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_primitive}{I\+Graph\+Primitive}}]\end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a4d45b0ba9ac709dcabadab1d69cef8f1}{}\index{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling}!Element@{Element}}
+\index{Element@{Element}!Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling}}
+\subsubsection[{Element(string label)}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf Graph\+Library.\+Generics.\+I\+Graph\+Labeling}$<$ T $>$.Element (
+\begin{DoxyParamCaption}
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)}\label{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a4d45b0ba9ac709dcabadab1d69cef8f1}
+
+
+Returns the element that is labelled with the given label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The label\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element
+\end{DoxyReturn}
+\hypertarget{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a2904d32c62f983b7afd6703ba8922a7b}{}\index{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling}!Label@{Label}}
+\index{Label@{Label}!Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling}}
+\subsubsection[{Label(\+T element)}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf Graph\+Library.\+Generics.\+I\+Graph\+Labeling}$<$ T $>$.Label (
+\begin{DoxyParamCaption}
+\item[{T}]{element}
+\end{DoxyParamCaption}
+)}\label{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a2904d32c62f983b7afd6703ba8922a7b}
+
+
+Returns the Label of the specified element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The labeled element\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The label
+\end{DoxyReturn}
+\hypertarget{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a9f5aa9fd0ae47e9ba13845eb3ca71fe3}{}\index{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling}!Label@{Label}}
+\index{Label@{Label}!Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling}}
+\subsubsection[{Label(int serial\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf Graph\+Library.\+Generics.\+I\+Graph\+Labeling}$<$ T $>$.Label (
+\begin{DoxyParamCaption}
+\item[{int}]{serial\+Number}
+\end{DoxyParamCaption}
+)}\label{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a9f5aa9fd0ae47e9ba13845eb3ca71fe3}
+
+
+Returns the Label of the element with the given serial number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial\+Number} & The serial number of the labelled element\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The label
+\end{DoxyReturn}
+\hypertarget{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a46bec4e7f765d5e6ede5e758cee4145a}{}\index{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling}!Set\+Label@{Set\+Label}}
+\index{Set\+Label@{Set\+Label}!Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling}}
+\subsubsection[{Set\+Label(\+T element, string label)}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Graph\+Library.\+Generics.\+I\+Graph\+Labeling}$<$ T $>$.Set\+Label (
+\begin{DoxyParamCaption}
+\item[{T}]{element, }
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)}\label{interface_graph_library_1_1_generics_1_1_i_graph_labeling_a46bec4e7f765d5e6ede5e758cee4145a}
+
+
+Sets the label of the given element. The element must exist in the graph and the label must not be already used by another element of the same type (node, edge) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The element.\\
+\hline
+{\em label} & The label.\\
+\hline
+\end{DoxyParams}
+\hypertarget{interface_graph_library_1_1_generics_1_1_i_graph_labeling_ab5abcba5824c65ffb695aba813b06a8e}{}\index{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling}!Set\+Label@{Set\+Label}}
+\index{Set\+Label@{Set\+Label}!Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+Generics\+::\+I\+Graph\+Labeling}}
+\subsubsection[{Set\+Label(int serial\+Number, Graph\+Element\+Type element\+Type, string label)}]{\setlength{\rightskip}{0pt plus 5cm}void {\bf Graph\+Library.\+Generics.\+I\+Graph\+Labeling}$<$ T $>$.Set\+Label (
+\begin{DoxyParamCaption}
+\item[{int}]{serial\+Number, }
+\item[{{\bf Graph\+Element\+Type}}]{element\+Type, }
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)}\label{interface_graph_library_1_1_generics_1_1_i_graph_labeling_ab5abcba5824c65ffb695aba813b06a8e}
+
+
+Sets the label of the element with the given serialnumber and type. The element must exist in the graph and the label must not be already used by another element of the same type (node, edge) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial\+Number} & The serial number.\\
+\hline
+{\em element\+Type} & Type of the element.\\
+\hline
+{\em label} & The label.\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/\+Generics/Abstract\+Graph\+Labeling.\+cs\end{DoxyCompactItemize}

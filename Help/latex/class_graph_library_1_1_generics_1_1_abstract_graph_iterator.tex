@@ -1,0 +1,141 @@
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator}{}\section{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator$<$ T $>$ Class Template Reference}
+\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator}\index{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator$<$ T $>$@{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator$<$ T $>$}}
+
+
+This class is the base abstract class of Graph\+Iterators. It has no implementation except from the m\+\_\+current\+Item member variable. This variable always point to the current element (which has type T) that the iterator points. The class\textquotesingle{}s methods are executed in a specific sequence that is dictated by the loop statement semantics that is \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Begin()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}, L\+O\+O\+P\+\_\+\+B\+O\+D\+Y, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}, L\+O\+O\+P\+\_\+\+B\+O\+D\+Y, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}, L\+O\+O\+P\+\_\+\+B\+O\+D\+Y, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}... etc  
+
+
+Inheritance diagram for Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_generics_1_1_abstract_graph_iterator}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract T \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Begin} ()
+\begin{DoxyCompactList}\small\item\em Executes once at the start of the iteration and before the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()} method Initializes the iterator variable ( realized in the subclasses ) and the m\+\_\+current\+Item to point to the first element of the item set. If the set is empty the m\+\_\+current\+Item points to null. After the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Begin()} method the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()} method executes before going into the loop body. Thus the loop terminates if the item set is empty before ever running the loop body The transition logic for finding the first item in the items set is implemented in the subclasses \end{DoxyCompactList}\item 
+abstract bool \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End} ()
+\begin{DoxyCompactList}\small\item\em Executes after the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Begin()} or \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()} methods and before the Loop Body Returns true if the m\+\_\+current\+Item is null. This case arises in the following scenarios\+: 1) The item set is empty thus, after the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Begin()} method call the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()} identifies that m\+\_\+current\+Item points to null 2) The item set is not empty and the iterator went outside the boundaries of the item set after the call to \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()} method (\hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()} method set m\+\_\+current\+Item to null) \end{DoxyCompactList}\item 
+abstract T \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next} ()
+\begin{DoxyCompactList}\small\item\em Executes after the execution of the loop body and before the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()} method Increases the iteration variable and set the m\+\_\+current\+Item to point to the current item of the item set. In case where the end of the item set is reached the m\+\_\+current\+Item points to null which is identified by the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()} methods that is executed next. The transition logic from item to item is implemented from the subclasses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a19c7904539e8519162a4c42739d37757}{m\+\_\+current\+Item} = default(T)
+\begin{DoxyCompactList}\small\item\em Current node pointed to by the iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a6621ff4270d662b95a80c7cbcc75b68c}{M\+\_\+\+Current\+Item}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the current item pointed by the iterator \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is the base abstract class of Graph\+Iterators. It has no implementation except from the m\+\_\+current\+Item member variable. This variable always point to the current element (which has type T) that the iterator points. The class\textquotesingle{}s methods are executed in a specific sequence that is dictated by the loop statement semantics that is \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Begin()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}, L\+O\+O\+P\+\_\+\+B\+O\+D\+Y, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}, L\+O\+O\+P\+\_\+\+B\+O\+D\+Y, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}, L\+O\+O\+P\+\_\+\+B\+O\+D\+Y, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}... etc 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of elements that this iterator iterates on\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+Graph\+Library.\+Generics.\+I\+Graph\+Iterator$<$\+T$>$, \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator}!Begin@{Begin}}
+\index{Begin@{Begin}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator}}
+\subsubsection[{Begin()}]{\setlength{\rightskip}{0pt plus 5cm}abstract T {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator}$<$ T $>$.Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}
+
+
+Executes once at the start of the iteration and before the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()} method Initializes the iterator variable ( realized in the subclasses ) and the m\+\_\+current\+Item to point to the first element of the item set. If the set is empty the m\+\_\+current\+Item points to null. After the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Begin()} method the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()} method executes before going into the loop body. Thus the loop terminates if the item set is empty before ever running the loop body The transition logic for finding the first item in the items set is implemented in the subclasses 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_iterator}{Graph\+Library.\+Generics.\+I\+Graph\+Iterator$<$ T $>$}.
+
+
+
+Implemented in \hyperlink{class_graph_library_1_1_c_it___graph_b_f_s_aa96b96be6229e08e45b85fcd0130445d}{Graph\+Library.\+C\+It\+\_\+\+Graph\+B\+F\+S}, \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a0c5f16a80d9647af3bf1ad35507fe62a}{Graph\+Library.\+C\+It\+\_\+\+Graph\+D\+F\+S}, \hyperlink{class_graph_library_1_1_c_it___graph_leaf_nodes_a7f9ce52d3e6c908a50abc991f77b805d}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Leaf\+Nodes}, \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a582dd6795006075f6f81fef42d1de1ba}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Root\+Nodes}, \hyperlink{class_graph_library_1_1_c_it___graph_nodes_a19eafdc8ea743803dddcc5a9a73adbf6}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Nodes}, \hyperlink{class_graph_library_1_1_c_it___graph_edges_a5934153f52d3b0e5bc7de7dbcb3d454d}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Edges}, \hyperlink{class_graph_library_1_1_c_it___predecessors_aa71033bdb63459cb6bac0c01db43bf6d}{Graph\+Library.\+C\+It\+\_\+\+Predecessors}, and \hyperlink{class_graph_library_1_1_c_it___successors_ab13b972da76d0f8972114e8d376ba68c}{Graph\+Library.\+C\+It\+\_\+\+Successors}.
+
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator}!End@{End}}
+\index{End@{End}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator}}
+\subsubsection[{End()}]{\setlength{\rightskip}{0pt plus 5cm}abstract bool {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator}$<$ T $>$.End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}
+
+
+Executes after the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Begin()} or \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()} methods and before the Loop Body Returns true if the m\+\_\+current\+Item is null. This case arises in the following scenarios\+: 1) The item set is empty thus, after the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Begin()} method call the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()} identifies that m\+\_\+current\+Item points to null 2) The item set is not empty and the iterator went outside the boundaries of the item set after the call to \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()} method (\hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()} method set m\+\_\+current\+Item to null) 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_iterator}{Graph\+Library.\+Generics.\+I\+Graph\+Iterator$<$ T $>$}.
+
+
+
+Implemented in \hyperlink{class_graph_library_1_1_c_it___graph_b_f_s_a46418dc24ecf2e8ad3aa3541a70d06b2}{Graph\+Library.\+C\+It\+\_\+\+Graph\+B\+F\+S}, \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{Graph\+Library.\+C\+It\+\_\+\+Graph\+D\+F\+S}, \hyperlink{class_graph_library_1_1_c_it___graph_leaf_nodes_a7a249d8774ff2fef55f20ae8dc1d0fac}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Leaf\+Nodes}, \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a1173c503776973a5e4f6f51492f21fe5}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Root\+Nodes}, \hyperlink{class_graph_library_1_1_c_it___graph_nodes_abb9dc813b7bf7ff0aa0a22ef83ba3478}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Nodes}, \hyperlink{class_graph_library_1_1_c_it___graph_edges_a64d0c02c22a40db7b62bf7cbf0de02fc}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Edges}, \hyperlink{class_graph_library_1_1_c_it___predecessors_a01294d5cb0b22ddc2e8c39edc5d2cc01}{Graph\+Library.\+C\+It\+\_\+\+Predecessors}, and \hyperlink{class_graph_library_1_1_c_it___successors_a8645c9047b2910e2c3bd246f8745773b}{Graph\+Library.\+C\+It\+\_\+\+Successors}.
+
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator}!Next@{Next}}
+\index{Next@{Next}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator}}
+\subsubsection[{Next()}]{\setlength{\rightskip}{0pt plus 5cm}abstract T {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator}$<$ T $>$.Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}
+
+
+Executes after the execution of the loop body and before the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()} method Increases the iteration variable and set the m\+\_\+current\+Item to point to the current item of the item set. In case where the end of the item set is reached the m\+\_\+current\+Item points to null which is identified by the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()} methods that is executed next. The transition logic from item to item is implemented from the subclasses. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_iterator}{Graph\+Library.\+Generics.\+I\+Graph\+Iterator$<$ T $>$}.
+
+
+
+Implemented in \hyperlink{class_graph_library_1_1_c_it___graph_b_f_s_ab836a3c5caca3c8d63d56827b677a243}{Graph\+Library.\+C\+It\+\_\+\+Graph\+B\+F\+S}, \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a89cf17a75298dabb07d6d0ce06895e78}{Graph\+Library.\+C\+It\+\_\+\+Graph\+D\+F\+S}, \hyperlink{class_graph_library_1_1_c_it___graph_leaf_nodes_aa6f30fbeebae338fa9d77455027679f0}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Leaf\+Nodes}, \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes_a4606ecd1ef26c19634171ccd81e18816}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Root\+Nodes}, \hyperlink{class_graph_library_1_1_c_it___graph_nodes_a669edb9e8d59c4dcdbb70fe15e89104a}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Nodes}, \hyperlink{class_graph_library_1_1_c_it___graph_edges_ab14c4a444a51dac76ed83211798f05a8}{Graph\+Library.\+C\+It\+\_\+\+Graph\+Edges}, \hyperlink{class_graph_library_1_1_c_it___predecessors_a560fdfb437097d41b4c7dd15905eae99}{Graph\+Library.\+C\+It\+\_\+\+Predecessors}, and \hyperlink{class_graph_library_1_1_c_it___successors_abeba92b544a86d4385e9120289801df3}{Graph\+Library.\+C\+It\+\_\+\+Successors}.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a19c7904539e8519162a4c42739d37757}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator}!m\+\_\+current\+Item@{m\+\_\+current\+Item}}
+\index{m\+\_\+current\+Item@{m\+\_\+current\+Item}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator}}
+\subsubsection[{m\+\_\+current\+Item}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator}$<$ T $>$.m\+\_\+current\+Item = default(T)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a19c7904539e8519162a4c42739d37757}
+
+
+Current node pointed to by the iterator 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a6621ff4270d662b95a80c7cbcc75b68c}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator}!M\+\_\+\+Current\+Item@{M\+\_\+\+Current\+Item}}
+\index{M\+\_\+\+Current\+Item@{M\+\_\+\+Current\+Item}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator}}
+\subsubsection[{M\+\_\+\+Current\+Item}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator}$<$ T $>$.M\+\_\+\+Current\+Item\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a6621ff4270d662b95a80c7cbcc75b68c}
+
+
+Returns the current item pointed by the iterator 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/\+Generics/Abstract\+Graph\+Iterators.\+cs\end{DoxyCompactItemize}

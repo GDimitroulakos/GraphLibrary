@@ -1,0 +1,124 @@
+\hypertarget{class_graph_library_1_1_c_graph_labeling}{}\section{Graph\+Library.\+C\+Graph\+Labeling$<$ T $>$ Class Template Reference}
+\label{class_graph_library_1_1_c_graph_labeling}\index{Graph\+Library.\+C\+Graph\+Labeling$<$ T $>$@{Graph\+Library.\+C\+Graph\+Labeling$<$ T $>$}}
+
+
+This class provides general graph labelling capabilities. It doesn\textquotesingle{}t follow a specific strategy to label nodes/edges. It just implements the default version of Set\+Label methods for the class \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}. (This class is specific to \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class)  
+
+
+Inheritance diagram for Graph\+Library.\+C\+Graph\+Labeling$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_c_graph_labeling}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graph_library_1_1_c_graph_labeling_a44b3f485518381900722bd80796a3f8c}{}{\bfseries C\+Graph\+Labeling} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} graph)\label{class_graph_library_1_1_c_graph_labeling_a44b3f485518381900722bd80796a3f8c}
+
+\item 
+override void \hyperlink{class_graph_library_1_1_c_graph_labeling_accff39c0e47f50e582586e91da5a217f}{Set\+Label} (T element, string label)
+\begin{DoxyCompactList}\small\item\em Sets the label of the given element. The element must exist in the graph and the label must not be already used by another element of the same type \end{DoxyCompactList}\item 
+override void \hyperlink{class_graph_library_1_1_c_graph_labeling_abc0c9a99fd0ed7d21d3294c017587888}{Set\+Label} (int serial\+Number, \hyperlink{namespace_graph_library_1_1_generics_a919a165f16deccdd1b3d7e8a93423fbc}{Graph\+Element\+Type} element\+Type, string label)
+\begin{DoxyCompactList}\small\item\em Sets the label of the element with the given serialnumber. The element must exist in the graph and the label must not be already used by another element of the same type (node, edge) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \hyperlink{class_graph_library_1_1_c_graph_labeling_aacfaf94dbe1fe9e65e95929a03d9f960}{Label\+Elements} ()
+\begin{DoxyCompactList}\small\item\em Gives the initial mapping of labels to elements. Called by the constructor. Must be defined in subclasses The version in this class doesn\textquotesingle{}t do anything \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graph_library_1_1_c_graph_labeling_a086fef646e5affb6ebdc82459e809157}{}\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} {\bfseries m\+\_\+\+Graph}\label{class_graph_library_1_1_c_graph_labeling_a086fef646e5affb6ebdc82459e809157}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides general graph labelling capabilities. It doesn\textquotesingle{}t follow a specific strategy to label nodes/edges. It just implements the default version of Set\+Label methods for the class \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}. (This class is specific to \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class) 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Type of element to label\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+Graph\+Library.\+Generics.\+Abstract\+Graph\+Labeling$<$\+T$>$
+
+
+\end{DoxySeeAlso}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em I\+Graph\+Primitive}]\end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_labeling_aacfaf94dbe1fe9e65e95929a03d9f960}{}\index{Graph\+Library\+::\+C\+Graph\+Labeling@{Graph\+Library\+::\+C\+Graph\+Labeling}!Label\+Elements@{Label\+Elements}}
+\index{Label\+Elements@{Label\+Elements}!Graph\+Library\+::\+C\+Graph\+Labeling@{Graph\+Library\+::\+C\+Graph\+Labeling}}
+\subsubsection[{Label\+Elements()}]{\setlength{\rightskip}{0pt plus 5cm}override void {\bf Graph\+Library.\+C\+Graph\+Labeling}$<$ T $>$.Label\+Elements (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}, {\ttfamily [virtual]}}\label{class_graph_library_1_1_c_graph_labeling_aacfaf94dbe1fe9e65e95929a03d9f960}
+
+
+Gives the initial mapping of labels to elements. Called by the constructor. Must be defined in subclasses The version in this class doesn\textquotesingle{}t do anything 
+
+
+
+Implements \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_labeling_a890775a0a91077bedd4330df8ddafe48}{Graph\+Library.\+Generics.\+Abstract\+Graph\+Labeling$<$ T $>$}.
+
+\hypertarget{class_graph_library_1_1_c_graph_labeling_accff39c0e47f50e582586e91da5a217f}{}\index{Graph\+Library\+::\+C\+Graph\+Labeling@{Graph\+Library\+::\+C\+Graph\+Labeling}!Set\+Label@{Set\+Label}}
+\index{Set\+Label@{Set\+Label}!Graph\+Library\+::\+C\+Graph\+Labeling@{Graph\+Library\+::\+C\+Graph\+Labeling}}
+\subsubsection[{Set\+Label(\+T element, string label)}]{\setlength{\rightskip}{0pt plus 5cm}override void {\bf Graph\+Library.\+C\+Graph\+Labeling}$<$ T $>$.Set\+Label (
+\begin{DoxyParamCaption}
+\item[{T}]{element, }
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_labeling_accff39c0e47f50e582586e91da5a217f}
+
+
+Sets the label of the given element. The element must exist in the graph and the label must not be already used by another element of the same type 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The element.\\
+\hline
+{\em label} & The label.\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Collections.\+Generic.\+Key\+Not\+Found\+Exception} & Element does not exist or label already exists in the graph\\
+\hline
+\end{DoxyExceptions}
+\hypertarget{class_graph_library_1_1_c_graph_labeling_abc0c9a99fd0ed7d21d3294c017587888}{}\index{Graph\+Library\+::\+C\+Graph\+Labeling@{Graph\+Library\+::\+C\+Graph\+Labeling}!Set\+Label@{Set\+Label}}
+\index{Set\+Label@{Set\+Label}!Graph\+Library\+::\+C\+Graph\+Labeling@{Graph\+Library\+::\+C\+Graph\+Labeling}}
+\subsubsection[{Set\+Label(int serial\+Number, Graph\+Element\+Type element\+Type, string label)}]{\setlength{\rightskip}{0pt plus 5cm}override void {\bf Graph\+Library.\+C\+Graph\+Labeling}$<$ T $>$.Set\+Label (
+\begin{DoxyParamCaption}
+\item[{int}]{serial\+Number, }
+\item[{{\bf Graph\+Element\+Type}}]{element\+Type, }
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_c_graph_labeling_abc0c9a99fd0ed7d21d3294c017587888}
+
+
+Sets the label of the element with the given serialnumber. The element must exist in the graph and the label must not be already used by another element of the same type (node, edge) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial\+Number} & The serial number.\\
+\hline
+{\em label} & The label.\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_labeling_a268a30e52ddd582947c6e35766627e73}{Graph\+Library.\+Generics.\+Abstract\+Graph\+Labeling$<$ T $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/Graph\+Labeling.\+cs\end{DoxyCompactItemize}

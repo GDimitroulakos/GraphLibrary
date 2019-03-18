@@ -1,0 +1,84 @@
+\hypertarget{interface_graph_library_1_1_i_graph_algorithm}{}\section{Graph\+Library.\+I\+Graph\+Algorithm$<$ T $>$ Interface Template Reference}
+\label{interface_graph_library_1_1_i_graph_algorithm}\index{Graph\+Library.\+I\+Graph\+Algorithm$<$ T $>$@{Graph\+Library.\+I\+Graph\+Algorithm$<$ T $>$}}
+
+
+The interface represent the mandatory interface of the algorithm class.  
+
+
+Inheritance diagram for Graph\+Library.\+I\+Graph\+Algorithm$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_graph_library_1_1_i_graph_algorithm}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+T \hyperlink{interface_graph_library_1_1_i_graph_algorithm_a85b88995ba27d084e9f7dd624a98cf2a}{Visit} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node)
+\begin{DoxyCompactList}\small\item\em The Visit method refers to the action the algorithm performs to a specific node Most of the times the Visit function is called recursively. \end{DoxyCompactList}\item 
+object \hyperlink{interface_graph_library_1_1_i_graph_algorithm_a17229ddd74c8e05afafa0ba7d5c1f774}{Visit\+Children} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node)
+\begin{DoxyCompactList}\small\item\em Visits the children of the specified node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The interface represent the mandatory interface of the algorithm class. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The parameter refers to the type of the return result\\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_graph_library_1_1_i_graph_algorithm_a85b88995ba27d084e9f7dd624a98cf2a}{}\index{Graph\+Library\+::\+I\+Graph\+Algorithm@{Graph\+Library\+::\+I\+Graph\+Algorithm}!Visit@{Visit}}
+\index{Visit@{Visit}!Graph\+Library\+::\+I\+Graph\+Algorithm@{Graph\+Library\+::\+I\+Graph\+Algorithm}}
+\subsubsection[{Visit(\+C\+Graph\+Node node)}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf Graph\+Library.\+I\+Graph\+Algorithm}$<$ T $>$.Visit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node}
+\end{DoxyParamCaption}
+)}\label{interface_graph_library_1_1_i_graph_algorithm_a85b88995ba27d084e9f7dd624a98cf2a}
+
+
+The Visit method refers to the action the algorithm performs to a specific node Most of the times the Visit function is called recursively. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to which the algorithm acts.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parameter refers to the type of the return result
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_graph_library_1_1_abstract_graph_algorithm_af0a50489383c3191e9a02cb6d8a6731d}{Graph\+Library.\+Abstract\+Graph\+Algorithm$<$ T $>$}.
+
+\hypertarget{interface_graph_library_1_1_i_graph_algorithm_a17229ddd74c8e05afafa0ba7d5c1f774}{}\index{Graph\+Library\+::\+I\+Graph\+Algorithm@{Graph\+Library\+::\+I\+Graph\+Algorithm}!Visit\+Children@{Visit\+Children}}
+\index{Visit\+Children@{Visit\+Children}!Graph\+Library\+::\+I\+Graph\+Algorithm@{Graph\+Library\+::\+I\+Graph\+Algorithm}}
+\subsubsection[{Visit\+Children(\+C\+Graph\+Node node)}]{\setlength{\rightskip}{0pt plus 5cm}object {\bf Graph\+Library.\+I\+Graph\+Algorithm}$<$ T $>$.Visit\+Children (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node}
+\end{DoxyParamCaption}
+)}\label{interface_graph_library_1_1_i_graph_algorithm_a17229ddd74c8e05afafa0ba7d5c1f774}
+
+
+Visits the children of the specified node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to which the children is visited\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+an object of type object
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_graph_library_1_1_abstract_graph_algorithm_a8a3fe9faaa81fd775a1800e18ef3b1cd}{Graph\+Library.\+Abstract\+Graph\+Algorithm$<$ T $>$}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/I\+Graph\+Algorithm.\+cs\end{DoxyCompactItemize}

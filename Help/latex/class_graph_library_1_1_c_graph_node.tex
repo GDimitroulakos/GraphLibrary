@@ -1,0 +1,347 @@
+\hypertarget{class_graph_library_1_1_c_graph_node}{}\section{Graph\+Library.\+C\+Graph\+Node Class Reference}
+\label{class_graph_library_1_1_c_graph_node}\index{Graph\+Library.\+C\+Graph\+Node@{Graph\+Library.\+C\+Graph\+Node}}
+
+
+Represents a graph node .  
+
+
+Inheritance diagram for Graph\+Library.\+C\+Graph\+Node\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_graph_library_1_1_c_graph_node}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_c_graph_node_aa1d9c216b6466f4bd34b6a6d761a5a83}{C\+Graph\+Node} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} owner\+Graph)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} class. \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_node_ad710e8d3562812517fd4558518442990}{Add\+Successor} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} target, \hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} edgetype, \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} foreign\+Graph=null)
+\begin{DoxyCompactList}\small\item\em Adds the successor to the current node. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_graph_node_a8264470518ce61df1bc111cdafafba68}{Successor} (int index)
+\begin{DoxyCompactList}\small\item\em Returns the i-\/th native successor in the list \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_node_a5d03becd7eb30cecb2074d4d7c9e818c}{Add\+Predecessor} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} source, \hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} edgetype, \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} foreign\+Graph=null)
+\begin{DoxyCompactList}\small\item\em Adds the predecessor to the current node. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_graph_node_ab37e7c5b8dc940a2cfd8e301f50d633e}{Predeccessor} (int index)
+\begin{DoxyCompactList}\small\item\em Returns the i-\/th predecessor in the list of predecessors \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_node_ad2b029d744be615c8de5c8f396154de1}{Set\+Label\+Context} (object context)
+\begin{DoxyCompactList}\small\item\em Sets the label context. \end{DoxyCompactList}\item 
+string \hyperlink{class_graph_library_1_1_c_graph_node_af75b2590fa8bdce8c81c56f645f121a0}{To\+String} (object labeler)
+\begin{DoxyCompactList}\small\item\em Returns a System.\+String that represents the label of the node given by the specifier labeler object C\+Graph\+Labeling$<$\+T$>$ \end{DoxyCompactList}\item 
+override string \hyperlink{class_graph_library_1_1_c_graph_node_a3e26e00defb555fc26c9e9f7eaf003f5}{To\+String} ()
+\begin{DoxyCompactList}\small\item\em Returns the label of the node. If a labeler object is specified in the member variable m\+\_\+label\+Context then the labeler object provides the label otherwise an ad-\/hoc label is provided. \end{DoxyCompactList}\item 
+override int \hyperlink{class_graph_library_1_1_c_graph_node_a77205fe388f8b37cb45ceadefe40bcb0}{Get\+Hash\+Code} ()
+\begin{DoxyCompactList}\small\item\em Returns a hash code for this instance. It actually returns the serial number of the node which is unique for each graph element \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_graph_library_1_1_c_graph_node_aec1f789c7ef7cf0e34d456eb3e7a9ccb}{m\+\_\+is\+Compound\+Node} = false
+\begin{DoxyCompactList}\small\item\em It is true if the node is a graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static object \hyperlink{class_graph_library_1_1_c_graph_node_a6778251b91c25126259a1c838324eea4}{m\+\_\+label\+Context} =null
+\begin{DoxyCompactList}\small\item\em The label context is the the object that provides labels to the graph nodes. It could be and algorithm, printer, etc \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_graph_library_1_1_c_graph_node_a1a877b0e26c037d267bcdb4eb17087ae}{M\+\_\+\+Number\+Of\+Successors}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the number of native (nodes that belong to the same graph as the current node) successors \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} $>$ \hyperlink{class_graph_library_1_1_c_graph_node_a5f3bca4eb56bce992ef018820bdd20c4}{M\+\_\+\+Successors}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the Node\textquotesingle{}s native successors in a list. The list is allocated inside the getter\textquotesingle{}s code \end{DoxyCompactList}\item 
+int \hyperlink{class_graph_library_1_1_c_graph_node_ac0f1e583a6b672b03e146cb730b1682a}{M\+\_\+\+Number\+Of\+Predecessors}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the number of native (nodes that belong to the same graph as the current node) predecessors \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} $>$ \hyperlink{class_graph_library_1_1_c_graph_node_a428ee478ef04cd06956671a94dafdbc5}{M\+\_\+\+Predecessors}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the Node\textquotesingle{}s native predecessors in a list \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} $>$ \hyperlink{class_graph_library_1_1_c_graph_node_af1dd68175bb884b10c5972c57b3c243f}{M\+\_\+\+Foreign\+Edges}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the foreign edges to which this node connects. Returns a list with the foreign edges \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} \hyperlink{class_graph_library_1_1_c_graph_node_af74860380cdc7a69e9ec6634e2ccdc48}{M\+\_\+\+Owner\+Graph}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the owner graph of the node \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_graph_library_1_1_c_graph_node_a43e9c4162fb28defd6c0193f2222d199}{M\+\_\+\+Serial\+Number}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the node\textquotesingle{}s serial number. \end{DoxyCompactList}\item 
+bool \hyperlink{class_graph_library_1_1_c_graph_node_a8b1a7e4ee0887d7555ed8e7fc183cf21}{M\+\_\+\+Is\+Compound\+Node}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Is a boolean attribute that indicates weather the node is compound \end{DoxyCompactList}\item 
+\hyperlink{namespace_graph_library_1_1_generics_a919a165f16deccdd1b3d7e8a93423fbc}{Graph\+Element\+Type} \hyperlink{class_graph_library_1_1_c_graph_node_a1b13fbb13f63117f18610da1fe6b86ac}{M\+\_\+\+Element\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the type of the m\+\_\+ element. \end{DoxyCompactList}\item 
+object \hyperlink{class_graph_library_1_1_c_graph_node_a2e5ed7afca428365f7aef68611f852fe}{this\mbox{[}object index\mbox{]}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indexer returns the information referring to a specific algorithm object \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a graph node . 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_node_aa1d9c216b6466f4bd34b6a6d761a5a83}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!C\+Graph\+Node@{C\+Graph\+Node}}
+\index{C\+Graph\+Node@{C\+Graph\+Node}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{C\+Graph\+Node(\+C\+Graph owner\+Graph)}]{\setlength{\rightskip}{0pt plus 5cm}Graph\+Library.\+C\+Graph\+Node.\+C\+Graph\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph}}]{owner\+Graph}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_node_aa1d9c216b6466f4bd34b6a6d761a5a83}
+
+
+Initializes a new instance of the \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner\+Graph} & The owner graph.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_node_a5d03becd7eb30cecb2074d4d7c9e818c}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!Add\+Predecessor@{Add\+Predecessor}}
+\index{Add\+Predecessor@{Add\+Predecessor}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{Add\+Predecessor(\+C\+Graph\+Node source, Graph\+Type edgetype, C\+Graph foreign\+Graph=null)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph\+Node.\+Add\+Predecessor (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{source, }
+\item[{{\bf Graph\+Type}}]{edgetype, }
+\item[{{\bf C\+Graph}}]{foreign\+Graph = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_node_a5d03becd7eb30cecb2074d4d7c9e818c}
+
+
+Adds the predecessor to the current node. 
+
+T\+O\+D\+O \+: Check here for foreign predecessors
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source node.\\
+\hline
+{\em edgetype} & The edgetype (directed/undirected).\\
+\hline
+{\em foreign\+Graph} & The graph that the source node belongs. If its the same with the current node\textquotesingle{}s graph then pass a null\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_node_ad710e8d3562812517fd4558518442990}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!Add\+Successor@{Add\+Successor}}
+\index{Add\+Successor@{Add\+Successor}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{Add\+Successor(\+C\+Graph\+Node target, Graph\+Type edgetype, C\+Graph foreign\+Graph=null)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph\+Node.\+Add\+Successor (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{target, }
+\item[{{\bf Graph\+Type}}]{edgetype, }
+\item[{{\bf C\+Graph}}]{foreign\+Graph = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_node_ad710e8d3562812517fd4558518442990}
+
+
+Adds the successor to the current node. 
+
+T\+O\+D\+O\+: Check here for Foreign successors
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & The target node.\\
+\hline
+{\em edgetype} & The edgetype (directed/undirected).\\
+\hline
+{\em foreign\+Graph} & The graph that the target node belongs. If its the same with the current node\textquotesingle{}s graph then pass a null\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_node_a77205fe388f8b37cb45ceadefe40bcb0}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!Get\+Hash\+Code@{Get\+Hash\+Code}}
+\index{Get\+Hash\+Code@{Get\+Hash\+Code}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{Get\+Hash\+Code()}]{\setlength{\rightskip}{0pt plus 5cm}override int Graph\+Library.\+C\+Graph\+Node.\+Get\+Hash\+Code (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_node_a77205fe388f8b37cb45ceadefe40bcb0}
+
+
+Returns a hash code for this instance. It actually returns the serial number of the node which is unique for each graph element 
+
+\begin{DoxyReturn}{Returns}
+A hash code for this instance, suitable for use in hashing algorithms and data structures like a hash table. 
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_node_ab37e7c5b8dc940a2cfd8e301f50d633e}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!Predeccessor@{Predeccessor}}
+\index{Predeccessor@{Predeccessor}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{Predeccessor(int index)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Node} Graph\+Library.\+C\+Graph\+Node.\+Predeccessor (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_node_ab37e7c5b8dc940a2cfd8e301f50d633e}
+
+
+Returns the i-\/th predecessor in the list of predecessors 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_node_ad2b029d744be615c8de5c8f396154de1}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!Set\+Label\+Context@{Set\+Label\+Context}}
+\index{Set\+Label\+Context@{Set\+Label\+Context}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{Set\+Label\+Context(object context)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph\+Node.\+Set\+Label\+Context (
+\begin{DoxyParamCaption}
+\item[{object}]{context}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_node_ad2b029d744be615c8de5c8f396154de1}
+
+
+Sets the label context. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & The context.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_node_a8264470518ce61df1bc111cdafafba68}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!Successor@{Successor}}
+\index{Successor@{Successor}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{Successor(int index)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Node} Graph\+Library.\+C\+Graph\+Node.\+Successor (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_node_a8264470518ce61df1bc111cdafafba68}
+
+
+Returns the i-\/th native successor in the list 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the successor at the given sequence index or null if index $>$= Number\+Of\+Successors 
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_node_af75b2590fa8bdce8c81c56f645f121a0}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{To\+String(object labeler)}]{\setlength{\rightskip}{0pt plus 5cm}string Graph\+Library.\+C\+Graph\+Node.\+To\+String (
+\begin{DoxyParamCaption}
+\item[{object}]{labeler}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_node_af75b2590fa8bdce8c81c56f645f121a0}
+
+
+Returns a System.\+String that represents the label of the node given by the specifier labeler object C\+Graph\+Labeling$<$\+T$>$ 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labeler} & The labeler.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A System.\+String that represents this instance. 
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_node_a3e26e00defb555fc26c9e9f7eaf003f5}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!To\+String@{To\+String}}
+\index{To\+String@{To\+String}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{To\+String()}]{\setlength{\rightskip}{0pt plus 5cm}override string Graph\+Library.\+C\+Graph\+Node.\+To\+String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_node_a3e26e00defb555fc26c9e9f7eaf003f5}
+
+
+Returns the label of the node. If a labeler object is specified in the member variable m\+\_\+label\+Context then the labeler object provides the label otherwise an ad-\/hoc label is provided. 
+
+\begin{DoxyReturn}{Returns}
+A System.\+String that represents the serialnumber of this node. 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_node_aec1f789c7ef7cf0e34d456eb3e7a9ccb}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!m\+\_\+is\+Compound\+Node@{m\+\_\+is\+Compound\+Node}}
+\index{m\+\_\+is\+Compound\+Node@{m\+\_\+is\+Compound\+Node}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{m\+\_\+is\+Compound\+Node}]{\setlength{\rightskip}{0pt plus 5cm}bool Graph\+Library.\+C\+Graph\+Node.\+m\+\_\+is\+Compound\+Node = false\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_c_graph_node_aec1f789c7ef7cf0e34d456eb3e7a9ccb}
+
+
+It is true if the node is a graph. 
+
+\hypertarget{class_graph_library_1_1_c_graph_node_a6778251b91c25126259a1c838324eea4}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!m\+\_\+label\+Context@{m\+\_\+label\+Context}}
+\index{m\+\_\+label\+Context@{m\+\_\+label\+Context}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{m\+\_\+label\+Context}]{\setlength{\rightskip}{0pt plus 5cm}object Graph\+Library.\+C\+Graph\+Node.\+m\+\_\+label\+Context =null\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}\label{class_graph_library_1_1_c_graph_node_a6778251b91c25126259a1c838324eea4}
+
+
+The label context is the the object that provides labels to the graph nodes. It could be and algorithm, printer, etc 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_node_a1b13fbb13f63117f18610da1fe6b86ac}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!M\+\_\+\+Element\+Type@{M\+\_\+\+Element\+Type}}
+\index{M\+\_\+\+Element\+Type@{M\+\_\+\+Element\+Type}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{M\+\_\+\+Element\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph\+Element\+Type} Graph\+Library.\+C\+Graph\+Node.\+M\+\_\+\+Element\+Type\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_node_a1b13fbb13f63117f18610da1fe6b86ac}
+
+
+Gets the type of the m\+\_\+ element. 
+
+The type of the m\+\_\+ element. \hypertarget{class_graph_library_1_1_c_graph_node_af1dd68175bb884b10c5972c57b3c243f}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!M\+\_\+\+Foreign\+Edges@{M\+\_\+\+Foreign\+Edges}}
+\index{M\+\_\+\+Foreign\+Edges@{M\+\_\+\+Foreign\+Edges}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{M\+\_\+\+Foreign\+Edges}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf C\+Graph\+Edge}$>$ Graph\+Library.\+C\+Graph\+Node.\+M\+\_\+\+Foreign\+Edges\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_node_af1dd68175bb884b10c5972c57b3c243f}
+
+
+Gets the foreign edges to which this node connects. Returns a list with the foreign edges 
+
+The m\+\_\+ foreign edges. \hypertarget{class_graph_library_1_1_c_graph_node_a8b1a7e4ee0887d7555ed8e7fc183cf21}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!M\+\_\+\+Is\+Compound\+Node@{M\+\_\+\+Is\+Compound\+Node}}
+\index{M\+\_\+\+Is\+Compound\+Node@{M\+\_\+\+Is\+Compound\+Node}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{M\+\_\+\+Is\+Compound\+Node}]{\setlength{\rightskip}{0pt plus 5cm}bool Graph\+Library.\+C\+Graph\+Node.\+M\+\_\+\+Is\+Compound\+Node\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_node_a8b1a7e4ee0887d7555ed8e7fc183cf21}
+
+
+Is a boolean attribute that indicates weather the node is compound 
+
+{\ttfamily true} if it is compound node; otherwise, {\ttfamily false}. \hypertarget{class_graph_library_1_1_c_graph_node_ac0f1e583a6b672b03e146cb730b1682a}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!M\+\_\+\+Number\+Of\+Predecessors@{M\+\_\+\+Number\+Of\+Predecessors}}
+\index{M\+\_\+\+Number\+Of\+Predecessors@{M\+\_\+\+Number\+Of\+Predecessors}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{M\+\_\+\+Number\+Of\+Predecessors}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\+Library.\+C\+Graph\+Node.\+M\+\_\+\+Number\+Of\+Predecessors\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_node_ac0f1e583a6b672b03e146cb730b1682a}
+
+
+Returns the number of native (nodes that belong to the same graph as the current node) predecessors 
+
+\hypertarget{class_graph_library_1_1_c_graph_node_a1a877b0e26c037d267bcdb4eb17087ae}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!M\+\_\+\+Number\+Of\+Successors@{M\+\_\+\+Number\+Of\+Successors}}
+\index{M\+\_\+\+Number\+Of\+Successors@{M\+\_\+\+Number\+Of\+Successors}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{M\+\_\+\+Number\+Of\+Successors}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\+Library.\+C\+Graph\+Node.\+M\+\_\+\+Number\+Of\+Successors\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_node_a1a877b0e26c037d267bcdb4eb17087ae}
+
+
+Returns the number of native (nodes that belong to the same graph as the current node) successors 
+
+\hypertarget{class_graph_library_1_1_c_graph_node_af74860380cdc7a69e9ec6634e2ccdc48}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!M\+\_\+\+Owner\+Graph@{M\+\_\+\+Owner\+Graph}}
+\index{M\+\_\+\+Owner\+Graph@{M\+\_\+\+Owner\+Graph}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{M\+\_\+\+Owner\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph} Graph\+Library.\+C\+Graph\+Node.\+M\+\_\+\+Owner\+Graph\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_graph_library_1_1_c_graph_node_af74860380cdc7a69e9ec6634e2ccdc48}
+
+
+Represents the owner graph of the node 
+
+Is the owner graph \hypertarget{class_graph_library_1_1_c_graph_node_a428ee478ef04cd06956671a94dafdbc5}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!M\+\_\+\+Predecessors@{M\+\_\+\+Predecessors}}
+\index{M\+\_\+\+Predecessors@{M\+\_\+\+Predecessors}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{M\+\_\+\+Predecessors}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf C\+Graph\+Node}$>$ Graph\+Library.\+C\+Graph\+Node.\+M\+\_\+\+Predecessors\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_node_a428ee478ef04cd06956671a94dafdbc5}
+
+
+Returns the Node\textquotesingle{}s native predecessors in a list 
+
+\hypertarget{class_graph_library_1_1_c_graph_node_a43e9c4162fb28defd6c0193f2222d199}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!M\+\_\+\+Serial\+Number@{M\+\_\+\+Serial\+Number}}
+\index{M\+\_\+\+Serial\+Number@{M\+\_\+\+Serial\+Number}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{M\+\_\+\+Serial\+Number}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Graph\+Library.\+C\+Graph\+Node.\+M\+\_\+\+Serial\+Number\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_node_a43e9c4162fb28defd6c0193f2222d199}
+
+
+Returns the node\textquotesingle{}s serial number. 
+
+The serial number. \hypertarget{class_graph_library_1_1_c_graph_node_a5f3bca4eb56bce992ef018820bdd20c4}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!M\+\_\+\+Successors@{M\+\_\+\+Successors}}
+\index{M\+\_\+\+Successors@{M\+\_\+\+Successors}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{M\+\_\+\+Successors}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf C\+Graph\+Node}$>$ Graph\+Library.\+C\+Graph\+Node.\+M\+\_\+\+Successors\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_node_a5f3bca4eb56bce992ef018820bdd20c4}
+
+
+Returns the Node\textquotesingle{}s native successors in a list. The list is allocated inside the getter\textquotesingle{}s code 
+
+\hypertarget{class_graph_library_1_1_c_graph_node_a2e5ed7afca428365f7aef68611f852fe}{}\index{Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}!this\mbox{[}object index\mbox{]}@{this[object index]}}
+\index{this\mbox{[}object index\mbox{]}@{this[object index]}!Graph\+Library\+::\+C\+Graph\+Node@{Graph\+Library\+::\+C\+Graph\+Node}}
+\subsubsection[{this[object index]}]{\setlength{\rightskip}{0pt plus 5cm}object Graph\+Library.\+C\+Graph\+Node.\+this\mbox{[}object index\mbox{]}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_graph_library_1_1_c_graph_node_a2e5ed7afca428365f7aef68611f852fe}
+
+
+Indexer returns the information referring to a specific algorithm object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Algorithm object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the information object referring to the node for the algorithm index. The returned object must be casted to the appropriate information object that is declared inside the algorithm object. The algorithm can be any object that may process the graph nodes eg. Iterators, Algorithms classes etc
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/\+Extensible/Graph\+Elements\+Base.\+cs\item 
+Graph\+Library/Graph\+Elements.\+cs\end{DoxyCompactItemize}

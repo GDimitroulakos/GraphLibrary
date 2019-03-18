@@ -1,0 +1,66 @@
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_printer}{}\section{Graph\+Library.\+Generics.\+Abstract\+Graph\+Printer$<$ T\+Graph $>$ Class Template Reference}
+\label{class_graph_library_1_1_generics_1_1_abstract_graph_printer}\index{Graph\+Library.\+Generics.\+Abstract\+Graph\+Printer$<$ T\+Graph $>$@{Graph\+Library.\+Generics.\+Abstract\+Graph\+Printer$<$ T\+Graph $>$}}
+
+
+This class is the parent class of all classes that print \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} objects Hence the class know the interface of \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}. (Its build for \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}). This class heirarchy is based on the Builder design pattern.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract String\+Builder \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_printer_a793fd0ab2baf6809eee04292d3992ce4}{Print} (bool onlyedges=false)
+\begin{DoxyCompactList}\small\item\em Prints the graph into a String\+Builder object \end{DoxyCompactList}\item 
+abstract void \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_printer_ae58857c9c21ef8ab2cd8a0651340e2ec}{Generate} (string filepath, bool execute\+Generator=true)
+\begin{DoxyCompactList}\small\item\em Generates the graph representation to a file \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is the parent class of all classes that print \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} objects Hence the class know the interface of \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}. (Its build for \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}). This class heirarchy is based on the Builder design pattern. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_printer_ae58857c9c21ef8ab2cd8a0651340e2ec}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Printer@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Printer}!Generate@{Generate}}
+\index{Generate@{Generate}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Printer@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Printer}}
+\subsubsection[{Generate(string filepath, bool execute\+Generator=true)}]{\setlength{\rightskip}{0pt plus 5cm}abstract void {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Printer}$<$ T\+Graph $>$.Generate (
+\begin{DoxyParamCaption}
+\item[{string}]{filepath, }
+\item[{bool}]{execute\+Generator = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_printer_ae58857c9c21ef8ab2cd8a0651340e2ec}
+
+
+Generates the graph representation to a file 
+
+
+
+Implemented in \hyperlink{class_graph_library_1_1_c_graph_viz_printer_a9d4366ecf1b1f27c8886f0891ae5f5cf}{Graph\+Library.\+C\+Graph\+Viz\+Printer}.
+
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_printer_a793fd0ab2baf6809eee04292d3992ce4}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Printer@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Printer}!Print@{Print}}
+\index{Print@{Print}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Printer@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Printer}}
+\subsubsection[{Print(bool onlyedges=false)}]{\setlength{\rightskip}{0pt plus 5cm}abstract String\+Builder {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Printer}$<$ T\+Graph $>$.Print (
+\begin{DoxyParamCaption}
+\item[{bool}]{onlyedges = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_printer_a793fd0ab2baf6809eee04292d3992ce4}
+
+
+Prints the graph into a String\+Builder object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em onlyedges} & if set to {\ttfamily true} \mbox{[}onlyedges\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_graph_library_1_1_c_graph_viz_printer_a5341d69647f313d81387578a629d1ed5}{Graph\+Library.\+C\+Graph\+Viz\+Printer}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/\+Generics/Abstract\+Graph\+Printer.\+cs\end{DoxyCompactItemize}

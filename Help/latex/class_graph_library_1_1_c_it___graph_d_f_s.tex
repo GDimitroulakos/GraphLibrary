@@ -1,0 +1,107 @@
+\hypertarget{class_graph_library_1_1_c_it___graph_d_f_s}{}\section{Graph\+Library.\+C\+It\+\_\+\+Graph\+D\+F\+S Class Reference}
+\label{class_graph_library_1_1_c_it___graph_d_f_s}\index{Graph\+Library.\+C\+It\+\_\+\+Graph\+D\+F\+S@{Graph\+Library.\+C\+It\+\_\+\+Graph\+D\+F\+S}}
+
+
+Iterates over the nodes of a graph using Depth First Traversal The graph can be directed or undirected  
+
+
+Inheritance diagram for Graph\+Library.\+C\+It\+\_\+\+Graph\+D\+F\+S\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_c_it___graph_d_f_s}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_1_1_info___d_f_s}{Info\+\_\+\+D\+F\+S}
+\begin{DoxyCompactList}\small\item\em Graph node info to assist the iterator algorithm \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graph_library_1_1_c_it___graph_d_f_s_afbed060eff3b2fbf3056e6bbb635c976}{}{\bfseries C\+It\+\_\+\+Graph\+D\+F\+S} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} m\+Graph)\label{class_graph_library_1_1_c_it___graph_d_f_s_afbed060eff3b2fbf3056e6bbb635c976}
+
+\item 
+override \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a0c5f16a80d9647af3bf1ad35507fe62a}{Begin} ()
+\begin{DoxyCompactList}\small\item\em Executes once at the start of the iteration and before the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End()} method Initializes the iterator variable ( realized in the subclasses ) and the m\+\_\+current\+Item to point to the first element of the item set. If the set is empty the m\+\_\+current\+Item points to null. After the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a0c5f16a80d9647af3bf1ad35507fe62a}{Begin()} method the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End()} method executes before going into the loop body. Thus the loop terminates if the item set is empty before ever running the loop body The transition logic for finding the first item in the items set is implemented in the subclasses \end{DoxyCompactList}\item 
+override bool \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End} ()
+\begin{DoxyCompactList}\small\item\em Executes after the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a0c5f16a80d9647af3bf1ad35507fe62a}{Begin()} or \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a89cf17a75298dabb07d6d0ce06895e78}{Next()} methods and before the Loop Body Returns true if the m\+\_\+current\+Item is null. This case arises in the following scenarios\+: 1) The item set is empty thus, after the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a0c5f16a80d9647af3bf1ad35507fe62a}{Begin()} method call the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End()} identifies that m\+\_\+current\+Item points to null 2) The item set is not empty and the iterator went outside the boundaries of the item set after the call to \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a89cf17a75298dabb07d6d0ce06895e78}{Next()} method (\hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a89cf17a75298dabb07d6d0ce06895e78}{Next()} method set m\+\_\+current\+Item to null) \end{DoxyCompactList}\item 
+override \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a89cf17a75298dabb07d6d0ce06895e78}{Next} ()
+\begin{DoxyCompactList}\small\item\em Executes after the execution of the loop body and before the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End()} method Increases the iteration variable and set the m\+\_\+current\+Item to point to the current item of the item set. In case where the end of the item set is reached the m\+\_\+current\+Item points to null which is identified by the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End()} methods that is executed next. The transition logic from item to item is implemented from the subclasses. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graph_library_1_1_c_it___graph_d_f_s_a9d6b05a3cc1d61cfdb614e53cb0d6a53}{}void {\bfseries Set\+Node\+Color} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node, int color)\label{class_graph_library_1_1_c_it___graph_d_f_s_a9d6b05a3cc1d61cfdb614e53cb0d6a53}
+
+\item 
+\hypertarget{class_graph_library_1_1_c_it___graph_d_f_s_ae8b64a6809607ee0258b983b4530e28f}{}int {\bfseries Get\+Node\+Color} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node)\label{class_graph_library_1_1_c_it___graph_d_f_s_ae8b64a6809607ee0258b983b4530e28f}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Iterates over the nodes of a graph using Depth First Traversal The graph can be directed or undirected 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_c_it___graph_d_f_s_a0c5f16a80d9647af3bf1ad35507fe62a}{}\index{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S}!Begin@{Begin}}
+\index{Begin@{Begin}!Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S}}
+\subsubsection[{Begin()}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf C\+Graph\+Node} Graph\+Library.\+C\+It\+\_\+\+Graph\+D\+F\+S.\+Begin (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_c_it___graph_d_f_s_a0c5f16a80d9647af3bf1ad35507fe62a}
+
+
+Executes once at the start of the iteration and before the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End()} method Initializes the iterator variable ( realized in the subclasses ) and the m\+\_\+current\+Item to point to the first element of the item set. If the set is empty the m\+\_\+current\+Item points to null. After the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a0c5f16a80d9647af3bf1ad35507fe62a}{Begin()} method the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End()} method executes before going into the loop body. Thus the loop terminates if the item set is empty before ever running the loop body The transition logic for finding the first item in the items set is implemented in the subclasses 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator$<$ C\+Graph\+Node $>$}.
+
+\hypertarget{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{}\index{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S}!End@{End}}
+\index{End@{End}!Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S}}
+\subsubsection[{End()}]{\setlength{\rightskip}{0pt plus 5cm}override bool Graph\+Library.\+C\+It\+\_\+\+Graph\+D\+F\+S.\+End (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}
+
+
+Executes after the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a0c5f16a80d9647af3bf1ad35507fe62a}{Begin()} or \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a89cf17a75298dabb07d6d0ce06895e78}{Next()} methods and before the Loop Body Returns true if the m\+\_\+current\+Item is null. This case arises in the following scenarios\+: 1) The item set is empty thus, after the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a0c5f16a80d9647af3bf1ad35507fe62a}{Begin()} method call the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End()} identifies that m\+\_\+current\+Item points to null 2) The item set is not empty and the iterator went outside the boundaries of the item set after the call to \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a89cf17a75298dabb07d6d0ce06895e78}{Next()} method (\hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a89cf17a75298dabb07d6d0ce06895e78}{Next()} method set m\+\_\+current\+Item to null) 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator$<$ C\+Graph\+Node $>$}.
+
+\hypertarget{class_graph_library_1_1_c_it___graph_d_f_s_a89cf17a75298dabb07d6d0ce06895e78}{}\index{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S}!Next@{Next}}
+\index{Next@{Next}!Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S@{Graph\+Library\+::\+C\+It\+\_\+\+Graph\+D\+F\+S}}
+\subsubsection[{Next()}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf C\+Graph\+Node} Graph\+Library.\+C\+It\+\_\+\+Graph\+D\+F\+S.\+Next (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_c_it___graph_d_f_s_a89cf17a75298dabb07d6d0ce06895e78}
+
+
+Executes after the execution of the loop body and before the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End()} method Increases the iteration variable and set the m\+\_\+current\+Item to point to the current item of the item set. In case where the end of the item set is reached the m\+\_\+current\+Item points to null which is identified by the \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s_a6f6992493bc70c2e551c5d46bf9bf998}{End()} methods that is executed next. The transition logic from item to item is implemented from the subclasses. 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator$<$ C\+Graph\+Node $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/Graph\+Iterators.\+cs\end{DoxyCompactItemize}

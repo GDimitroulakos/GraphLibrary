@@ -1,0 +1,6 @@
+1) A graph consists of nodes and edges
+2) A Graph may be directed or undirected
+3) A Graph should be able to print
+
+4) A node has edge ports connecting to a specific edge
+5) Each edge endpoint connects to the node's edge ports

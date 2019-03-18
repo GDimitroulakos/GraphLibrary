@@ -1,0 +1,71 @@
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory}{}\section{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator\+Factory$<$ T\+Node, T\+Edge, T\+Graph $>$ Class Template Reference}
+\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory}\index{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator\+Factory$<$ T\+Node, T\+Edge, T\+Graph $>$@{Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator\+Factory$<$ T\+Node, T\+Edge, T\+Graph $>$}}
+
+
+This class is for programmers convinience. It instanciates iterators that iterate over a graph\textquotesingle{}s elements required for the algorithms and other graph processing facilities  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_acbbe628f60e73dd2d9e9077347f54e41}{}{\bfseries Abstract\+Graph\+Iterator\+Factory} (T\+Graph graph)\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_acbbe628f60e73dd2d9e9077347f54e41}
+
+\item 
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_aedef4114f6965591866b6a55708142c4}{}abstract \hyperlink{class_graph_library_1_1_c_it___successors}{C\+It\+\_\+\+Successors} {\bfseries Create\+Successors\+Iterator} (T\+Node node)\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_aedef4114f6965591866b6a55708142c4}
+
+\item 
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_af1548bfc2a8b5ee6cfc7fa2e4894a639}{}abstract \hyperlink{class_graph_library_1_1_c_it___predecessors}{C\+It\+\_\+\+Predecessors} {\bfseries Create\+Predecessors\+Iterator} (T\+Node node)\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_af1548bfc2a8b5ee6cfc7fa2e4894a639}
+
+\item 
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a7dc7403eaf646c430e98336322a419e5}{}abstract \hyperlink{class_graph_library_1_1_c_it___graph_edges}{C\+It\+\_\+\+Graph\+Edges} {\bfseries Create\+Graph\+Edges\+Iterator} ()\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a7dc7403eaf646c430e98336322a419e5}
+
+\item 
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a91ab86c2cfe0ddc527a88fffc3cc03ba}{}abstract \hyperlink{class_graph_library_1_1_c_it___graph_nodes}{C\+It\+\_\+\+Graph\+Nodes} {\bfseries Create\+Graph\+Nodes\+Iterator} ()\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a91ab86c2cfe0ddc527a88fffc3cc03ba}
+
+\item 
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a20730a2a51ea08948e341366b4c07e7e}{}abstract \hyperlink{class_graph_library_1_1_c_it___graph_root_nodes}{C\+It\+\_\+\+Graph\+Root\+Nodes} {\bfseries Create\+Graph\+Root\+Nodes\+Iterator} ()\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a20730a2a51ea08948e341366b4c07e7e}
+
+\item 
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a31f5f1dd1751eda776dc6ef95c766321}{}abstract \hyperlink{class_graph_library_1_1_c_it___graph_leaf_nodes}{C\+It\+\_\+\+Graph\+Leaf\+Nodes} {\bfseries Create\+Graph\+Leaf\+Nodes\+Iterator} ()\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a31f5f1dd1751eda776dc6ef95c766321}
+
+\item 
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a3d1fb037c1e0dd1b5d2b101115828b13}{}abstract \hyperlink{class_graph_library_1_1_c_it___graph_d_f_s}{C\+It\+\_\+\+Graph\+D\+F\+S} {\bfseries Create\+Graph\+Dfs\+Iterator} ()\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a3d1fb037c1e0dd1b5d2b101115828b13}
+
+\item 
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a7e3269a17f343779069ae26ece350d2e}{}abstract \hyperlink{class_graph_library_1_1_c_it___graph_b_f_s}{C\+It\+\_\+\+Graph\+B\+F\+S} {\bfseries Create\+Graph\+Bfs\+Iterator} (T\+Node start\+Node)\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a7e3269a17f343779069ae26ece350d2e}
+
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+T\+Graph \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a536c2a6608e8d664bc37c0ee9b878d91}{m\+\_\+\+Graph}
+\begin{DoxyCompactList}\small\item\em A reference to the graph \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class is for programmers convinience. It instanciates iterators that iterate over a graph\textquotesingle{}s elements required for the algorithms and other graph processing facilities 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T\+Node} & The type of the node.\\
+\hline
+{\em T\+Edge} & The type of the edge.\\
+\hline
+{\em T\+Graph} & The type of the graph.\\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a536c2a6608e8d664bc37c0ee9b878d91}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator\+Factory@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator\+Factory}!m\+\_\+\+Graph@{m\+\_\+\+Graph}}
+\index{m\+\_\+\+Graph@{m\+\_\+\+Graph}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator\+Factory@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Iterator\+Factory}}
+\subsubsection[{m\+\_\+\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}T\+Graph {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Iterator\+Factory}$<$ T\+Node, T\+Edge, T\+Graph $>$.m\+\_\+\+Graph\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory_a536c2a6608e8d664bc37c0ee9b878d91}
+
+
+A reference to the graph 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/\+Generics/Abstract\+Graph\+Iterator\+Factory.\+cs\end{DoxyCompactItemize}

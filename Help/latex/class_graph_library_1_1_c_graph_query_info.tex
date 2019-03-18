@@ -1,0 +1,215 @@
+\hypertarget{class_graph_library_1_1_c_graph_query_info}{}\section{Graph\+Library.\+C\+Graph\+Query\+Info Class Reference}
+\label{class_graph_library_1_1_c_graph_query_info}\index{Graph\+Library.\+C\+Graph\+Query\+Info@{Graph\+Library.\+C\+Graph\+Query\+Info}}
+
+
+Query info from the \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class  
+
+
+Inheritance diagram for Graph\+Library.\+C\+Graph\+Query\+Info\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_c_graph_query_info}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_c_graph_query_info_a3b4904ea0d850f99d13969b2b060f39b}{C\+Graph\+Query\+Info} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} graph)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a8dd567e7f04df4a55df4bd8b4a0c3e48}{Abstract\+Graph\+Query\+Info} class. \end{DoxyCompactList}\item 
+override object \hyperlink{class_graph_library_1_1_c_graph_query_info_affa34cf122ba03f978f4a276f32ccfb5}{Info} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node, object key=null)
+\begin{DoxyCompactList}\small\item\em Returns information concerning a node or a graph ( derives from node) Since the graph derives from \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} it stores the information at the same collection as node. So the function to retrieve the information is common in both elements \end{DoxyCompactList}\item 
+override object \hyperlink{class_graph_library_1_1_c_graph_query_info_a0cc7688e9e571af4587c232a51b73acd}{Info} (\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} edge, object key=null)
+\begin{DoxyCompactList}\small\item\em Returns the information of the specified edge \end{DoxyCompactList}\item 
+override object \hyperlink{class_graph_library_1_1_c_graph_query_info_a1f12d92a287f9f5779416649705f36e4}{Info} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} source, \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} target, object key=null)
+\begin{DoxyCompactList}\small\item\em Returns the information of the edge between the given source and target nodes. \end{DoxyCompactList}\item 
+override object \hyperlink{class_graph_library_1_1_c_graph_query_info_adc1215f254e82c2dfee52279b49bba64}{Create\+Info} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node, object info, object key=null)
+\begin{DoxyCompactList}\small\item\em Stores the information at the specified node or graph. If information already exists, it is overwritten \end{DoxyCompactList}\item 
+override object \hyperlink{class_graph_library_1_1_c_graph_query_info_a7b0cf74374283e88bf6309acb1c63a2c}{Create\+Info} (\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} edge, object info, object key=null)
+\begin{DoxyCompactList}\small\item\em Stores the information at the specified edge. If information already exists, it is overwritten \end{DoxyCompactList}\item 
+override object \hyperlink{class_graph_library_1_1_c_graph_query_info_ab7bfe088c7bad560bf15784468f6eb2a}{Create\+Info} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} source, \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} target, object info, object key=null)
+\begin{DoxyCompactList}\small\item\em Stores the information at the specified edge. If information already exists, it is overwritten \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Query info from the \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class 
+
+\begin{DoxySeeAlso}{See also}
+Graph\+Library.\+Abstract\+Graph\+Query\+Info$<$\+Graph\+Library.\+C\+Graph\+Node,\+Graph\+Library.\+C\+Graph\+Edge,\+Graph\+Library.\+C\+Graph$>$
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_query_info_a3b4904ea0d850f99d13969b2b060f39b}{}\index{Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}!C\+Graph\+Query\+Info@{C\+Graph\+Query\+Info}}
+\index{C\+Graph\+Query\+Info@{C\+Graph\+Query\+Info}!Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}}
+\subsubsection[{C\+Graph\+Query\+Info(\+C\+Graph graph)}]{\setlength{\rightskip}{0pt plus 5cm}Graph\+Library.\+C\+Graph\+Query\+Info.\+C\+Graph\+Query\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph}}]{graph}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_query_info_a3b4904ea0d850f99d13969b2b060f39b}
+
+
+Initializes a new instance of the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a8dd567e7f04df4a55df4bd8b4a0c3e48}{Abstract\+Graph\+Query\+Info} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & The graph.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_query_info_adc1215f254e82c2dfee52279b49bba64}{}\index{Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}!Create\+Info@{Create\+Info}}
+\index{Create\+Info@{Create\+Info}!Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}}
+\subsubsection[{Create\+Info(\+C\+Graph\+Node node, object info, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}override object Graph\+Library.\+C\+Graph\+Query\+Info.\+Create\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node, }
+\item[{object}]{info, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_query_info_adc1215f254e82c2dfee52279b49bba64}
+
+
+Stores the information at the specified node or graph. If information already exists, it is overwritten 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+{\em info} & The information.\\
+\hline
+{\em key} & The key that will extract the information from the specified node\textquotesingle{}s dictionary. If null is given then the current Query Info object is used as a key. Thus the Query\+Info object can be used as an information creator/exploitator\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The information object 
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_query_info_a7b0cf74374283e88bf6309acb1c63a2c}{}\index{Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}!Create\+Info@{Create\+Info}}
+\index{Create\+Info@{Create\+Info}!Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}}
+\subsubsection[{Create\+Info(\+C\+Graph\+Edge edge, object info, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}override object Graph\+Library.\+C\+Graph\+Query\+Info.\+Create\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Edge}}]{edge, }
+\item[{object}]{info, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_query_info_a7b0cf74374283e88bf6309acb1c63a2c}
+
+
+Stores the information at the specified edge. If information already exists, it is overwritten 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge.\\
+\hline
+{\em info} & The information object.\\
+\hline
+{\em key} & The key that will extract the information from the specified node\textquotesingle{}s dictionary. If null is given then the current Query Info object is used as a key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The information object 
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_query_info_ab7bfe088c7bad560bf15784468f6eb2a}{}\index{Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}!Create\+Info@{Create\+Info}}
+\index{Create\+Info@{Create\+Info}!Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}}
+\subsubsection[{Create\+Info(\+C\+Graph\+Node source, C\+Graph\+Node target, object info, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}override object Graph\+Library.\+C\+Graph\+Query\+Info.\+Create\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{source, }
+\item[{{\bf C\+Graph\+Node}}]{target, }
+\item[{object}]{info, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_query_info_ab7bfe088c7bad560bf15784468f6eb2a}
+
+
+Stores the information at the specified edge. If information already exists, it is overwritten 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source node.\\
+\hline
+{\em target} & The target node.\\
+\hline
+{\em info} & The information.\\
+\hline
+{\em key} & The key that will extract the information from the specified node\textquotesingle{}s dictionary. If null is given then the current Query Info object is used as a key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The information object 
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_query_info_affa34cf122ba03f978f4a276f32ccfb5}{}\index{Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}!Info@{Info}}
+\index{Info@{Info}!Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}}
+\subsubsection[{Info(\+C\+Graph\+Node node, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}override object Graph\+Library.\+C\+Graph\+Query\+Info.\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_query_info_affa34cf122ba03f978f4a276f32ccfb5}
+
+
+Returns information concerning a node or a graph ( derives from node) Since the graph derives from \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} it stores the information at the same collection as node. So the function to retrieve the information is common in both elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+{\em key} & The key that will extract the information from the specified node\textquotesingle{}s dictionary. If null is given then the current Query Info object is used as a key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_query_info_a0cc7688e9e571af4587c232a51b73acd}{}\index{Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}!Info@{Info}}
+\index{Info@{Info}!Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}}
+\subsubsection[{Info(\+C\+Graph\+Edge edge, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}override object Graph\+Library.\+C\+Graph\+Query\+Info.\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Edge}}]{edge, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_query_info_a0cc7688e9e571af4587c232a51b73acd}
+
+
+Returns the information of the specified edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge.\\
+\hline
+{\em key} & The key that will extract the information from the specified node\textquotesingle{}s dictionary. If null is given then the current Query Info object is used as a key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_query_info_a1f12d92a287f9f5779416649705f36e4}{}\index{Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}!Info@{Info}}
+\index{Info@{Info}!Graph\+Library\+::\+C\+Graph\+Query\+Info@{Graph\+Library\+::\+C\+Graph\+Query\+Info}}
+\subsubsection[{Info(\+C\+Graph\+Node source, C\+Graph\+Node target, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}override object Graph\+Library.\+C\+Graph\+Query\+Info.\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{source, }
+\item[{{\bf C\+Graph\+Node}}]{target, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_query_info_a1f12d92a287f9f5779416649705f36e4}
+
+
+Returns the information of the edge between the given source and target nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source.\\
+\hline
+{\em target} & The target.\\
+\hline
+{\em key} & The key that will extract the information from the specified node\textquotesingle{}s dictionary.\+If null is given then the current Query Info object is used as a key\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/Graph\+Query\+Info.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,751 @@
+\hypertarget{class_graph_library_1_1_c_graph}{}\section{Graph\+Library.\+C\+Graph Class Reference}
+\label{class_graph_library_1_1_c_graph}\index{Graph\+Library.\+C\+Graph@{Graph\+Library.\+C\+Graph}}
+
+
+The Graph holds the list of nodes and the list of edges as well as the type of graph ( directed / undirected )  
+
+
+Inheritance diagram for Graph\+Library.\+C\+Graph\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_graph_library_1_1_c_graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_graph_aaf1c7e3fc443585374700fdcb71f0289}{Create\+Graph\+Node} ()
+\begin{DoxyCompactList}\small\item\em Creates and adds a node to the graph. Gives the default label, the node\textquotesingle{}s serialnumber \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_graph_af60c41b8fe601277ec6bb45fcb2768a7}{Create\+Graph\+Node} (string label)
+\begin{DoxyCompactList}\small\item\em Creates the graph node and gives it the specified label \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_a299d93f0be8ed93b1e17817c6f5bf5cc}{Add\+Graph\+Node} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} newnode)
+\begin{DoxyCompactList}\small\item\em Adds an existing node to the graph. Assumes that the node does not already belong to another graph \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_ae7eafc40d87100bf02a189a502ec6881}{Add\+Graph\+Node\+Labelling} (object labels\+Contructor, \hyperlink{class_graph_library_1_1_c_graph_labeling}{C\+Graph\+Labeling}$<$ \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} $>$ nodelabeling)
+\begin{DoxyCompactList}\small\item\em Adds the graph node labelling Contructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_a44eca07849f3cbb2f28db1fcae27802f}{Add\+Graph\+Edge\+Labelling} (object labels\+Contructor, \hyperlink{class_graph_library_1_1_c_graph_labeling}{C\+Graph\+Labeling}$<$ \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} $>$ edgelabeling)
+\begin{DoxyCompactList}\small\item\em Adds the graph edge labelling. \end{DoxyCompactList}\item 
+string \hyperlink{class_graph_library_1_1_c_graph_a84eb3418b6dca4fc1d8dea9d1864493d}{Node\+Label} (object label\+Contructor, \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node)
+\begin{DoxyCompactList}\small\item\em Returns a node label given for a specified contructor ( algorithm ,printer etc) \end{DoxyCompactList}\item 
+string \hyperlink{class_graph_library_1_1_c_graph_a31064cccadfc56bb1d4bcb9a1605ad27}{Node\+Label} (object label\+Contructor, int serial\+Number)
+\begin{DoxyCompactList}\small\item\em Returns a node label given for a specified contructor ( algorithm ,printer etc) \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_a670c9a24d5244887e9c231707c7eef57}{Set\+Node\+Label} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node, string label)
+\begin{DoxyCompactList}\small\item\em Sets the label of the specified node using the host graph as label contructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_a3ef7f744ad2a374e1fa7eeded40325e4}{Set\+Edge\+Label} (\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} edge, string label)
+\begin{DoxyCompactList}\small\item\em Sets the label of the specified edge for using the host graph as label contructor. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \hyperlink{class_graph_library_1_1_c_graph_af12db1b8e252d2a1e3179d12180798dc}{Add\+Graph\+Edge} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} source, \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} target, \hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} edgetype=Graph\+Type.\+G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D)
+\begin{DoxyCompactList}\small\item\em Adds a native edge to the graph and label it with the default ie its serialnumber. N\+O\+T\+I\+C\+E\+: If you want to add a foreign edge do it through \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} object containing both the source and the target node. An edge that connects nodes of diffrent graphs does not belong to any of these graphs but at the graph that contain\textquotesingle{}s them \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \hyperlink{class_graph_library_1_1_c_graph_af57fff06c0780defe3574dbe22c51902}{Add\+Graph\+Edge} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} source, \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} target, string label, \hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} edgetype=Graph\+Type.\+G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D)
+\begin{DoxyCompactList}\small\item\em Adds a native edge to the graph with the given label. N\+O\+T\+I\+C\+E\+: If you want to add a foreign edge do it through \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} object containing both the source and the target node. An edge that connects nodes of diffrent graphs does not belong to any of these graphs but at the graph that contain\textquotesingle{}s them \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_a572ac323b5642ac9ba3a8755748b3f5e}{Remove\+Node} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node)
+\begin{DoxyCompactList}\small\item\em Removes a node from the graph. \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_a3e02229a24c28d1ebbf3ec5f12d1a145}{Remove\+Native\+Graph\+Edge} (\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} edge)
+\begin{DoxyCompactList}\small\item\em Deletes a native graph edge. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_graph_a93fba5a60f4cec728a6511049bc7c079}{Node} (int index)
+\begin{DoxyCompactList}\small\item\em Returns a node at the specified index or raises an exception when a non existing node is indexed \end{DoxyCompactList}\item 
+\hyperlink{namespace_graph_library_1_1_generics_a919a165f16deccdd1b3d7e8a93423fbc}{Graph\+Element\+Type} \hyperlink{class_graph_library_1_1_c_graph_a11e37ac22c8c9770a53ef80e54c7adfa}{Contains} (\hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_primitive}{I\+Graph\+Primitive} element)
+\begin{DoxyCompactList}\small\item\em Determines whether the graph contains the specified element \end{DoxyCompactList}\item 
+\hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_primitive}{I\+Graph\+Primitive} \hyperlink{class_graph_library_1_1_c_graph_aafdb175ad7467a414d37eecac0ea05d1}{Contains} (int serial\+Number, \hyperlink{namespace_graph_library_1_1_generics_a919a165f16deccdd1b3d7e8a93423fbc}{Graph\+Element\+Type} element\+Type)
+\begin{DoxyCompactList}\small\item\em Determines whether the element with the given serial number and type exists in the graph \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_graph_a6a468edc9fb6a205ddbe5e8de847a745}{Node} (string label, object label\+Context\+Key)
+\begin{DoxyCompactList}\small\item\em Returns the node with the given label from the given label context. Different contexts may assign different labels to the nodes. By default a node is labelled only by its serialnumber which is unique. In the default case call public \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_graph_a93fba5a60f4cec728a6511049bc7c079}{Node(int index)} method \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \hyperlink{class_graph_library_1_1_c_graph_aed4132c7cc61ce43d85a3cde3b6334af}{Edge} (string label, object label\+Context\+Key)
+\begin{DoxyCompactList}\small\item\em Returns the edge with the given label from the given label context. Different contexts may assign different labels to the edges. By default a edge is labelled only by its serialnumber which is unique. In the default case call public \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \hyperlink{class_graph_library_1_1_c_graph_a0aa4b87cbe9c0c8f9956ebc9d45f11f8}{Edge(int source, int target)} method \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \hyperlink{class_graph_library_1_1_c_graph_a0aa4b87cbe9c0c8f9956ebc9d45f11f8}{Edge} (int source, int target)
+\begin{DoxyCompactList}\small\item\em Returns the N\+A\+T\+I\+V\+E edge between the source and the target nodes. It returns the first edge it finds with the specified source and sink. If parallel edges are supported use the function Edges that returns a list of edges having the same source and target nodes. The function returns null if it doesn\textquotesingle{}t find the edge. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \hyperlink{class_graph_library_1_1_c_graph_a9a1acc1f91a1d8de411ee77d3826f996}{Edge} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} source, \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} target)
+\begin{DoxyCompactList}\small\item\em Returns the N\+A\+T\+I\+V\+E edge between the source and the target nodes. It returns the first edge it finds with the specified source and sink. If parallel edges are supported use the function Edges that returns a list of edges having the same source and target nodes. The function returns null if it doesn\textquotesingle{}t find the edge. \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} $>$ \hyperlink{class_graph_library_1_1_c_graph_a06c8ee25ece0294e50501796a1c22dd9}{Edges} (int source, int target)
+\begin{DoxyCompactList}\small\item\em Returns all the edges it finds between the source and target nodes. In case where the graph doesn\textquotesingle{}t have parallel edges its preferable tha you call the Edge function. The edges are return in a list or null if no edge were found between the specified source and sink node \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_a1585ebb9c26742a09b342a67a066e9ee}{Generate\+Graph\+\_\+\+Random\+Edges} (int Num\+Vertices, int Num\+Edges, \hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} graphtype=Graph\+Type.\+G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D, bool loops=false, bool paralleledges=false)
+\begin{DoxyCompactList}\small\item\em Creates a random graph of the given type and number of nodes and edges. The method creates Num\+Vertices and creates Num\+Edges random edges between them. This function is made according to the algorithm Program 17.\+12 Random graph generator (random edges) in the book Graph Algorithms Sedgewick 2002 Notice that the final number of edges inserted to the graph is smaller or equal to the requested number because some edges might be excluded due to the two switches loops and paralleledges. Assumes that the graph is empty \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_aec37e426c9745454988e8c4e75ac8b1d}{Generate\+Graph\+\_\+\+Random\+Graph} (int Num\+Vertices, int Num\+Edges, \hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} graphtype=Graph\+Type.\+G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D, bool loops=false, bool paralleledges=false)
+\begin{DoxyCompactList}\small\item\em Creates a random graph with the given number of vertices. The algorithm considers every possible pair of nodes and draws an edge between them based on some probability that can be defined by the designer. The main characteristic of this algorithm is that all pairs of nodes are considered however not all possible edges are drawn. This gives the possibility to draw graphs that the edges exhibit some properties ( i.\+e locality \+: connect mostly nearby nodes etc ) In a directed graph Parallel edges cannot exist because its pair is considered once Assumes that the graph is empty \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_ae9e690d0f3b0b84f837de51a08550f51}{Generate} (string filepath, bool execute\+Generator=true)
+\begin{DoxyCompactList}\small\item\em Calls the tool that renders the graph to some representable media \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_c_graph_a441e3e9293be54f3a8503fdc655d59d9}{Register\+Graph\+Printer} (\hyperlink{class_graph_library_1_1_c_graph_printer}{C\+Graph\+Printer} printer)
+\begin{DoxyCompactList}\small\item\em Registers a printer to the graph. The printer is added if it doesn\textquotesingle{}t already exists and if it is not null \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} \hyperlink{class_graph_library_1_1_c_graph_af4914521623ddb668b21285684e6e6fc}{Create\+Graph} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} owner\+Graph=null)
+\begin{DoxyCompactList}\small\item\em Creates a new graph. The \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} constructor is protected and hence this method acts as a constructor. ownergraph parameter is null only this function creates the top level graph. If the ownergraph is not null the graph is labelled with the default ie. its serialnumber \end{DoxyCompactList}\item 
+static \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} \hyperlink{class_graph_library_1_1_c_graph_a4e157e57dd1a6c927935c27d3e16fd00}{Create\+Graph\+From\+C\+S\+V} (string filename, \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} owner\+Graph=null)
+\begin{DoxyCompactList}\small\item\em Creates the graph from C\+S\+V file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_c_graph_a62d8da6f4b059adea3ef77ea8e014569}{C\+Graph} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} owner\+Graph)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+List$<$ \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} $>$ \hyperlink{class_graph_library_1_1_c_graph_abccc3feed7b02988f555743364ea4ea8}{m\+\_\+graph\+Nodes}
+\begin{DoxyCompactList}\small\item\em List of graph nodes \end{DoxyCompactList}\item 
+List$<$ \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} $>$ \hyperlink{class_graph_library_1_1_c_graph_af16b65e1c7b51ba0f3be2d5fb4ab67b4}{m\+\_\+graph\+Edges}
+\begin{DoxyCompactList}\small\item\em List of graph\textquotesingle{}s native edges. All the edges of a graph are considered as native. Foreign edge that go across two graphs are in the m\+\_\+graph\+Edges member variable of the graph contain both nodes \end{DoxyCompactList}\item 
+\hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} \hyperlink{class_graph_library_1_1_c_graph_a5887f502837519c87dfb654748ee8fc7}{m\+\_\+graph\+Type}
+\begin{DoxyCompactList}\small\item\em True indicates a directed graph, False indicates an undirected graph \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{class_graph_library_1_1_c_graph_a77c0f98b93196dd167a2b0bfcd4ae6fb}{M\+\_\+\+Number\+Of\+Nodes}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the number of graph nodes \end{DoxyCompactList}\item 
+int \hyperlink{class_graph_library_1_1_c_graph_a984f5731db28443874a6a6ba6a8ad824}{M\+\_\+\+Number\+Of\+Edges}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the number of graph edges \end{DoxyCompactList}\item 
+\hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} \hyperlink{class_graph_library_1_1_c_graph_a705c73461dfec01d7ee91e8dc62d082f}{M\+\_\+\+Graph\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the type of graph. \end{DoxyCompactList}\item 
+bool \hyperlink{class_graph_library_1_1_c_graph_a262016f2855aac75e0b5611a26f149a8}{M\+\_\+\+Is\+Root\+Graph}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents a graph that is the higher level graph that is, it is not contained in other graphs as a node. \end{DoxyCompactList}\item 
+bool \hyperlink{class_graph_library_1_1_c_graph_a6773626813d807a0d4db0ab860baad9e}{M\+\_\+\+Is\+Compound\+Graph}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents a graph the contains other graphs apart from simple nodes \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+The Graph holds the list of nodes and the list of edges as well as the type of graph ( directed / undirected ) 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_a62d8da6f4b059adea3ef77ea8e014569}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!C\+Graph@{C\+Graph}}
+\index{C\+Graph@{C\+Graph}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{C\+Graph(\+C\+Graph owner\+Graph)}]{\setlength{\rightskip}{0pt plus 5cm}Graph\+Library.\+C\+Graph.\+C\+Graph (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph}}]{owner\+Graph}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_c_graph_a62d8da6f4b059adea3ef77ea8e014569}
+
+
+Initializes a new instance of the \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class. 
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_af12db1b8e252d2a1e3179d12180798dc}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Add\+Graph\+Edge@{Add\+Graph\+Edge}}
+\index{Add\+Graph\+Edge@{Add\+Graph\+Edge}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Add\+Graph\+Edge(\+C\+Graph\+Node source, C\+Graph\+Node target, Graph\+Type edgetype=\+Graph\+Type.\+G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Edge} Graph\+Library.\+C\+Graph.\+Add\+Graph\+Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{source, }
+\item[{{\bf C\+Graph\+Node}}]{target, }
+\item[{{\bf Graph\+Type}}]{edgetype = {\ttfamily GraphType.GT\+\_\+DIRECTED}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_af12db1b8e252d2a1e3179d12180798dc}
+
+
+Adds a native edge to the graph and label it with the default ie its serialnumber. N\+O\+T\+I\+C\+E\+: If you want to add a foreign edge do it through \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} object containing both the source and the target node. An edge that connects nodes of diffrent graphs does not belong to any of these graphs but at the graph that contain\textquotesingle{}s them 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & A reference to the source node\\
+\hline
+{\em target} & A reference to the target node\\
+\hline
+{\em edgetype} & The edgetype.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the new edge
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Null\+Reference\+Exception} & At least one of the input nodes has a null reference\\
+\hline
+\end{DoxyExceptions}
+\hypertarget{class_graph_library_1_1_c_graph_af57fff06c0780defe3574dbe22c51902}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Add\+Graph\+Edge@{Add\+Graph\+Edge}}
+\index{Add\+Graph\+Edge@{Add\+Graph\+Edge}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Add\+Graph\+Edge(\+C\+Graph\+Node source, C\+Graph\+Node target, string label, Graph\+Type edgetype=\+Graph\+Type.\+G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Edge} Graph\+Library.\+C\+Graph.\+Add\+Graph\+Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{source, }
+\item[{{\bf C\+Graph\+Node}}]{target, }
+\item[{string}]{label, }
+\item[{{\bf Graph\+Type}}]{edgetype = {\ttfamily GraphType.GT\+\_\+DIRECTED}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_af57fff06c0780defe3574dbe22c51902}
+
+
+Adds a native edge to the graph with the given label. N\+O\+T\+I\+C\+E\+: If you want to add a foreign edge do it through \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} object containing both the source and the target node. An edge that connects nodes of diffrent graphs does not belong to any of these graphs but at the graph that contain\textquotesingle{}s them 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source.\\
+\hline
+{\em target} & The target.\\
+\hline
+{\em label} & The label.\\
+\hline
+{\em edgetype} & The edgetype.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_a44eca07849f3cbb2f28db1fcae27802f}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Add\+Graph\+Edge\+Labelling@{Add\+Graph\+Edge\+Labelling}}
+\index{Add\+Graph\+Edge\+Labelling@{Add\+Graph\+Edge\+Labelling}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Add\+Graph\+Edge\+Labelling(object labels\+Contructor, C\+Graph\+Labeling$<$ C\+Graph\+Edge $>$ edgelabeling)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Add\+Graph\+Edge\+Labelling (
+\begin{DoxyParamCaption}
+\item[{object}]{labels\+Contructor, }
+\item[{{\bf C\+Graph\+Labeling}$<$ {\bf C\+Graph\+Edge} $>$}]{edgelabeling}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a44eca07849f3cbb2f28db1fcae27802f}
+
+
+Adds the graph edge labelling. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labels\+Contructor} & The labels contructor.\\
+\hline
+{\em edgelabeling} & The edgelabeling.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_a299d93f0be8ed93b1e17817c6f5bf5cc}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Add\+Graph\+Node@{Add\+Graph\+Node}}
+\index{Add\+Graph\+Node@{Add\+Graph\+Node}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Add\+Graph\+Node(\+C\+Graph\+Node newnode)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Add\+Graph\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{newnode}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a299d93f0be8ed93b1e17817c6f5bf5cc}
+
+
+Adds an existing node to the graph. Assumes that the node does not already belong to another graph 
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the newnode
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_ae7eafc40d87100bf02a189a502ec6881}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Add\+Graph\+Node\+Labelling@{Add\+Graph\+Node\+Labelling}}
+\index{Add\+Graph\+Node\+Labelling@{Add\+Graph\+Node\+Labelling}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Add\+Graph\+Node\+Labelling(object labels\+Contructor, C\+Graph\+Labeling$<$ C\+Graph\+Node $>$ nodelabeling)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Add\+Graph\+Node\+Labelling (
+\begin{DoxyParamCaption}
+\item[{object}]{labels\+Contructor, }
+\item[{{\bf C\+Graph\+Labeling}$<$ {\bf C\+Graph\+Node} $>$}]{nodelabeling}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_ae7eafc40d87100bf02a189a502ec6881}
+
+
+Adds the graph node labelling Contructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em labels\+Handler} & The labels handler.\\
+\hline
+{\em nodelabeling} & The nodelabeling.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_a11e37ac22c8c9770a53ef80e54c7adfa}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Contains@{Contains}}
+\index{Contains@{Contains}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Contains(\+I\+Graph\+Primitive element)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph\+Element\+Type} Graph\+Library.\+C\+Graph.\+Contains (
+\begin{DoxyParamCaption}
+\item[{{\bf I\+Graph\+Primitive}}]{element}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a11e37ac22c8c9770a53ef80e54c7adfa}
+
+
+Determines whether the graph contains the specified element 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the node belongs to the graph
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_aafdb175ad7467a414d37eecac0ea05d1}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Contains@{Contains}}
+\index{Contains@{Contains}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Contains(int serial\+Number, Graph\+Element\+Type element\+Type)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\+Graph\+Primitive} Graph\+Library.\+C\+Graph.\+Contains (
+\begin{DoxyParamCaption}
+\item[{int}]{serial\+Number, }
+\item[{{\bf Graph\+Element\+Type}}]{element\+Type}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_aafdb175ad7467a414d37eecac0ea05d1}
+
+
+Determines whether the element with the given serial number and type exists in the graph 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial\+Number} & The serial naumber.\\
+\hline
+{\em element\+Type} & Type of the element.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns a reference to the element
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_af4914521623ddb668b21285684e6e6fc}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Create\+Graph@{Create\+Graph}}
+\index{Create\+Graph@{Create\+Graph}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Create\+Graph(\+C\+Graph owner\+Graph=null)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf C\+Graph} Graph\+Library.\+C\+Graph.\+Create\+Graph (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph}}]{owner\+Graph = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_graph_library_1_1_c_graph_af4914521623ddb668b21285684e6e6fc}
+
+
+Creates a new graph. The \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} constructor is protected and hence this method acts as a constructor. ownergraph parameter is null only this function creates the top level graph. If the ownergraph is not null the graph is labelled with the default ie. its serialnumber 
+
+
+\begin{DoxyParams}{Parameters}
+{\em owner\+Graph} & The owner graph.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new graph
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_a4e157e57dd1a6c927935c27d3e16fd00}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Create\+Graph\+From\+C\+S\+V@{Create\+Graph\+From\+C\+S\+V}}
+\index{Create\+Graph\+From\+C\+S\+V@{Create\+Graph\+From\+C\+S\+V}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Create\+Graph\+From\+C\+S\+V(string filename, C\+Graph owner\+Graph=null)}]{\setlength{\rightskip}{0pt plus 5cm}static {\bf C\+Graph} Graph\+Library.\+C\+Graph.\+Create\+Graph\+From\+C\+S\+V (
+\begin{DoxyParamCaption}
+\item[{string}]{filename, }
+\item[{{\bf C\+Graph}}]{owner\+Graph = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{class_graph_library_1_1_c_graph_a4e157e57dd1a6c927935c27d3e16fd00}
+
+
+Creates the graph from C\+S\+V file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filename} & The filename.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new graph
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_aaf1c7e3fc443585374700fdcb71f0289}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Create\+Graph\+Node@{Create\+Graph\+Node}}
+\index{Create\+Graph\+Node@{Create\+Graph\+Node}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Create\+Graph\+Node()}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Node} Graph\+Library.\+C\+Graph.\+Create\+Graph\+Node (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_aaf1c7e3fc443585374700fdcb71f0289}
+
+
+Creates and adds a node to the graph. Gives the default label, the node\textquotesingle{}s serialnumber 
+
+\begin{DoxyReturn}{Returns}
+Returns a reference to the newnode
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_af60c41b8fe601277ec6bb45fcb2768a7}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Create\+Graph\+Node@{Create\+Graph\+Node}}
+\index{Create\+Graph\+Node@{Create\+Graph\+Node}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Create\+Graph\+Node(string label)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Node} Graph\+Library.\+C\+Graph.\+Create\+Graph\+Node (
+\begin{DoxyParamCaption}
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_af60c41b8fe601277ec6bb45fcb2768a7}
+
+
+Creates the graph node and gives it the specified label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The label.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new node
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_aed4132c7cc61ce43d85a3cde3b6334af}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Edge@{Edge}}
+\index{Edge@{Edge}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Edge(string label, object label\+Context\+Key)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Edge} Graph\+Library.\+C\+Graph.\+Edge (
+\begin{DoxyParamCaption}
+\item[{string}]{label, }
+\item[{object}]{label\+Context\+Key}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_aed4132c7cc61ce43d85a3cde3b6334af}
+
+
+Returns the edge with the given label from the given label context. Different contexts may assign different labels to the edges. By default a edge is labelled only by its serialnumber which is unique. In the default case call public \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \hyperlink{class_graph_library_1_1_c_graph_a0aa4b87cbe9c0c8f9956ebc9d45f11f8}{Edge(int source, int target)} method 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The label.\\
+\hline
+{\em label\+Context\+Key} & The label context key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_a0aa4b87cbe9c0c8f9956ebc9d45f11f8}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Edge@{Edge}}
+\index{Edge@{Edge}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Edge(int source, int target)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Edge} Graph\+Library.\+C\+Graph.\+Edge (
+\begin{DoxyParamCaption}
+\item[{int}]{source, }
+\item[{int}]{target}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a0aa4b87cbe9c0c8f9956ebc9d45f11f8}
+
+
+Returns the N\+A\+T\+I\+V\+E edge between the source and the target nodes. It returns the first edge it finds with the specified source and sink. If parallel edges are supported use the function Edges that returns a list of edges having the same source and target nodes. The function returns null if it doesn\textquotesingle{}t find the edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source node serialnumber.\\
+\hline
+{\em target} & The target node serialnumber.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The edge between the source and target nodes
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_a9a1acc1f91a1d8de411ee77d3826f996}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Edge@{Edge}}
+\index{Edge@{Edge}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Edge(\+C\+Graph\+Node source, C\+Graph\+Node target)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Edge} Graph\+Library.\+C\+Graph.\+Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{source, }
+\item[{{\bf C\+Graph\+Node}}]{target}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a9a1acc1f91a1d8de411ee77d3826f996}
+
+
+Returns the N\+A\+T\+I\+V\+E edge between the source and the target nodes. It returns the first edge it finds with the specified source and sink. If parallel edges are supported use the function Edges that returns a list of edges having the same source and target nodes. The function returns null if it doesn\textquotesingle{}t find the edge. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source.\\
+\hline
+{\em target} & The target.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_a06c8ee25ece0294e50501796a1c22dd9}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Edges@{Edges}}
+\index{Edges@{Edges}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Edges(int source, int target)}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf C\+Graph\+Edge}$>$ Graph\+Library.\+C\+Graph.\+Edges (
+\begin{DoxyParamCaption}
+\item[{int}]{source, }
+\item[{int}]{target}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a06c8ee25ece0294e50501796a1c22dd9}
+
+
+Returns all the edges it finds between the source and target nodes. In case where the graph doesn\textquotesingle{}t have parallel edges its preferable tha you call the Edge function. The edges are return in a list or null if no edge were found between the specified source and sink node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source.\\
+\hline
+{\em target} & The target.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of edges between the source and target nodes
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_ae9e690d0f3b0b84f837de51a08550f51}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Generate@{Generate}}
+\index{Generate@{Generate}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Generate(string filepath, bool execute\+Generator=true)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Generate (
+\begin{DoxyParamCaption}
+\item[{string}]{filepath, }
+\item[{bool}]{execute\+Generator = {\ttfamily true}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_ae9e690d0f3b0b84f837de51a08550f51}
+
+
+Calls the tool that renders the graph to some representable media 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The filepath.\\
+\hline
+{\em execute\+Generator} & if set to {\ttfamily true} \mbox{[}execute generator\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_a1585ebb9c26742a09b342a67a066e9ee}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Generate\+Graph\+\_\+\+Random\+Edges@{Generate\+Graph\+\_\+\+Random\+Edges}}
+\index{Generate\+Graph\+\_\+\+Random\+Edges@{Generate\+Graph\+\_\+\+Random\+Edges}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Generate\+Graph\+\_\+\+Random\+Edges(int Num\+Vertices, int Num\+Edges, Graph\+Type graphtype=\+Graph\+Type.\+G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D, bool loops=false, bool paralleledges=false)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Generate\+Graph\+\_\+\+Random\+Edges (
+\begin{DoxyParamCaption}
+\item[{int}]{Num\+Vertices, }
+\item[{int}]{Num\+Edges, }
+\item[{{\bf Graph\+Type}}]{graphtype = {\ttfamily GraphType.GT\+\_\+DIRECTED}, }
+\item[{bool}]{loops = {\ttfamily false}, }
+\item[{bool}]{paralleledges = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a1585ebb9c26742a09b342a67a066e9ee}
+
+
+Creates a random graph of the given type and number of nodes and edges. The method creates Num\+Vertices and creates Num\+Edges random edges between them. This function is made according to the algorithm Program 17.\+12 Random graph generator (random edges) in the book Graph Algorithms Sedgewick 2002 Notice that the final number of edges inserted to the graph is smaller or equal to the requested number because some edges might be excluded due to the two switches loops and paralleledges. Assumes that the graph is empty 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Num\+Vertices} & The number vertices.\\
+\hline
+{\em Num\+Edges} & The number edges.\\
+\hline
+{\em graphtype} & The graph type can be directed (default) or undirected\\
+\hline
+{\em loops} & if set to {\ttfamily true} loop edges are allowed to be generated. Default is false\\
+\hline
+{\em paralleledges} & if set to {\ttfamily true} parallel edges are allowed to be generated. Default is false\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_aec37e426c9745454988e8c4e75ac8b1d}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Generate\+Graph\+\_\+\+Random\+Graph@{Generate\+Graph\+\_\+\+Random\+Graph}}
+\index{Generate\+Graph\+\_\+\+Random\+Graph@{Generate\+Graph\+\_\+\+Random\+Graph}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Generate\+Graph\+\_\+\+Random\+Graph(int Num\+Vertices, int Num\+Edges, Graph\+Type graphtype=\+Graph\+Type.\+G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D, bool loops=false, bool paralleledges=false)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Generate\+Graph\+\_\+\+Random\+Graph (
+\begin{DoxyParamCaption}
+\item[{int}]{Num\+Vertices, }
+\item[{int}]{Num\+Edges, }
+\item[{{\bf Graph\+Type}}]{graphtype = {\ttfamily GraphType.GT\+\_\+DIRECTED}, }
+\item[{bool}]{loops = {\ttfamily false}, }
+\item[{bool}]{paralleledges = {\ttfamily false}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_aec37e426c9745454988e8c4e75ac8b1d}
+
+
+Creates a random graph with the given number of vertices. The algorithm considers every possible pair of nodes and draws an edge between them based on some probability that can be defined by the designer. The main characteristic of this algorithm is that all pairs of nodes are considered however not all possible edges are drawn. This gives the possibility to draw graphs that the edges exhibit some properties ( i.\+e locality \+: connect mostly nearby nodes etc ) In a directed graph Parallel edges cannot exist because its pair is considered once Assumes that the graph is empty 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Num\+Vertices} & The number vertices.\\
+\hline
+{\em Num\+Edges} & The number edges.\\
+\hline
+{\em graphtype} & The graphtype.\\
+\hline
+{\em loops} & if set to {\ttfamily true} loops are allowed.\\
+\hline
+{\em paralleledges} & if set to {\ttfamily true} parallel edges are allowed (use only for undirected).\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_a93fba5a60f4cec728a6511049bc7c079}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Node@{Node}}
+\index{Node@{Node}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Node(int index)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Node} Graph\+Library.\+C\+Graph.\+Node (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a93fba5a60f4cec728a6511049bc7c079}
+
+
+Returns a node at the specified index or raises an exception when a non existing node is indexed 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to the indexed node
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_a6a468edc9fb6a205ddbe5e8de847a745}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Node@{Node}}
+\index{Node@{Node}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Node(string label, object label\+Context\+Key)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Node} Graph\+Library.\+C\+Graph.\+Node (
+\begin{DoxyParamCaption}
+\item[{string}]{label, }
+\item[{object}]{label\+Context\+Key}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a6a468edc9fb6a205ddbe5e8de847a745}
+
+
+Returns the node with the given label from the given label context. Different contexts may assign different labels to the nodes. By default a node is labelled only by its serialnumber which is unique. In the default case call public \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_graph_a93fba5a60f4cec728a6511049bc7c079}{Node(int index)} method 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The label.\\
+\hline
+{\em label\+Context\+Key} & The label context.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_a84eb3418b6dca4fc1d8dea9d1864493d}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Node\+Label@{Node\+Label}}
+\index{Node\+Label@{Node\+Label}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Node\+Label(object label\+Contructor, C\+Graph\+Node node)}]{\setlength{\rightskip}{0pt plus 5cm}string Graph\+Library.\+C\+Graph.\+Node\+Label (
+\begin{DoxyParamCaption}
+\item[{object}]{label\+Contructor, }
+\item[{{\bf C\+Graph\+Node}}]{node}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a84eb3418b6dca4fc1d8dea9d1864493d}
+
+
+Returns a node label given for a specified contructor ( algorithm ,printer etc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label\+Contructor} & The contructor.\\
+\hline
+{\em node} & The node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_a31064cccadfc56bb1d4bcb9a1605ad27}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Node\+Label@{Node\+Label}}
+\index{Node\+Label@{Node\+Label}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Node\+Label(object label\+Contructor, int serial\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}string Graph\+Library.\+C\+Graph.\+Node\+Label (
+\begin{DoxyParamCaption}
+\item[{object}]{label\+Contructor, }
+\item[{int}]{serial\+Number}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a31064cccadfc56bb1d4bcb9a1605ad27}
+
+
+Returns a node label given for a specified contructor ( algorithm ,printer etc) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label\+Contructor} & The label contructor.\\
+\hline
+{\em serial\+Number} & The serial number.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_a441e3e9293be54f3a8503fdc655d59d9}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Register\+Graph\+Printer@{Register\+Graph\+Printer}}
+\index{Register\+Graph\+Printer@{Register\+Graph\+Printer}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Register\+Graph\+Printer(\+C\+Graph\+Printer printer)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Register\+Graph\+Printer (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Printer}}]{printer}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a441e3e9293be54f3a8503fdc655d59d9}
+
+
+Registers a printer to the graph. The printer is added if it doesn\textquotesingle{}t already exists and if it is not null 
+
+
+\begin{DoxyParams}{Parameters}
+{\em printer} & The printer object\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_a3e02229a24c28d1ebbf3ec5f12d1a145}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Remove\+Native\+Graph\+Edge@{Remove\+Native\+Graph\+Edge}}
+\index{Remove\+Native\+Graph\+Edge@{Remove\+Native\+Graph\+Edge}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Remove\+Native\+Graph\+Edge(\+C\+Graph\+Edge edge)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Remove\+Native\+Graph\+Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Edge}}]{edge}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a3e02229a24c28d1ebbf3ec5f12d1a145}
+
+
+Deletes a native graph edge. 
+
+T\+O\+D\+O\+: Remove edge label as well
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_a572ac323b5642ac9ba3a8755748b3f5e}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Remove\+Node@{Remove\+Node}}
+\index{Remove\+Node@{Remove\+Node}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Remove\+Node(\+C\+Graph\+Node node)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Remove\+Node (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a572ac323b5642ac9ba3a8755748b3f5e}
+
+
+Removes a node from the graph. 
+
+T\+O\+D\+O\+: Remove the label as well
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to be removed\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_a3ef7f744ad2a374e1fa7eeded40325e4}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Set\+Edge\+Label@{Set\+Edge\+Label}}
+\index{Set\+Edge\+Label@{Set\+Edge\+Label}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Set\+Edge\+Label(\+C\+Graph\+Edge edge, string label)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Set\+Edge\+Label (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Edge}}]{edge, }
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a3ef7f744ad2a374e1fa7eeded40325e4}
+
+
+Sets the label of the specified edge for using the host graph as label contructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge.\\
+\hline
+{\em label} & The label.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_c_graph_a670c9a24d5244887e9c231707c7eef57}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!Set\+Node\+Label@{Set\+Node\+Label}}
+\index{Set\+Node\+Label@{Set\+Node\+Label}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{Set\+Node\+Label(\+C\+Graph\+Node node, string label)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+C\+Graph.\+Set\+Node\+Label (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node, }
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_a670c9a24d5244887e9c231707c7eef57}
+
+
+Sets the label of the specified node using the host graph as label contructor. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+{\em label} & The label.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_af16b65e1c7b51ba0f3be2d5fb4ab67b4}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!m\+\_\+graph\+Edges@{m\+\_\+graph\+Edges}}
+\index{m\+\_\+graph\+Edges@{m\+\_\+graph\+Edges}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{m\+\_\+graph\+Edges}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf C\+Graph\+Edge}$>$ Graph\+Library.\+C\+Graph.\+m\+\_\+graph\+Edges\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_c_graph_af16b65e1c7b51ba0f3be2d5fb4ab67b4}
+
+
+List of graph\textquotesingle{}s native edges. All the edges of a graph are considered as native. Foreign edge that go across two graphs are in the m\+\_\+graph\+Edges member variable of the graph contain both nodes 
+
+\hypertarget{class_graph_library_1_1_c_graph_abccc3feed7b02988f555743364ea4ea8}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!m\+\_\+graph\+Nodes@{m\+\_\+graph\+Nodes}}
+\index{m\+\_\+graph\+Nodes@{m\+\_\+graph\+Nodes}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{m\+\_\+graph\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}List$<${\bf C\+Graph\+Node}$>$ Graph\+Library.\+C\+Graph.\+m\+\_\+graph\+Nodes\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_c_graph_abccc3feed7b02988f555743364ea4ea8}
+
+
+List of graph nodes 
+
+\hypertarget{class_graph_library_1_1_c_graph_a5887f502837519c87dfb654748ee8fc7}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!m\+\_\+graph\+Type@{m\+\_\+graph\+Type}}
+\index{m\+\_\+graph\+Type@{m\+\_\+graph\+Type}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{m\+\_\+graph\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph\+Type} Graph\+Library.\+C\+Graph.\+m\+\_\+graph\+Type\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_c_graph_a5887f502837519c87dfb654748ee8fc7}
+
+
+True indicates a directed graph, False indicates an undirected graph 
+
+
+
+\subsection{Property Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_a705c73461dfec01d7ee91e8dc62d082f}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!M\+\_\+\+Graph\+Type@{M\+\_\+\+Graph\+Type}}
+\index{M\+\_\+\+Graph\+Type@{M\+\_\+\+Graph\+Type}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{M\+\_\+\+Graph\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph\+Type} Graph\+Library.\+C\+Graph.\+M\+\_\+\+Graph\+Type\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_a705c73461dfec01d7ee91e8dc62d082f}
+
+
+Gets the type of graph. 
+
+Returns one of the values of Graph\+Type enumeration based on the type of edges that the graph has. \hypertarget{class_graph_library_1_1_c_graph_a6773626813d807a0d4db0ab860baad9e}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!M\+\_\+\+Is\+Compound\+Graph@{M\+\_\+\+Is\+Compound\+Graph}}
+\index{M\+\_\+\+Is\+Compound\+Graph@{M\+\_\+\+Is\+Compound\+Graph}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{M\+\_\+\+Is\+Compound\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}bool Graph\+Library.\+C\+Graph.\+M\+\_\+\+Is\+Compound\+Graph\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_a6773626813d807a0d4db0ab860baad9e}
+
+
+Represents a graph the contains other graphs apart from simple nodes 
+
+{\ttfamily true} if is a compount graph; otherwise it returns, {\ttfamily false}. \hypertarget{class_graph_library_1_1_c_graph_a262016f2855aac75e0b5611a26f149a8}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!M\+\_\+\+Is\+Root\+Graph@{M\+\_\+\+Is\+Root\+Graph}}
+\index{M\+\_\+\+Is\+Root\+Graph@{M\+\_\+\+Is\+Root\+Graph}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{M\+\_\+\+Is\+Root\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}bool Graph\+Library.\+C\+Graph.\+M\+\_\+\+Is\+Root\+Graph\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_a262016f2855aac75e0b5611a26f149a8}
+
+
+Represents a graph that is the higher level graph that is, it is not contained in other graphs as a node. 
+
+{\ttfamily true} if it is the root graph; otherwise it returns {\ttfamily false}. \hypertarget{class_graph_library_1_1_c_graph_a984f5731db28443874a6a6ba6a8ad824}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!M\+\_\+\+Number\+Of\+Edges@{M\+\_\+\+Number\+Of\+Edges}}
+\index{M\+\_\+\+Number\+Of\+Edges@{M\+\_\+\+Number\+Of\+Edges}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{M\+\_\+\+Number\+Of\+Edges}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\+Library.\+C\+Graph.\+M\+\_\+\+Number\+Of\+Edges\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_a984f5731db28443874a6a6ba6a8ad824}
+
+
+Represents the number of graph edges 
+
+Returns the number of graph edges. \hypertarget{class_graph_library_1_1_c_graph_a77c0f98b93196dd167a2b0bfcd4ae6fb}{}\index{Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}!M\+\_\+\+Number\+Of\+Nodes@{M\+\_\+\+Number\+Of\+Nodes}}
+\index{M\+\_\+\+Number\+Of\+Nodes@{M\+\_\+\+Number\+Of\+Nodes}!Graph\+Library\+::\+C\+Graph@{Graph\+Library\+::\+C\+Graph}}
+\subsubsection[{M\+\_\+\+Number\+Of\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\+Library.\+C\+Graph.\+M\+\_\+\+Number\+Of\+Nodes\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_a77c0f98b93196dd167a2b0bfcd4ae6fb}
+
+
+Represents the number of graph nodes 
+
+Returns the number of graph nodes. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/Graph\+Elements.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>dhmhgre.GraphLibrary</id>
+    <version>1.0.0-alpha</version>
+    <title>dhmhgre's Graph Library</title>
+    <authors>Grigoris Dimitroulakos</authors>
+    <owners>Grigoris Dimitroulakos</owners>    
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A graphs' algorithm library for directed and undirected graphs</description>
+    <releaseNotes>This is the first release</releaseNotes>
+    <copyright>Copyright 2019</copyright>
+    <tags>C#, Graph, Library</tags>
+  </metadata>
+  <files>
+	<file src="bin\Release\GraphLibrary.dll"
+			target="lib\net45\GraphLibrary.dll"/>
+  </files>
+</package>

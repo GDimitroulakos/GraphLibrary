@@ -1,0 +1,93 @@
+\hypertarget{class_graph_library_1_1_abstract_graph_algorithm}{}\section{Graph\+Library.\+Abstract\+Graph\+Algorithm$<$ T $>$ Class Template Reference}
+\label{class_graph_library_1_1_abstract_graph_algorithm}\index{Graph\+Library.\+Abstract\+Graph\+Algorithm$<$ T $>$@{Graph\+Library.\+Abstract\+Graph\+Algorithm$<$ T $>$}}
+
+
+The abstract base class of the algorithms applied on graphs  
+
+
+Inheritance diagram for Graph\+Library.\+Abstract\+Graph\+Algorithm$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_abstract_graph_algorithm}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual T \hyperlink{class_graph_library_1_1_abstract_graph_algorithm_af0a50489383c3191e9a02cb6d8a6731d}{Visit} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node)
+\begin{DoxyCompactList}\small\item\em The Visit method refers to the action the algorithm performs to a specific node Most of the times the Visit function is called recursively. \end{DoxyCompactList}\item 
+virtual object \hyperlink{class_graph_library_1_1_abstract_graph_algorithm_a8a3fe9faaa81fd775a1800e18ef3b1cd}{Visit\+Children} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node)
+\begin{DoxyCompactList}\small\item\em Visits the children of the specified node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The abstract base class of the algorithms applied on graphs 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & Visit function retured type\\
+\hline
+\end{DoxyTemplParams}
+\begin{DoxySeeAlso}{See also}
+Graph\+Library.\+I\+Graph\+Algorithm$<$\+T$>$
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_abstract_graph_algorithm_af0a50489383c3191e9a02cb6d8a6731d}{}\index{Graph\+Library\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Abstract\+Graph\+Algorithm}!Visit@{Visit}}
+\index{Visit@{Visit}!Graph\+Library\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Visit(\+C\+Graph\+Node node)}]{\setlength{\rightskip}{0pt plus 5cm}virtual T {\bf Graph\+Library.\+Abstract\+Graph\+Algorithm}$<$ T $>$.Visit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_abstract_graph_algorithm_af0a50489383c3191e9a02cb6d8a6731d}
+
+
+The Visit method refers to the action the algorithm performs to a specific node Most of the times the Visit function is called recursively. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to which the algorithm acts.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parameter refers to the type of the return result
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_graph_library_1_1_i_graph_algorithm_a85b88995ba27d084e9f7dd624a98cf2a}{Graph\+Library.\+I\+Graph\+Algorithm$<$ T $>$}.
+
+
+
+Reimplemented in \hyperlink{class_graph_library_1_1_g_alg___depth_first_search_a25029f53be2b8c588c248f4bb165618d}{Graph\+Library.\+G\+Alg\+\_\+\+Depth\+First\+Search}.
+
+\hypertarget{class_graph_library_1_1_abstract_graph_algorithm_a8a3fe9faaa81fd775a1800e18ef3b1cd}{}\index{Graph\+Library\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Abstract\+Graph\+Algorithm}!Visit\+Children@{Visit\+Children}}
+\index{Visit\+Children@{Visit\+Children}!Graph\+Library\+::\+Abstract\+Graph\+Algorithm@{Graph\+Library\+::\+Abstract\+Graph\+Algorithm}}
+\subsubsection[{Visit\+Children(\+C\+Graph\+Node node)}]{\setlength{\rightskip}{0pt plus 5cm}virtual object {\bf Graph\+Library.\+Abstract\+Graph\+Algorithm}$<$ T $>$.Visit\+Children (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_abstract_graph_algorithm_a8a3fe9faaa81fd775a1800e18ef3b1cd}
+
+
+Visits the children of the specified node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to which the children is visited\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The default version returns null 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{interface_graph_library_1_1_i_graph_algorithm_a17229ddd74c8e05afafa0ba7d5c1f774}{Graph\+Library.\+I\+Graph\+Algorithm$<$ T $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/I\+Graph\+Algorithm.\+cs\end{DoxyCompactItemize}

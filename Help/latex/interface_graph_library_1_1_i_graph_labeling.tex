@@ -1,0 +1,113 @@
+\hypertarget{interface_graph_library_1_1_i_graph_labeling}{}\section{Graph\+Library.\+I\+Graph\+Labeling$<$ T $>$ Interface Template Reference}
+\label{interface_graph_library_1_1_i_graph_labeling}\index{Graph\+Library.\+I\+Graph\+Labeling$<$ T $>$@{Graph\+Library.\+I\+Graph\+Labeling$<$ T $>$}}
+
+
+Provides a generic interface for retrieving the label of a graph element of type T ( edge, node, whatever... ). Thus this class applies to all types of graph elements.  
+
+
+Inheritance diagram for Graph\+Library.\+I\+Graph\+Labeling$<$ T $>$\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_graph_library_1_1_i_graph_labeling}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{interface_graph_library_1_1_i_graph_labeling_a72391788639c686dbb02bc135b4d2b68}{Label} (T element)
+\begin{DoxyCompactList}\small\item\em Returns the Label of the specified element. \end{DoxyCompactList}\item 
+string \hyperlink{interface_graph_library_1_1_i_graph_labeling_aa889d08a24d32a78bd464f4c98b53344}{Label} (int serial\+Number)
+\begin{DoxyCompactList}\small\item\em Returns the Label of the element with the given serial number. \end{DoxyCompactList}\item 
+T \hyperlink{interface_graph_library_1_1_i_graph_labeling_a155203509c4489593811ec7520e72a13}{Element} (string label)
+\begin{DoxyCompactList}\small\item\em Returns the element that is labelled with the given label \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Provides a generic interface for retrieving the label of a graph element of type T ( edge, node, whatever... ). Thus this class applies to all types of graph elements. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & The type of graph element\\
+\hline
+\end{DoxyTemplParams}
+\begin{Desc}
+\item[Type Constraints]\begin{description}
+\item[{\em T} : {\em \hyperlink{interface_graph_library_1_1_i_graph_primitive}{I\+Graph\+Primitive}}]\end{description}
+\end{Desc}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{interface_graph_library_1_1_i_graph_labeling_a155203509c4489593811ec7520e72a13}{}\index{Graph\+Library\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+I\+Graph\+Labeling}!Element@{Element}}
+\index{Element@{Element}!Graph\+Library\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+I\+Graph\+Labeling}}
+\subsubsection[{Element(string label)}]{\setlength{\rightskip}{0pt plus 5cm}T {\bf Graph\+Library.\+I\+Graph\+Labeling}$<$ T $>$.Element (
+\begin{DoxyParamCaption}
+\item[{string}]{label}
+\end{DoxyParamCaption}
+)}\label{interface_graph_library_1_1_i_graph_labeling_a155203509c4489593811ec7520e72a13}
+
+
+Returns the element that is labelled with the given label 
+
+
+\begin{DoxyParams}{Parameters}
+{\em label} & The label\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The element
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_graph_library_1_1_abstract_graph_labeling_afee7a68424e1db807c738f9c0647200c}{Graph\+Library.\+Abstract\+Graph\+Labeling$<$ T $>$}.
+
+\hypertarget{interface_graph_library_1_1_i_graph_labeling_a72391788639c686dbb02bc135b4d2b68}{}\index{Graph\+Library\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+I\+Graph\+Labeling}!Label@{Label}}
+\index{Label@{Label}!Graph\+Library\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+I\+Graph\+Labeling}}
+\subsubsection[{Label(\+T element)}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf Graph\+Library.\+I\+Graph\+Labeling}$<$ T $>$.Label (
+\begin{DoxyParamCaption}
+\item[{T}]{element}
+\end{DoxyParamCaption}
+)}\label{interface_graph_library_1_1_i_graph_labeling_a72391788639c686dbb02bc135b4d2b68}
+
+
+Returns the Label of the specified element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em element} & The labeled element\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The label
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_graph_library_1_1_abstract_graph_labeling_a496a92bed9a3b4719d6b8305c8faa7fc}{Graph\+Library.\+Abstract\+Graph\+Labeling$<$ T $>$}.
+
+\hypertarget{interface_graph_library_1_1_i_graph_labeling_aa889d08a24d32a78bd464f4c98b53344}{}\index{Graph\+Library\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+I\+Graph\+Labeling}!Label@{Label}}
+\index{Label@{Label}!Graph\+Library\+::\+I\+Graph\+Labeling@{Graph\+Library\+::\+I\+Graph\+Labeling}}
+\subsubsection[{Label(int serial\+Number)}]{\setlength{\rightskip}{0pt plus 5cm}string {\bf Graph\+Library.\+I\+Graph\+Labeling}$<$ T $>$.Label (
+\begin{DoxyParamCaption}
+\item[{int}]{serial\+Number}
+\end{DoxyParamCaption}
+)}\label{interface_graph_library_1_1_i_graph_labeling_aa889d08a24d32a78bd464f4c98b53344}
+
+
+Returns the Label of the element with the given serial number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em serial\+Number} & The serial number of the labelled element\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The label
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_graph_library_1_1_abstract_graph_labeling_a88b33d453be1ca7b7625c9cb253fdd3a}{Graph\+Library.\+Abstract\+Graph\+Labeling$<$ T $>$}.
+
+
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/Graph\+Labeling.\+cs\end{DoxyCompactItemize}

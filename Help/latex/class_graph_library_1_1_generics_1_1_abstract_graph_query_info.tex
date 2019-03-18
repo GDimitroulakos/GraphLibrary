@@ -1,0 +1,230 @@
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_query_info}{}\section{Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info$<$ Node, Edge, Graph $>$ Class Template Reference}
+\label{class_graph_library_1_1_generics_1_1_abstract_graph_query_info}\index{Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info$<$ Node, Edge, Graph $>$@{Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info$<$ Node, Edge, Graph $>$}}
+
+
+The purpose of this class is to simplify the expressions that the designer should write to access graph information from the code that describes the algorithm. This way the code that describes the algorithm is described with minimal complexity expressions something necessery to make him easily readapt to the code after long periods of abstention from this framework The class provides general access (takes object and returns object) to the node/edge information and requires casting to specialize it.  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+abstract object \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_ac354a77c11aebe2f5fa87edadb9f05a1}{Info} (Node node, object key=null)
+\begin{DoxyCompactList}\small\item\em Returns information concerning a node or a graph ( derives from node) Since the graph derives from \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} it stores the information at the same collection as node. So the function to retrieve the information is common in both elements \end{DoxyCompactList}\item 
+abstract object \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a037261a2580a6f1946622de4f660e3b0}{Info} (Edge edge, object key=null)
+\begin{DoxyCompactList}\small\item\em Returns the information of the specified edge \end{DoxyCompactList}\item 
+abstract object \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a9a562930423ff0bca814ec0d13596134}{Info} (Node source, Node target, object key=null)
+\begin{DoxyCompactList}\small\item\em Returns the information of the edge between the given source and target nodes. \end{DoxyCompactList}\item 
+abstract object \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a58d00a825e3006b3066021fd992be858}{Create\+Info} (Node node, object info, object key=null)
+\begin{DoxyCompactList}\small\item\em Stores the information at the specified node or graph. If information already exists, it is overwritten \end{DoxyCompactList}\item 
+abstract object \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a39c8abaf3efbae750098bc6b0ed423da}{Create\+Info} (Edge edge, object info, object key=null)
+\begin{DoxyCompactList}\small\item\em Stores the information at the specified edge. If information already exists, it is overwritten \end{DoxyCompactList}\item 
+abstract object \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_ad555b8fc4849bc003f0d457414edcb26}{Create\+Info} (Node source, Node target, object info, object key=null)
+\begin{DoxyCompactList}\small\item\em Stores the information at the specified edge. If information already exists, it is overwritten \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a8dd567e7f04df4a55df4bd8b4a0c3e48}{Abstract\+Graph\+Query\+Info} (Graph graph)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a8dd567e7f04df4a55df4bd8b4a0c3e48}{Abstract\+Graph\+Query\+Info$<$\+Node, Edge, Graph$>$} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Graph \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a7f1d5e09659d1e98da56197e1cc5973a}{m\+\_\+\+Graph}
+\begin{DoxyCompactList}\small\item\em The graph to which the info refers \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The purpose of this class is to simplify the expressions that the designer should write to access graph information from the code that describes the algorithm. This way the code that describes the algorithm is described with minimal complexity expressions something necessery to make him easily readapt to the code after long periods of abstention from this framework The class provides general access (takes object and returns object) to the node/edge information and requires casting to specialize it. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Node} & The type of the node.\\
+\hline
+{\em Edge} & The type of the edge.\\
+\hline
+{\em Graph} & The type of the graph.\\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a8dd567e7f04df4a55df4bd8b4a0c3e48}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}!Abstract\+Graph\+Query\+Info@{Abstract\+Graph\+Query\+Info}}
+\index{Abstract\+Graph\+Query\+Info@{Abstract\+Graph\+Query\+Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}}
+\subsubsection[{Abstract\+Graph\+Query\+Info(\+Graph graph)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info}$<$ Node, Edge, Graph $>$.{\bf Abstract\+Graph\+Query\+Info} (
+\begin{DoxyParamCaption}
+\item[{Graph}]{graph}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a8dd567e7f04df4a55df4bd8b4a0c3e48}
+
+
+Initializes a new instance of the \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a8dd567e7f04df4a55df4bd8b4a0c3e48}{Abstract\+Graph\+Query\+Info$<$\+Node, Edge, Graph$>$} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & The graph.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a58d00a825e3006b3066021fd992be858}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}!Create\+Info@{Create\+Info}}
+\index{Create\+Info@{Create\+Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}}
+\subsubsection[{Create\+Info(\+Node node, object info, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}abstract object {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info}$<$ Node, Edge, Graph $>$.Create\+Info (
+\begin{DoxyParamCaption}
+\item[{Node}]{node, }
+\item[{object}]{info, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a58d00a825e3006b3066021fd992be858}
+
+
+Stores the information at the specified node or graph. If information already exists, it is overwritten 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+{\em info} & The information object\\
+\hline
+{\em key} & The key that will extract the information from the specified node\textquotesingle{}s dictionary\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The information object
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a39c8abaf3efbae750098bc6b0ed423da}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}!Create\+Info@{Create\+Info}}
+\index{Create\+Info@{Create\+Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}}
+\subsubsection[{Create\+Info(\+Edge edge, object info, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}abstract object {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info}$<$ Node, Edge, Graph $>$.Create\+Info (
+\begin{DoxyParamCaption}
+\item[{Edge}]{edge, }
+\item[{object}]{info, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a39c8abaf3efbae750098bc6b0ed423da}
+
+
+Stores the information at the specified edge. If information already exists, it is overwritten 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge.\\
+\hline
+{\em info} & The information object\\
+\hline
+{\em key} & The key that will extract the information from the specified edge\textquotesingle{}s dictionary\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The information object
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_ad555b8fc4849bc003f0d457414edcb26}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}!Create\+Info@{Create\+Info}}
+\index{Create\+Info@{Create\+Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}}
+\subsubsection[{Create\+Info(\+Node source, Node target, object info, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}abstract object {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info}$<$ Node, Edge, Graph $>$.Create\+Info (
+\begin{DoxyParamCaption}
+\item[{Node}]{source, }
+\item[{Node}]{target, }
+\item[{object}]{info, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_ad555b8fc4849bc003f0d457414edcb26}
+
+
+Stores the information at the specified edge. If information already exists, it is overwritten 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source node.\\
+\hline
+{\em target} & The target node.\\
+\hline
+{\em info} & The information object\\
+\hline
+{\em key} & The key that will extract the information from the specified edge\textquotesingle{}s dictionary\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The information object
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_ac354a77c11aebe2f5fa87edadb9f05a1}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}!Info@{Info}}
+\index{Info@{Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}}
+\subsubsection[{Info(\+Node node, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}abstract object {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info}$<$ Node, Edge, Graph $>$.Info (
+\begin{DoxyParamCaption}
+\item[{Node}]{node, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_ac354a77c11aebe2f5fa87edadb9f05a1}
+
+
+Returns information concerning a node or a graph ( derives from node) Since the graph derives from \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} it stores the information at the same collection as node. So the function to retrieve the information is common in both elements 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+{\em key} & The key that will extract the information from the specified node\textquotesingle{}s dictionary\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a037261a2580a6f1946622de4f660e3b0}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}!Info@{Info}}
+\index{Info@{Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}}
+\subsubsection[{Info(\+Edge edge, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}abstract object {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info}$<$ Node, Edge, Graph $>$.Info (
+\begin{DoxyParamCaption}
+\item[{Edge}]{edge, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a037261a2580a6f1946622de4f660e3b0}
+
+
+Returns the information of the specified edge 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & The edge.\\
+\hline
+{\em key} & The key that will extract the information from the specified edge\textquotesingle{}s dictionary\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a9a562930423ff0bca814ec0d13596134}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}!Info@{Info}}
+\index{Info@{Info}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}}
+\subsubsection[{Info(\+Node source, Node target, object key=null)}]{\setlength{\rightskip}{0pt plus 5cm}abstract object {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info}$<$ Node, Edge, Graph $>$.Info (
+\begin{DoxyParamCaption}
+\item[{Node}]{source, }
+\item[{Node}]{target, }
+\item[{object}]{key = {\ttfamily null}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a9a562930423ff0bca814ec0d13596134}
+
+
+Returns the information of the edge between the given source and target nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source} & The source.\\
+\hline
+{\em target} & The target.\\
+\hline
+{\em key} & The key that will extract the information from the specified edge\textquotesingle{}s dictionary\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a7f1d5e09659d1e98da56197e1cc5973a}{}\index{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}!m\+\_\+\+Graph@{m\+\_\+\+Graph}}
+\index{m\+\_\+\+Graph@{m\+\_\+\+Graph}!Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info@{Graph\+Library\+::\+Generics\+::\+Abstract\+Graph\+Query\+Info}}
+\subsubsection[{m\+\_\+\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}Graph {\bf Graph\+Library.\+Generics.\+Abstract\+Graph\+Query\+Info}$<$ Node, Edge, Graph $>$.m\+\_\+\+Graph\hspace{0.3cm}{\ttfamily [protected]}}\label{class_graph_library_1_1_generics_1_1_abstract_graph_query_info_a7f1d5e09659d1e98da56197e1cc5973a}
+
+
+The graph to which the info refers 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/\+Generics/Abstract\+Query\+Info.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,93 @@
+\hypertarget{class_graph_library_1_1_c_graph_viz_printer}{}\section{Graph\+Library.\+C\+Graph\+Viz\+Printer Class Reference}
+\label{class_graph_library_1_1_c_graph_viz_printer}\index{Graph\+Library.\+C\+Graph\+Viz\+Printer@{Graph\+Library.\+C\+Graph\+Viz\+Printer}}
+
+
+This class exports the graph in graphviz form. It accepts the graph and optionally a class that defined the labelling of nodes. If the client doen\textquotesingle{}t provide a labelling class a default class (Graph\+Viz\+Node\+Labeling) takes over the labelling of nodes  
+
+
+Inheritance diagram for Graph\+Library.\+C\+Graph\+Viz\+Printer\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=3.000000cm]{class_graph_library_1_1_c_graph_viz_printer}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graph_library_1_1_c_graph_viz_printer_abb31a40f8b3a16c8abe21ca13d4debb0}{}{\bfseries C\+Graph\+Viz\+Printer} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} graph, \hyperlink{class_graph_library_1_1_c_graph_labeling}{C\+Graph\+Labeling}$<$ \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} $>$ labeling=null)\label{class_graph_library_1_1_c_graph_viz_printer_abb31a40f8b3a16c8abe21ca13d4debb0}
+
+\item 
+override String\+Builder \hyperlink{class_graph_library_1_1_c_graph_viz_printer_a5341d69647f313d81387578a629d1ed5}{Print} (bool onlyedges=false)
+\begin{DoxyCompactList}\small\item\em Prints the graph into a String\+Builder object. Optionally the header and footer of the .dot file can be ommited for use of the graph edges in the multi layer graph printer \end{DoxyCompactList}\item 
+override void \hyperlink{class_graph_library_1_1_c_graph_viz_printer_a9d4366ecf1b1f27c8886f0891ae5f5cf}{Generate} (string filepath, bool execute\+Generator=true)
+\begin{DoxyCompactList}\small\item\em Generates the Graph\+Viz .dot file and optionally calls the graphviz to generate the picture of the graph. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This class exports the graph in graphviz form. It accepts the graph and optionally a class that defined the labelling of nodes. If the client doen\textquotesingle{}t provide a labelling class a default class (Graph\+Viz\+Node\+Labeling) takes over the labelling of nodes 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_graph_library_1_1_c_graph_printer}{Graph\+Library.\+C\+Graph\+Printer}
+
+
+\end{DoxySeeAlso}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_viz_printer_a9d4366ecf1b1f27c8886f0891ae5f5cf}{}\index{Graph\+Library\+::\+C\+Graph\+Viz\+Printer@{Graph\+Library\+::\+C\+Graph\+Viz\+Printer}!Generate@{Generate}}
+\index{Generate@{Generate}!Graph\+Library\+::\+C\+Graph\+Viz\+Printer@{Graph\+Library\+::\+C\+Graph\+Viz\+Printer}}
+\subsubsection[{Generate(string filepath, bool execute\+Generator=true)}]{\setlength{\rightskip}{0pt plus 5cm}override void Graph\+Library.\+C\+Graph\+Viz\+Printer.\+Generate (
+\begin{DoxyParamCaption}
+\item[{string}]{filepath, }
+\item[{bool}]{execute\+Generator = {\ttfamily true}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_c_graph_viz_printer_a9d4366ecf1b1f27c8886f0891ae5f5cf}
+
+
+Generates the Graph\+Viz .dot file and optionally calls the graphviz to generate the picture of the graph. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em filepath} & The full path to which the file is generated\\
+\hline
+{\em execute\+Generator} & If true calls the dot tool to produce the graph in a picture\\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_printer_ae58857c9c21ef8ab2cd8a0651340e2ec}{Graph\+Library.\+Generics.\+Abstract\+Graph\+Printer$<$ C\+Graph $>$}.
+
+\hypertarget{class_graph_library_1_1_c_graph_viz_printer_a5341d69647f313d81387578a629d1ed5}{}\index{Graph\+Library\+::\+C\+Graph\+Viz\+Printer@{Graph\+Library\+::\+C\+Graph\+Viz\+Printer}!Print@{Print}}
+\index{Print@{Print}!Graph\+Library\+::\+C\+Graph\+Viz\+Printer@{Graph\+Library\+::\+C\+Graph\+Viz\+Printer}}
+\subsubsection[{Print(bool onlyedges=false)}]{\setlength{\rightskip}{0pt plus 5cm}override String\+Builder Graph\+Library.\+C\+Graph\+Viz\+Printer.\+Print (
+\begin{DoxyParamCaption}
+\item[{bool}]{onlyedges = {\ttfamily false}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_c_graph_viz_printer_a5341d69647f313d81387578a629d1ed5}
+
+
+Prints the graph into a String\+Builder object. Optionally the header and footer of the .dot file can be ommited for use of the graph edges in the multi layer graph printer 
+
+
+\begin{DoxyParams}{Parameters}
+{\em onlyedges} & if set to {\ttfamily true} \mbox{[}onlyedges\mbox{]}.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em System.\+Not\+Implemented\+Exception} & \\
+\hline
+\end{DoxyExceptions}
+
+
+Implements \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_printer_a793fd0ab2baf6809eee04292d3992ce4}{Graph\+Library.\+Generics.\+Abstract\+Graph\+Printer$<$ C\+Graph $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/\+Printers/\+Graph\+Viz\+Printer/Graph\+Viz\+Printer.\+cs\end{DoxyCompactItemize}

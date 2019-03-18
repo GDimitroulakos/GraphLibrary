@@ -1,0 +1,89 @@
+\hypertarget{class_graph_library_1_1_g_alg___depth_first_search}{}\section{Graph\+Library.\+G\+Alg\+\_\+\+Depth\+First\+Search Class Reference}
+\label{class_graph_library_1_1_g_alg___depth_first_search}\index{Graph\+Library.\+G\+Alg\+\_\+\+Depth\+First\+Search@{Graph\+Library.\+G\+Alg\+\_\+\+Depth\+First\+Search}}
+
+
+This algorithm ( visitor ) performs a D\+F\+S traversal over a graph (directed or undirected ).  
+
+
+Inheritance diagram for Graph\+Library.\+G\+Alg\+\_\+\+Depth\+First\+Search\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_g_alg___depth_first_search}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_graph_library_1_1_g_alg___depth_first_search_1_1_info___d_f_s}{Info\+\_\+\+D\+F\+S}
+\begin{DoxyCompactList}\small\item\em Graph node info to assist the algorithm \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_g_alg___depth_first_search_a4bb5db62c1c4a75d9c204ead9a254c06}{G\+Alg\+\_\+\+Depth\+First\+Search} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} graph)
+\begin{DoxyCompactList}\small\item\em Constructor \end{DoxyCompactList}\item 
+\hypertarget{class_graph_library_1_1_g_alg___depth_first_search_acb806ff284125eece9f558af21ea4a86}{}void {\bfseries Init} ()\label{class_graph_library_1_1_g_alg___depth_first_search_acb806ff284125eece9f558af21ea4a86}
+
+\item 
+override \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_g_alg___depth_first_search_a25029f53be2b8c588c248f4bb165618d}{Visit} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node)
+\begin{DoxyCompactList}\small\item\em The Visit method refers to the action the algorithm performs to a specific node Most of the times the Visit function is called recursively. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graph_library_1_1_g_alg___depth_first_search_af8a276814fe95f97c0778d1254a25efb}{}bool {\bfseries M\+\_\+\+Start\+At\+Root\+Nodes}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}\label{class_graph_library_1_1_g_alg___depth_first_search_af8a276814fe95f97c0778d1254a25efb}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This algorithm ( visitor ) performs a D\+F\+S traversal over a graph (directed or undirected ). 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_library_1_1_g_alg___depth_first_search_a4bb5db62c1c4a75d9c204ead9a254c06}{}\index{Graph\+Library\+::\+G\+Alg\+\_\+\+Depth\+First\+Search@{Graph\+Library\+::\+G\+Alg\+\_\+\+Depth\+First\+Search}!G\+Alg\+\_\+\+Depth\+First\+Search@{G\+Alg\+\_\+\+Depth\+First\+Search}}
+\index{G\+Alg\+\_\+\+Depth\+First\+Search@{G\+Alg\+\_\+\+Depth\+First\+Search}!Graph\+Library\+::\+G\+Alg\+\_\+\+Depth\+First\+Search@{Graph\+Library\+::\+G\+Alg\+\_\+\+Depth\+First\+Search}}
+\subsubsection[{G\+Alg\+\_\+\+Depth\+First\+Search(\+C\+Graph graph)}]{\setlength{\rightskip}{0pt plus 5cm}Graph\+Library.\+G\+Alg\+\_\+\+Depth\+First\+Search.\+G\+Alg\+\_\+\+Depth\+First\+Search (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph}}]{graph}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_g_alg___depth_first_search_a4bb5db62c1c4a75d9c204ead9a254c06}
+
+
+Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Graph to which the algorithm is applied\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_g_alg___depth_first_search_a25029f53be2b8c588c248f4bb165618d}{}\index{Graph\+Library\+::\+G\+Alg\+\_\+\+Depth\+First\+Search@{Graph\+Library\+::\+G\+Alg\+\_\+\+Depth\+First\+Search}!Visit@{Visit}}
+\index{Visit@{Visit}!Graph\+Library\+::\+G\+Alg\+\_\+\+Depth\+First\+Search@{Graph\+Library\+::\+G\+Alg\+\_\+\+Depth\+First\+Search}}
+\subsubsection[{Visit(\+C\+Graph\+Node node)}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf C\+Graph\+Node} Graph\+Library.\+G\+Alg\+\_\+\+Depth\+First\+Search.\+Visit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\label{class_graph_library_1_1_g_alg___depth_first_search_a25029f53be2b8c588c248f4bb165618d}
+
+
+The Visit method refers to the action the algorithm performs to a specific node Most of the times the Visit function is called recursively. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node to which the algorithm acts.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parameter refers to the type of the return result
+\end{DoxyReturn}
+
+
+Reimplemented from \hyperlink{class_graph_library_1_1_abstract_graph_algorithm_af0a50489383c3191e9a02cb6d8a6731d}{Graph\+Library.\+Abstract\+Graph\+Algorithm$<$ C\+Graph\+Node $>$}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/I\+Graph\+Algorithm.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,156 @@
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s}{}\section{Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S Class Reference}
+\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s}\index{Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}}
+
+
+This algorithm ( visitor ) performs a D\+F\+S traversal over a graph (directed or undirected ). It records the paths from which the algorithm passes by coloring nodes along them. The algorith works also for non-\/connected graphs 1) White (0) \+: Not yet visited 2) Gray (1) \+: Visited but not all of its neighbours 3) Black (2) \+: Visited and all of its neighbours  
+
+
+Inheritance diagram for Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a08a0b177dee71f014d5d2dfe929bae6c}{G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} graph)
+\begin{DoxyCompactList}\small\item\em Constructor \end{DoxyCompactList}\item 
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a67e72af02594968bea2c7c140bf55f4a}{}override void {\bfseries Init} ()\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a67e72af02594968bea2c7c140bf55f4a}
+
+\item 
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a27528338adca82162cdf706c70ddde42}{}override \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} {\bfseries Visit} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node)\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a27528338adca82162cdf706c70ddde42}
+
+\item 
+int \hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a33ee93fab673a0093497d2841fefb78d}{Color} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node)
+\begin{DoxyCompactList}\small\item\em Returns the color of the specified node \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_aa6194f3209502e02fe32cd088a1d7e45}{Set\+Color} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node, int color)
+\begin{DoxyCompactList}\small\item\em Sets the color of the specified node. \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_aglorithms_1_1_node_info___d_f_s}{Node\+Info\+\_\+\+D\+F\+S} \hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a55ad5132fce2173810b363f088f70003}{Node\+Info} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} node, object key)
+\begin{DoxyCompactList}\small\item\em Returns the specified node information. \end{DoxyCompactList}\item 
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a10c4c01856895ec203cb5564169f38e0}{}void {\bfseries event\+Handler1} (object sender, Event\+Args arg)\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a10c4c01856895ec203cb5564169f38e0}
+
+\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a7926a5bacfd6a50547e8848ead5b5a68}{M\+\_\+\+Start\+At\+Root\+Nodes}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indicates whether the D\+F\+S start from nodes without predecessors \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Events}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a0075221ca2acf0374839e43f771e5c17}{}Event\+Handler {\bfseries m\+\_\+\+On\+Init}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a0075221ca2acf0374839e43f771e5c17}
+
+\item 
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_ab9102270aa7568fd3bf5abbde240385e}{}Event\+Handler {\bfseries m\+\_\+\+On\+Enter\+Node}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_ab9102270aa7568fd3bf5abbde240385e}
+
+\item 
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a7a2e9dd262f27b2cfa97092224de4025}{}Event\+Handler {\bfseries m\+\_\+\+On\+Exit\+Node}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a7a2e9dd262f27b2cfa97092224de4025}
+
+\item 
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a782cb35a1823fa98dcbaaaaae376e214}{}Event\+Handler {\bfseries m\+\_\+\+On\+Bypassing\+Node}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a782cb35a1823fa98dcbaaaaae376e214}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This algorithm ( visitor ) performs a D\+F\+S traversal over a graph (directed or undirected ). It records the paths from which the algorithm passes by coloring nodes along them. The algorith works also for non-\/connected graphs 1) White (0) \+: Not yet visited 2) Gray (1) \+: Visited but not all of its neighbours 3) Black (2) \+: Visited and all of its neighbours 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a08a0b177dee71f014d5d2dfe929bae6c}{}\index{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}!G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}}
+\index{G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}!Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}}
+\subsubsection[{G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S(\+C\+Graph graph)}]{\setlength{\rightskip}{0pt plus 5cm}Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S.\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph}}]{graph}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a08a0b177dee71f014d5d2dfe929bae6c}
+
+
+Constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & Graph to which the algorithm is applied\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a33ee93fab673a0093497d2841fefb78d}{}\index{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}!Color@{Color}}
+\index{Color@{Color}!Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}}
+\subsubsection[{Color(\+C\+Graph\+Node node)}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S.\+Color (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a33ee93fab673a0093497d2841fefb78d}
+
+
+Returns the color of the specified node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{[}int\mbox{]}\+: Returns the color of the specified node 
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a55ad5132fce2173810b363f088f70003}{}\index{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}!Node\+Info@{Node\+Info}}
+\index{Node\+Info@{Node\+Info}!Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}}
+\subsubsection[{Node\+Info(\+C\+Graph\+Node node, object key)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Node\+Info\+\_\+\+D\+F\+S} Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S.\+Node\+Info (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node, }
+\item[{object}]{key}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a55ad5132fce2173810b363f088f70003}
+
+
+Returns the specified node information. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+{\em key} & The key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_aa6194f3209502e02fe32cd088a1d7e45}{}\index{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}!Set\+Color@{Set\+Color}}
+\index{Set\+Color@{Set\+Color}!Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}}
+\subsubsection[{Set\+Color(\+C\+Graph\+Node node, int color)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S.\+Set\+Color (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{node, }
+\item[{int}]{color}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_aa6194f3209502e02fe32cd088a1d7e45}
+
+
+Sets the color of the specified node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+{\em color} & The color.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a7926a5bacfd6a50547e8848ead5b5a68}{}\index{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}!M\+\_\+\+Start\+At\+Root\+Nodes@{M\+\_\+\+Start\+At\+Root\+Nodes}}
+\index{M\+\_\+\+Start\+At\+Root\+Nodes@{M\+\_\+\+Start\+At\+Root\+Nodes}!Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S}}
+\subsubsection[{M\+\_\+\+Start\+At\+Root\+Nodes}]{\setlength{\rightskip}{0pt plus 5cm}bool Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S.\+M\+\_\+\+Start\+At\+Root\+Nodes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___node_oriented_d_f_s_a7926a5bacfd6a50547e8848ead5b5a68}
+
+
+Indicates whether the D\+F\+S start from nodes without predecessors 
+
+{\ttfamily true} if the algorithm starts at nodes without predecessors; otherwise, {\ttfamily false}. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/\+Aglorithms/G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,117 @@
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s}{}\section{Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S Class Reference}
+\label{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s}\index{Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}}
+
+
+This algorithm ( visitor ) performs a D\+F\+S traversal over a graph (directed or undirected ). It records the paths from which the algorithm passes by coloring nodes along them. The algorith works also for non-\/connected graphs 1) White (0) \+: Not yet visited 2) Gray (1) \+: Visited but not all of its neighbours 3) Black (2) \+: Visited and all of its neighbours  
+
+
+Inheritance diagram for Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_ab154db21f7f5f64ec4d2899925a6c3bb}{G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S} (\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} graph)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s}{G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S} class. \end{DoxyCompactList}\item 
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_aa0b0c46c857d02f7f93dc47ab8df7b5a}{}override void {\bfseries Init} ()\label{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_aa0b0c46c857d02f7f93dc47ab8df7b5a}
+
+\item 
+override \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} \hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_ad46d1eec3b67f4fcd6ecdc02fb44603a}{Visit} (\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} edge)
+\begin{DoxyCompactList}\small\item\em The Visit method refers to the action the algorithm performs to a specific edge Most of the times the Visit function is called recursively. \end{DoxyCompactList}\item 
+int \hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_a99f99cba172890de22281af8c448fc1c}{Color} (\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} edge)
+\begin{DoxyCompactList}\small\item\em Returns the color of the specified node \end{DoxyCompactList}\item 
+void \hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_aeb59734bfbf42cdc8502e5b111d0a5b5}{Set\+Color} (\hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} edge, int color)
+\begin{DoxyCompactList}\small\item\em Sets the color of the specified node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+This algorithm ( visitor ) performs a D\+F\+S traversal over a graph (directed or undirected ). It records the paths from which the algorithm passes by coloring nodes along them. The algorith works also for non-\/connected graphs 1) White (0) \+: Not yet visited 2) Gray (1) \+: Visited but not all of its neighbours 3) Black (2) \+: Visited and all of its neighbours 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_ab154db21f7f5f64ec4d2899925a6c3bb}{}\index{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}!G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}}
+\index{G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}!Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}}
+\subsubsection[{G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S(\+C\+Graph graph)}]{\setlength{\rightskip}{0pt plus 5cm}Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S.\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph}}]{graph}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_ab154db21f7f5f64ec4d2899925a6c3bb}
+
+
+Initializes a new instance of the \hyperlink{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s}{G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S} class. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em graph} & The graph.\\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_a99f99cba172890de22281af8c448fc1c}{}\index{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}!Color@{Color}}
+\index{Color@{Color}!Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}}
+\subsubsection[{Color(\+C\+Graph\+Edge edge)}]{\setlength{\rightskip}{0pt plus 5cm}int Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S.\+Color (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Edge}}]{edge}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_a99f99cba172890de22281af8c448fc1c}
+
+
+Returns the color of the specified node 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\mbox{[}int\mbox{]}\+: Returns the color of the specified node 
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_aeb59734bfbf42cdc8502e5b111d0a5b5}{}\index{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}!Set\+Color@{Set\+Color}}
+\index{Set\+Color@{Set\+Color}!Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}}
+\subsubsection[{Set\+Color(\+C\+Graph\+Edge edge, int color)}]{\setlength{\rightskip}{0pt plus 5cm}void Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S.\+Set\+Color (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Edge}}]{edge, }
+\item[{int}]{color}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_aeb59734bfbf42cdc8502e5b111d0a5b5}
+
+
+Sets the color of the specified node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & The node.\\
+\hline
+{\em color} & The color.\\
+\hline
+\end{DoxyParams}
+\hypertarget{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_ad46d1eec3b67f4fcd6ecdc02fb44603a}{}\index{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}!Visit@{Visit}}
+\index{Visit@{Visit}!Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S@{Graph\+Library\+::\+Aglorithms\+::\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S}}
+\subsubsection[{Visit(\+C\+Graph\+Edge edge)}]{\setlength{\rightskip}{0pt plus 5cm}override {\bf C\+Graph\+Edge} Graph\+Library.\+Aglorithms.\+G\+Alg\+\_\+\+Edge\+Oriented\+D\+F\+S.\+Visit (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Edge}}]{edge}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_aglorithms_1_1_g_alg___edge_oriented_d_f_s_ad46d1eec3b67f4fcd6ecdc02fb44603a}
+
+
+The Visit method refers to the action the algorithm performs to a specific edge Most of the times the Visit function is called recursively. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em edge} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The parameter refers to the type of the return result 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/\+Aglorithms/G\+Alg\+\_\+\+Node\+Oriented\+D\+F\+S.\+cs\end{DoxyCompactItemize}

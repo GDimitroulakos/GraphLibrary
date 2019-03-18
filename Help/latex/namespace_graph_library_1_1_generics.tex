@@ -1,0 +1,63 @@
+\hypertarget{namespace_graph_library_1_1_generics}{}\section{Graph\+Library.\+Generics Namespace Reference}
+\label{namespace_graph_library_1_1_generics}\index{Graph\+Library.\+Generics@{Graph\+Library.\+Generics}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_algorithm}{Abstract\+Graph\+Algorithm}
+\begin{DoxyCompactList}\small\item\em The abstract base class of the algorithms applied on graphs \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator}{Abstract\+Graph\+Iterator}
+\begin{DoxyCompactList}\small\item\em This class is the base abstract class of Graph\+Iterators. It has no implementation except from the m\+\_\+current\+Item member variable. This variable always point to the current element (which has type T) that the iterator points. The class\textquotesingle{}s methods are executed in a specific sequence that is dictated by the loop statement semantics that is \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_a2c97c7a412c233b8442b7ad403f29779}{Begin()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}, L\+O\+O\+P\+\_\+\+B\+O\+D\+Y, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}, L\+O\+O\+P\+\_\+\+B\+O\+D\+Y, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}, L\+O\+O\+P\+\_\+\+B\+O\+D\+Y, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aac8cffd0d579708a94ba056e4f4a00b2}{Next()}, \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_aa8cd9f596ec0b6c4c1e9c244ba75df04}{End()}... etc \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator_factory}{Abstract\+Graph\+Iterator\+Factory}
+\begin{DoxyCompactList}\small\item\em This class is for programmers convinience. It instanciates iterators that iterate over a graph\textquotesingle{}s elements required for the algorithms and other graph processing facilities \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_labeling}{Abstract\+Graph\+Labeling}
+\begin{DoxyCompactList}\small\item\em This class holds the labels for a specific type of elements (edge , nodes, graphs ) of a graph. I use two dictionaries for both mapping to gain in query speed. This class gives the opportunity that diffrent graph clients can assign diffrent labels to the graph nodes, edges etc. The graph client ( contructor ) creates a subclass of \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_labeling}{Abstract\+Graph\+Labeling$<$\+T$>$} and assigns labels to nodes. The instance of this class exists inside the \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} class and the client can add a new labeling of graph elements through the Add\+Graph\+Node\+Labelling() method. \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_printer}{Abstract\+Graph\+Printer}
+\begin{DoxyCompactList}\small\item\em This class is the parent class of all classes that print \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} objects Hence the class know the interface of \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}. (Its build for \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph}). This class heirarchy is based on the Builder design pattern. \end{DoxyCompactList}\item 
+class \hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_query_info}{Abstract\+Graph\+Query\+Info}
+\begin{DoxyCompactList}\small\item\em The purpose of this class is to simplify the expressions that the designer should write to access graph information from the code that describes the algorithm. This way the code that describes the algorithm is described with minimal complexity expressions something necessery to make him easily readapt to the code after long periods of abstention from this framework The class provides general access (takes object and returns object) to the node/edge information and requires casting to specialize it. \end{DoxyCompactList}\item 
+class {\bfseries Graph\+Utils\+Extensions}
+\item 
+interface \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_algorithm}{I\+Graph\+Algorithm}
+\begin{DoxyCompactList}\small\item\em The interface represent the mandatory interface of the algorithm class. \end{DoxyCompactList}\item 
+interface \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_iterator}{I\+Graph\+Iterator}
+\begin{DoxyCompactList}\small\item\em Every iterator should implement the following interface. Look for more details in the \begin{DoxySeeAlso}{See also}
+\hyperlink{class_graph_library_1_1_generics_1_1_abstract_graph_iterator}{Abstract\+Graph\+Iterator}
+
+
+\end{DoxySeeAlso}
+class \end{DoxyCompactList}\item 
+interface \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_labeling}{I\+Graph\+Labeling}
+\begin{DoxyCompactList}\small\item\em Provides a generic interface for retrieving the label of a graph element of type T ( edge, node, whatever... ). Thus this class applies to all types of graph elements. \end{DoxyCompactList}\item 
+interface \hyperlink{interface_graph_library_1_1_generics_1_1_i_graph_primitive}{I\+Graph\+Primitive}
+\begin{DoxyCompactList}\small\item\em This interface contains primitive operations common to any graph element ( node, edge, graph ) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} \{ {\bfseries G\+T\+\_\+\+N\+A}, 
+{\bfseries G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D}, 
+{\bfseries G\+T\+\_\+\+U\+N\+D\+I\+R\+E\+C\+T\+E\+D}, 
+{\bfseries G\+T\+\_\+\+M\+I\+X\+E\+D}
+ \}\begin{DoxyCompactList}\small\item\em An enumeration type that describes the type of the graph regarding the type of edges in contains. When it has only directed edges is called Directed ( G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D) when it has non-\/directional edges its called Undirected ( G\+T\+\_\+\+U\+N\+D\+I\+R\+E\+C\+T\+E\+D ) and when it has both directed and undirected edge its a mixed graph ( G\+T\+\_\+\+M\+I\+X\+E\+D ). A graph with no edge can\textquotesingle{}t have a type ( G\+T\+\_\+\+N\+A) \end{DoxyCompactList}
+\item 
+enum \hyperlink{namespace_graph_library_1_1_generics_a919a165f16deccdd1b3d7e8a93423fbc}{Graph\+Element\+Type} \{ {\bfseries E\+T\+\_\+\+N\+A} =0, 
+{\bfseries E\+T\+\_\+\+N\+O\+D\+E}, 
+{\bfseries E\+T\+\_\+\+E\+D\+G\+E}
+ \}\begin{DoxyCompactList}\small\item\em This enumeration describes the type of graph element. E\+T\+\_\+\+N\+A characterizes conditions such as \char`\"{}element not found in query\char`\"{}. Can also be used as a boolean value with E\+T\+\_\+\+N\+A representing \char`\"{}false\char`\"{} and the other values \char`\"{}true\char`\"{}. For this reason look the extension method To\+Boolean(this Graph\+Element\+Type value) below \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+
+
+\subsection{Enumeration Type Documentation}
+\hypertarget{namespace_graph_library_1_1_generics_a919a165f16deccdd1b3d7e8a93423fbc}{}\index{Graph\+Library\+::\+Generics@{Graph\+Library\+::\+Generics}!Graph\+Element\+Type@{Graph\+Element\+Type}}
+\index{Graph\+Element\+Type@{Graph\+Element\+Type}!Graph\+Library\+::\+Generics@{Graph\+Library\+::\+Generics}}
+\subsubsection[{Graph\+Element\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Graph\+Library.\+Generics.\+Graph\+Element\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_graph_library_1_1_generics_a919a165f16deccdd1b3d7e8a93423fbc}
+
+
+This enumeration describes the type of graph element. E\+T\+\_\+\+N\+A characterizes conditions such as \char`\"{}element not found in query\char`\"{}. Can also be used as a boolean value with E\+T\+\_\+\+N\+A representing \char`\"{}false\char`\"{} and the other values \char`\"{}true\char`\"{}. For this reason look the extension method To\+Boolean(this Graph\+Element\+Type value) below 
+
+\hypertarget{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{}\index{Graph\+Library\+::\+Generics@{Graph\+Library\+::\+Generics}!Graph\+Type@{Graph\+Type}}
+\index{Graph\+Type@{Graph\+Type}!Graph\+Library\+::\+Generics@{Graph\+Library\+::\+Generics}}
+\subsubsection[{Graph\+Type}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf Graph\+Library.\+Generics.\+Graph\+Type}\hspace{0.3cm}{\ttfamily [strong]}}\label{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}
+
+
+An enumeration type that describes the type of the graph regarding the type of edges in contains. When it has only directed edges is called Directed ( G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D) when it has non-\/directional edges its called Undirected ( G\+T\+\_\+\+U\+N\+D\+I\+R\+E\+C\+T\+E\+D ) and when it has both directed and undirected edge its a mixed graph ( G\+T\+\_\+\+M\+I\+X\+E\+D ). A graph with no edge can\textquotesingle{}t have a type ( G\+T\+\_\+\+N\+A) 
+

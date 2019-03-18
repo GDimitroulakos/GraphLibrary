@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D0E52A9B-DFDA-4EC2-90C5-8C3BB41FE782}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GraphLibrary</RootNamespace>
+    <AssemblyName>GraphLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Aglorithms\AlgorithmDataKeys.cs" />
+    <Compile Include="Aglorithms\BasicBlocks\GAlg_BasicBlockFinder.cs" />
+    <None Include="Aglorithms\BasicBlocks\GAlg_CondensedGraphBuilder.cs" />
+    <None Include="Aglorithms\BasicBlocks\GAlg_ExtendedBasicBlockFinder.cs" />
+    <None Include="Aglorithms\DFS\GAlg_NodeOrientedDFS.cs" />
+    <Compile Include="Aglorithms\DFS\Info_DFS.cs" />
+    <Compile Include="Generics\AbstractGraphAlgorithm.cs" />
+    <Compile Include="Generics\AbstractGraphElements.cs" />
+    <Compile Include="Generics\AbstractGraphIteratorFactory.cs" />
+    <Compile Include="Generics\AbstractGraphIterators.cs" />
+    <Compile Include="Generics\AbstractGraphLabeling.cs" />
+    <Compile Include="Generics\AbstractGraphPrinter.cs" />
+    <Compile Include="Generics\AbstractQueryInfo.cs" />
+    <Compile Include="GraphElements.cs" />
+    <Compile Include="GraphIterators.cs" />
+    <Compile Include="GraphIteratorsFactory.cs" />
+    <Compile Include="GraphLabeling.cs" />
+    <Compile Include="GraphPrinters.cs" />
+    <Compile Include="GraphQueryInfo.cs" />
+    <Compile Include="Printers\GraphVizPrinter\GraphVizLabeling.cs" />
+    <Compile Include="Printers\GraphVizPrinter\GraphVizPrinter.cs" />
+    <Compile Include="GraphAlgorithm.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CONTENTS.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

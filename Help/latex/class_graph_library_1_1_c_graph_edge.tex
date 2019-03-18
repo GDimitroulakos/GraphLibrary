@@ -1,0 +1,159 @@
+\hypertarget{class_graph_library_1_1_c_graph_edge}{}\section{Graph\+Library.\+C\+Graph\+Edge Class Reference}
+\label{class_graph_library_1_1_c_graph_edge}\index{Graph\+Library.\+C\+Graph\+Edge@{Graph\+Library.\+C\+Graph\+Edge}}
+
+
+A graph edges interconnects to Nodes ports that in sequence belong to a node The \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} class stores a reference to the source and target ports. And can provide through properties the source and target ports and nodes. It also provides given the port or node at the one side of the edge the corresponding port or node at the side.  
+
+
+Inheritance diagram for Graph\+Library.\+C\+Graph\+Edge\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_graph_library_1_1_c_graph_edge}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_graph_library_1_1_c_graph_edge_a38f5e03ba556824dc271a9873b981d50}{C\+Graph\+Edge} (\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} source\+Node, \hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} sink\+Node, \hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} owner\+Graph, \hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} edge\+Type=Graph\+Type.\+G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D)
+\begin{DoxyCompactList}\small\item\em Initializes a new instance of the \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} class. It creates an edge that connects the two nodes gives as parameters. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+object \hyperlink{class_graph_library_1_1_c_graph_edge_ad5cb4b4ef0423da4a0c2b156cf3fb3f7}{this\mbox{[}object index\mbox{]}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Indexer returns the information referring to a specific algorithm object \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_graph_edge_a79ff7b9982b737ed66755c8baf51a31a}{M\+\_\+\+Source}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the source node for directed graphs or one of the edge\textquotesingle{}s nodes of the undirected graph \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph_node}{C\+Graph\+Node} \hyperlink{class_graph_library_1_1_c_graph_edge_a42c115e4937a251f524edc71a2b1ea7a}{M\+\_\+\+Target}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the target node for directed graphs or one of the edge\textquotesingle{}s nodes of the undirected graph \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} \hyperlink{class_graph_library_1_1_c_graph_edge_aa1b8faca82c1d9fe1cafef980a1cbb82}{M\+\_\+\+Source\+Graph}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the graph from where the edge originates \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} \hyperlink{class_graph_library_1_1_c_graph_edge_a0548b68a08517457f2bd5fbec3eb0628}{M\+\_\+\+Sink\+Graph}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the graph to where the edge sinks \end{DoxyCompactList}\item 
+\hyperlink{namespace_graph_library_1_1_generics_a1bac729ea88e6f3925406df33f15d056}{Graph\+Type} \hyperlink{class_graph_library_1_1_c_graph_edge_aeee79cda191cc06d78688848f6168e8c}{M\+\_\+\+Edge\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the edge type. Can be directed or undirected \end{DoxyCompactList}\item 
+virtual int \hyperlink{class_graph_library_1_1_c_graph_edge_a4a000bcf04e549dc33e522ace7facc63}{M\+\_\+\+Serial\+Number}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Returns the edge\textquotesingle{}s serial number \end{DoxyCompactList}\item 
+\hyperlink{class_graph_library_1_1_c_graph}{C\+Graph} \hyperlink{class_graph_library_1_1_c_graph_edge_a59088a897b7cee66d1425b65e6bb945b}{M\+\_\+\+Owner\+Graph}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Represents the graph that owns the node \end{DoxyCompactList}\item 
+\hyperlink{namespace_graph_library_1_1_generics_a919a165f16deccdd1b3d7e8a93423fbc}{Graph\+Element\+Type} \hyperlink{class_graph_library_1_1_c_graph_edge_a43275553517bb0104bfdfc7ea14984ea}{M\+\_\+\+Element\+Type}\hspace{0.3cm}{\ttfamily  \mbox{[}get\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Gets the type of the m\+\_\+ element. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A graph edges interconnects to Nodes ports that in sequence belong to a node The \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} class stores a reference to the source and target ports. And can provide through properties the source and target ports and nodes. It also provides given the port or node at the one side of the edge the corresponding port or node at the side. 
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_edge_a38f5e03ba556824dc271a9873b981d50}{}\index{Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}!C\+Graph\+Edge@{C\+Graph\+Edge}}
+\index{C\+Graph\+Edge@{C\+Graph\+Edge}!Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}}
+\subsubsection[{C\+Graph\+Edge(\+C\+Graph\+Node source\+Node, C\+Graph\+Node sink\+Node, C\+Graph owner\+Graph, Graph\+Type edge\+Type=\+Graph\+Type.\+G\+T\+\_\+\+D\+I\+R\+E\+C\+T\+E\+D)}]{\setlength{\rightskip}{0pt plus 5cm}Graph\+Library.\+C\+Graph\+Edge.\+C\+Graph\+Edge (
+\begin{DoxyParamCaption}
+\item[{{\bf C\+Graph\+Node}}]{source\+Node, }
+\item[{{\bf C\+Graph\+Node}}]{sink\+Node, }
+\item[{{\bf C\+Graph}}]{owner\+Graph, }
+\item[{{\bf Graph\+Type}}]{edge\+Type = {\ttfamily GraphType.GT\+\_\+DIRECTED}}
+\end{DoxyParamCaption}
+)}\label{class_graph_library_1_1_c_graph_edge_a38f5e03ba556824dc271a9873b981d50}
+
+
+Initializes a new instance of the \hyperlink{class_graph_library_1_1_c_graph_edge}{C\+Graph\+Edge} class. It creates an edge that connects the two nodes gives as parameters. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em source\+Node} & The source node.\\
+\hline
+{\em sink\+Node} & The sink node.\\
+\hline
+{\em owner\+Graph} & The owner graph.\\
+\hline
+{\em edge\+Type} & Type of the edge can be directed or undirected (optional default is D\+I\+R\+E\+C\+T\+E\+D).\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyExceptions}{Exceptions}
+{\em Null\+Reference\+Exception} & At least one of the nodes is null\\
+\hline
+\end{DoxyExceptions}
+
+
+\subsection{Property Documentation}
+\hypertarget{class_graph_library_1_1_c_graph_edge_aeee79cda191cc06d78688848f6168e8c}{}\index{Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}!M\+\_\+\+Edge\+Type@{M\+\_\+\+Edge\+Type}}
+\index{M\+\_\+\+Edge\+Type@{M\+\_\+\+Edge\+Type}!Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}}
+\subsubsection[{M\+\_\+\+Edge\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph\+Type} Graph\+Library.\+C\+Graph\+Edge.\+M\+\_\+\+Edge\+Type\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_edge_aeee79cda191cc06d78688848f6168e8c}
+
+
+Represents the edge type. Can be directed or undirected 
+
+The type of the m\+\_\+ edge. \hypertarget{class_graph_library_1_1_c_graph_edge_a43275553517bb0104bfdfc7ea14984ea}{}\index{Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}!M\+\_\+\+Element\+Type@{M\+\_\+\+Element\+Type}}
+\index{M\+\_\+\+Element\+Type@{M\+\_\+\+Element\+Type}!Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}}
+\subsubsection[{M\+\_\+\+Element\+Type}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Graph\+Element\+Type} Graph\+Library.\+C\+Graph\+Edge.\+M\+\_\+\+Element\+Type\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_edge_a43275553517bb0104bfdfc7ea14984ea}
+
+
+Gets the type of the m\+\_\+ element. 
+
+The type of the m\+\_\+ element. \hypertarget{class_graph_library_1_1_c_graph_edge_a59088a897b7cee66d1425b65e6bb945b}{}\index{Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}!M\+\_\+\+Owner\+Graph@{M\+\_\+\+Owner\+Graph}}
+\index{M\+\_\+\+Owner\+Graph@{M\+\_\+\+Owner\+Graph}!Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}}
+\subsubsection[{M\+\_\+\+Owner\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph} Graph\+Library.\+C\+Graph\+Edge.\+M\+\_\+\+Owner\+Graph\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_edge_a59088a897b7cee66d1425b65e6bb945b}
+
+
+Represents the graph that owns the node 
+
+The owner graph. \hypertarget{class_graph_library_1_1_c_graph_edge_a4a000bcf04e549dc33e522ace7facc63}{}\index{Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}!M\+\_\+\+Serial\+Number@{M\+\_\+\+Serial\+Number}}
+\index{M\+\_\+\+Serial\+Number@{M\+\_\+\+Serial\+Number}!Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}}
+\subsubsection[{M\+\_\+\+Serial\+Number}]{\setlength{\rightskip}{0pt plus 5cm}virtual int Graph\+Library.\+C\+Graph\+Edge.\+M\+\_\+\+Serial\+Number\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_edge_a4a000bcf04e549dc33e522ace7facc63}
+
+
+Returns the edge\textquotesingle{}s serial number 
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\hypertarget{class_graph_library_1_1_c_graph_edge_a0548b68a08517457f2bd5fbec3eb0628}{}\index{Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}!M\+\_\+\+Sink\+Graph@{M\+\_\+\+Sink\+Graph}}
+\index{M\+\_\+\+Sink\+Graph@{M\+\_\+\+Sink\+Graph}!Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}}
+\subsubsection[{M\+\_\+\+Sink\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph} Graph\+Library.\+C\+Graph\+Edge.\+M\+\_\+\+Sink\+Graph\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_edge_a0548b68a08517457f2bd5fbec3eb0628}
+
+
+Represents the graph to where the edge sinks 
+
+The m\+\_\+ sink graph. \hypertarget{class_graph_library_1_1_c_graph_edge_a79ff7b9982b737ed66755c8baf51a31a}{}\index{Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}!M\+\_\+\+Source@{M\+\_\+\+Source}}
+\index{M\+\_\+\+Source@{M\+\_\+\+Source}!Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}}
+\subsubsection[{M\+\_\+\+Source}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Node} Graph\+Library.\+C\+Graph\+Edge.\+M\+\_\+\+Source\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_edge_a79ff7b9982b737ed66755c8baf51a31a}
+
+
+Represents the source node for directed graphs or one of the edge\textquotesingle{}s nodes of the undirected graph 
+
+Returns a reference to the source node \hypertarget{class_graph_library_1_1_c_graph_edge_aa1b8faca82c1d9fe1cafef980a1cbb82}{}\index{Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}!M\+\_\+\+Source\+Graph@{M\+\_\+\+Source\+Graph}}
+\index{M\+\_\+\+Source\+Graph@{M\+\_\+\+Source\+Graph}!Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}}
+\subsubsection[{M\+\_\+\+Source\+Graph}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph} Graph\+Library.\+C\+Graph\+Edge.\+M\+\_\+\+Source\+Graph\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_edge_aa1b8faca82c1d9fe1cafef980a1cbb82}
+
+
+Represents the graph from where the edge originates 
+
+The m\+\_\+ source graph. \hypertarget{class_graph_library_1_1_c_graph_edge_a42c115e4937a251f524edc71a2b1ea7a}{}\index{Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}!M\+\_\+\+Target@{M\+\_\+\+Target}}
+\index{M\+\_\+\+Target@{M\+\_\+\+Target}!Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}}
+\subsubsection[{M\+\_\+\+Target}]{\setlength{\rightskip}{0pt plus 5cm}{\bf C\+Graph\+Node} Graph\+Library.\+C\+Graph\+Edge.\+M\+\_\+\+Target\hspace{0.3cm}{\ttfamily [get]}}\label{class_graph_library_1_1_c_graph_edge_a42c115e4937a251f524edc71a2b1ea7a}
+
+
+Represents the target node for directed graphs or one of the edge\textquotesingle{}s nodes of the undirected graph 
+
+Returns a reference to the target node \hypertarget{class_graph_library_1_1_c_graph_edge_ad5cb4b4ef0423da4a0c2b156cf3fb3f7}{}\index{Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}!this\mbox{[}object index\mbox{]}@{this[object index]}}
+\index{this\mbox{[}object index\mbox{]}@{this[object index]}!Graph\+Library\+::\+C\+Graph\+Edge@{Graph\+Library\+::\+C\+Graph\+Edge}}
+\subsubsection[{this[object index]}]{\setlength{\rightskip}{0pt plus 5cm}object Graph\+Library.\+C\+Graph\+Edge.\+this\mbox{[}object index\mbox{]}\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}\label{class_graph_library_1_1_c_graph_edge_ad5cb4b4ef0423da4a0c2b156cf3fb3f7}
+
+
+Indexer returns the information referring to a specific algorithm object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Algorithm object\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns the information that the algorithm indicated by \char`\"{}index\char`\"{} stored in the edge
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Graph\+Library/Graph\+Elements.\+cs\end{DoxyCompactItemize}
