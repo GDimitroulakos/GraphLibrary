@@ -54,6 +54,7 @@
     <None Include="Aglorithms\BasicBlocks\GAlg_CondensedGraphBuilder.cs" />
     <None Include="Aglorithms\BasicBlocks\GAlg_ExtendedBasicBlockFinder.cs" />
     <None Include="Aglorithms\DFS\GAlg_NodeOrientedDFS.cs" />
+    <Compile Include="Aglorithms\BellmanFord.cs" />
     <Compile Include="Aglorithms\DFS\Info_DFS.cs" />
     <Compile Include="Generics\AbstractGraphAlgorithm.cs" />
     <Compile Include="Generics\AbstractGraphElements.cs" />
