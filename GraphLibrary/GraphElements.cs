@@ -77,7 +77,7 @@ namespace GraphLibrary{
         /// It is called by the graph class
         /// </summary>
         /// <param name="ownerGraph">The owner graph.</param>
-        internal CGraphNode(CGraph ownerGraph) :base(GraphElementType.ET_NODE, ownerGraph){
+        public CGraphNode(CGraph ownerGraph) :base(GraphElementType.ET_NODE, ownerGraph){
 
             // Native graph information
             m_Predecessors = new List<CGraphNode>();
@@ -86,7 +86,11 @@ namespace GraphLibrary{
             m_OutgoingEdges = new List<CGraphEdge>();
         }
 
-
+        /// <summary>
+        /// No argument contructor
+        /// </summary>
+        public CGraphNode() : this(null) {
+        }
 
         // It is called by the CGraph object while inserting an edge to the graph. It updates
         // the relevant member variables of the class for the current node
@@ -363,6 +367,10 @@ namespace GraphLibrary{
             m_edgeType = edgeType;
         }
 
+        public CGraphEdge() : base(GraphElementType.ET_EDGE, null) {
+
+        }
+
         /// <summary>
         /// Sets the label for the current node using the name specified
         /// in the given labeller. After this call the node exposes the 
@@ -410,8 +418,9 @@ namespace GraphLibrary{
         /// <summary>
         /// Returns true if the edge is directed
         /// </summary>
-        bool M_IsDirected {
+        private bool M_IsDirected {
             get { return m_edgeType == GraphType.GT_DIRECTED; }
+            set { m_edgeType = (value? GraphType.GT_DIRECTED: GraphType.GT_UNDIRECTED); }
         }
 
         /// <summary>
@@ -423,6 +432,7 @@ namespace GraphLibrary{
         /// </value>
         public CGraphNode M_Source {
             get { return m_sourceNode; }
+            set { m_sourceNode = value; }
         }
 
         /// <summary>
@@ -434,6 +444,7 @@ namespace GraphLibrary{
         /// </value>
         public CGraphNode M_Target {
             get { return m_sinkNode; }
+            set { m_sinkNode = value; }
         }
         
         /// <summary>
@@ -444,6 +455,7 @@ namespace GraphLibrary{
         /// </value>
         public GraphType M_EdgeType {
             get { return m_edgeType; }
+            set { m_edgeType = value; }
         }
 
         #endregion
@@ -457,6 +469,7 @@ namespace GraphLibrary{
         /// </value>
         public CGraph M_OwnerGraph {
             get { return m_graph; }
+            set { m_graph = value; }
         }
         
     }
@@ -532,7 +545,7 @@ namespace GraphLibrary{
 
                 for (it.Begin(); !it.End(); it.Next()) {
 
-                    CGraphNode newnode = m_resultGraph.CreateGraphNode();
+                    CGraphNode newnode = m_resultGraph.CreateGraphNode<CGraphNode>();
                     
                     // Correspondence between merged graph "newnode" and the given 
                     // graph node. Map[givengraph.node] -> merged.node
@@ -544,7 +557,7 @@ namespace GraphLibrary{
 
                 for (itEdge.Begin(); !itEdge.End(); itEdge.Next()) {
 
-                    CGraphEdge newEdge = m_resultGraph.AddGraphEdge(m_nodeMapping[itEdge.M_CurrentItem.M_Source],
+                    CGraphEdge newEdge = m_resultGraph.AddGraphEdge<CGraphEdge,CGraphNode>(m_nodeMapping[itEdge.M_CurrentItem.M_Source],
                         m_nodeMapping[itEdge.M_CurrentItem.M_Target],
                         GraphType.GT_DIRECTED);
 
@@ -627,7 +640,7 @@ namespace GraphLibrary{
                 for (it1.Begin(); !it1.End(); it1.Next()) {
                     // Create the node and associate it with the node of the initial graph from which it came.
                     if (edgePredicates==null || (edgePredicates!=null && edgePredicates.Contains(it1.M_CurrentItem))) {
-                        m_nodeMapping[it1.M_CurrentItem] = m_graphClone.CreateGraphNode();
+                        m_nodeMapping[it1.M_CurrentItem] = m_graphClone.CreateGraphNode<CGraphNode>();
                     }
                 }
 
@@ -638,7 +651,7 @@ namespace GraphLibrary{
                         (edgePredicates != null &&
                         edgePredicates.Contains(it2.M_CurrentItem.M_Source) &&
                         edgePredicates.Contains(it2.M_CurrentItem.M_Target))) {
-                            m_edgeMapping[it2.M_CurrentItem] = m_graphClone.AddGraphEdge(m_nodeMapping[it2.M_CurrentItem.M_Source],
+                            m_edgeMapping[it2.M_CurrentItem] = m_graphClone.AddGraphEdge<CGraphEdge,CGraphNode>(m_nodeMapping[it2.M_CurrentItem.M_Source],
                             m_nodeMapping[it2.M_CurrentItem.M_Target],
                             GraphType.GT_DIRECTED);
                     }
@@ -827,22 +840,22 @@ namespace GraphLibrary{
                     MatchCollection mCol = Regex.Matches(m.Value, @"\d+|\w");
                     if (mCol.Count == 1) {
                         // This is a graph node
-                        newGraph.CreateGraphNode(mCol[0].Value);
+                        newGraph.CreateGraphNode<CGraphNode>(mCol[0].Value);
                     }
                     else if (mCol.Count == 2) {
                         // This is an edge node
                         // Create the nodes if not already exist
                         sourceNode = newGraph.Node(mCol[0].Value, newGraph);
                         if (sourceNode == null) {
-                            sourceNode=newGraph.CreateGraphNode(mCol[0].Value);
+                            sourceNode=newGraph.CreateGraphNode<CGraphNode>(mCol[0].Value);
                         }
                         sinkNode = newGraph.Node(mCol[1].Value, newGraph);
                         if (sinkNode == null) {
-                            sinkNode= newGraph.CreateGraphNode(mCol[1].Value);
+                            sinkNode= newGraph.CreateGraphNode<CGraphNode>(mCol[1].Value);
                         }
 
                         // Add the edge
-                        newGraph.AddGraphEdge(sourceNode,sinkNode,null);
+                        newGraph.AddGraphEdge<CGraphEdge, CGraphNode>(sourceNode,sinkNode,null);
                     }
                     else {
                         // Syntax error in graph description file
@@ -858,8 +871,8 @@ namespace GraphLibrary{
         /// Creates and adds a node to the graph. Gives the default label
         /// </summary>
         /// <returns>Returns a reference to the newnode</returns>
-        public virtual CGraphNode CreateGraphNode() {
-            CGraphNode newnode = new CGraphNode(this);
+        public virtual N CreateGraphNode<N>() where N:CGraphNode,new() {
+            N newnode = new N(){M_OwnerGraph = this};
             m_graphNodes.Add(newnode);
             newnode.SetLabel(GenerateNodeLabel(newnode));
             return newnode;
@@ -885,8 +898,8 @@ namespace GraphLibrary{
         /// </summary>
         /// <param name="label">The label.</param>
         /// <returns>The new node</returns>
-        public CGraphNode CreateGraphNode(string label) {
-            CGraphNode newnode = new CGraphNode(this);
+        public N CreateGraphNode<N>(string label) where N : CGraphNode, new() {
+            N newnode = new N(){M_OwnerGraph = this};
             m_graphNodes.Add(newnode);
             newnode.SetLabel(label);
             return newnode;
@@ -1102,9 +1115,10 @@ namespace GraphLibrary{
         /// <param name="edgetype">The edgetype.</param>
         /// <returns> A reference to the new edge</returns>
         /// <exception cref="System.NullReferenceException">At least one of the input nodes has a null reference</exception>
-        public CGraphEdge AddGraphEdge(CGraphNode source, CGraphNode target,
-            GraphType edgetype=GraphType.GT_DIRECTED ) {
-            CGraphEdge newGraphEdge;
+        public E AddGraphEdge<E,N>(N source, N target,
+            GraphType edgetype=GraphType.GT_DIRECTED ) where E : CGraphEdge ,new()
+                                                       where N : CGraphNode {
+            E newGraphEdge;
 
             if (source == null || target == null) {
                 throw new NullReferenceException("At least one of the input nodes has a null reference");
@@ -1119,7 +1133,8 @@ namespace GraphLibrary{
             }
 
             // Add edge
-            newGraphEdge = new CGraphEdge(source, target, this, edgetype);
+            newGraphEdge = new E(){ M_Source = source, M_Target = target,
+                                    M_EdgeType = edgetype, M_OwnerGraph = this};
 
             // Update the nodes
             source.AddOutgoingGraphEdge(newGraphEdge);
@@ -1161,9 +1176,10 @@ namespace GraphLibrary{
         /// <param name="label">The label.</param>
         /// <param name="edgetype">The edgetype.</param>
         /// <returns></returns>
-        public CGraphEdge AddGraphEdge(CGraphNode source, CGraphNode target, string label=null,
-            GraphType edgetype = GraphType.GT_DIRECTED) {
-            CGraphEdge newEdge= AddGraphEdge(source,target,edgetype);
+        public E AddGraphEdge<E,N>(N source, N target, string label=null,
+            GraphType edgetype = GraphType.GT_DIRECTED) where E : CGraphEdge,new()
+                                                        where N : CGraphNode {
+            E newEdge= AddGraphEdge<E,N>(source,target,edgetype);
             if (label != null) {
                 newEdge.SetLabel(label);
             }
@@ -1377,7 +1393,7 @@ namespace GraphLibrary{
 
             // Create vertices
             for (i = 0; i < NumVertices; i++){
-                newnode = CreateGraphNode();
+                newnode = CreateGraphNode<CGraphNode>();
             }
             // Create edges
             for (i = 0; i < NumEdges; i++){
@@ -1393,7 +1409,7 @@ namespace GraphLibrary{
                     // CONDITION 3: true when w->v edge doesn't exist. paralleledges and m_graphType == GraphType.GT_DIRECTED is a switch
                      ( ReferenceEquals(Edge(w, v), null) || paralleledges || m_graphType == GraphType.GT_DIRECTED)
                    ){
-                    AddGraphEdge(v, w, graphtype);
+                    AddGraphEdge<CGraphEdge,CGraphNode>(v, w, graphtype);
                 }
             }
         }
@@ -1428,7 +1444,7 @@ namespace GraphLibrary{
                 Random r = new Random((int)DateTime.Now.Ticks & 0x0000FFFF);
                 // Create the requested number of vertices
                 for (i = 0; i < NumVertices; i++){
-                    CreateGraphNode();
+                    CreateGraphNode<CGraphNode>();
                 }
                 // Probability function
                 p = (2.0 * NumEdges) / (NumVertices * (NumVertices - 1));
@@ -1446,7 +1462,7 @@ namespace GraphLibrary{
                             // CONDITION 3: In case of undirected graph check if a parallel edge exists
                             ( ReferenceEquals(Edge(w,v),null ) || paralleledges || m_graphType== GraphType.GT_UNDIRECTED )
                             ){
-                                AddGraphEdge(v, w, graphtype);
+                                AddGraphEdge<CGraphEdge,CGraphNode>(v, w, graphtype);
                         }
                     }
                 }

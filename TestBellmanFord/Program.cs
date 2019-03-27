@@ -14,22 +14,22 @@ namespace TestBellmanFord {
             // 1. Create a graph
             CGraph mgraph = CGraph.CreateGraph();
 
-            CGraphNode x= mgraph.CreateGraphNode("x");
-            CGraphNode y = mgraph.CreateGraphNode("y");
-            CGraphNode z = mgraph.CreateGraphNode("z");
-            CGraphNode t = mgraph.CreateGraphNode("t");
-            CGraphNode s = mgraph.CreateGraphNode("s");
+            CGraphNode x= mgraph.CreateGraphNode<CGraphNode>("x");
+            CGraphNode y = mgraph.CreateGraphNode<CGraphNode>("y");
+            CGraphNode z = mgraph.CreateGraphNode<CGraphNode>("z");
+            CGraphNode t = mgraph.CreateGraphNode<CGraphNode>("t");
+            CGraphNode s = mgraph.CreateGraphNode<CGraphNode>("s");
 
-            mgraph.AddGraphEdge(t, x,GraphType.GT_DIRECTED);
-            mgraph.AddGraphEdge(t, y, GraphType.GT_DIRECTED);
-            mgraph.AddGraphEdge(t, z, GraphType.GT_DIRECTED);
-            mgraph.AddGraphEdge(x, t, GraphType.GT_DIRECTED);
-            mgraph.AddGraphEdge(y, x, GraphType.GT_DIRECTED);
-            mgraph.AddGraphEdge(y, z, GraphType.GT_DIRECTED);
-            mgraph.AddGraphEdge(z, x, GraphType.GT_DIRECTED);
-            mgraph.AddGraphEdge(z, s, GraphType.GT_DIRECTED);
-            mgraph.AddGraphEdge(s, t, GraphType.GT_DIRECTED);
-            mgraph.AddGraphEdge(s, y, GraphType.GT_DIRECTED);
+            mgraph.AddGraphEdge<CGraphEdge,CGraphNode>(t, x,GraphType.GT_DIRECTED);
+            mgraph.AddGraphEdge<CGraphEdge, CGraphNode>(t, y, GraphType.GT_DIRECTED);
+            mgraph.AddGraphEdge<CGraphEdge, CGraphNode>(t, z, GraphType.GT_DIRECTED);
+            mgraph.AddGraphEdge<CGraphEdge, CGraphNode>(x, t, GraphType.GT_DIRECTED);
+            mgraph.AddGraphEdge<CGraphEdge, CGraphNode>(y, x, GraphType.GT_DIRECTED);
+            mgraph.AddGraphEdge<CGraphEdge, CGraphNode>(y, z, GraphType.GT_DIRECTED);
+            mgraph.AddGraphEdge<CGraphEdge, CGraphNode>(z, x, GraphType.GT_DIRECTED);
+            mgraph.AddGraphEdge<CGraphEdge, CGraphNode>(z, s, GraphType.GT_DIRECTED);
+            mgraph.AddGraphEdge<CGraphEdge, CGraphNode>(s, t, GraphType.GT_DIRECTED);
+            mgraph.AddGraphEdge<CGraphEdge, CGraphNode>(s, y, GraphType.GT_DIRECTED);
 
             // 2. Associate weights with the edges of the graph
             CGraphQueryInfo weights = new CGraphQueryInfo(mgraph,255);
