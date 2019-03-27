@@ -48,9 +48,23 @@ namespace TestBellmanFord {
             // 3. Run the BellmanFord algorithm
             BellmanFord bl = new BellmanFord(mgraph,s,255);
 
-            bl.Run();
+            bl.FindAllPairsShortestPaths();
 
-
+            // 4. Print Paths
+            CGraphQueryInfo shortestPath = new CGraphQueryInfo(mgraph,bl);
+            CIt_GraphNodes i = new CIt_GraphNodes(mgraph);
+            CIt_GraphNodes j = new CIt_GraphNodes(mgraph);
+            Dictionary<CGraphNode, Dictionary<CGraphNode, Path>> paths =
+                (Dictionary<CGraphNode, Dictionary<CGraphNode, Path>>)(shortestPath.Info());
+            for (i.Begin(); !i.End(); i.Next()) {
+                Console.WriteLine();
+                for (j.Begin(); !j.End(); j.Next()) {
+                    Console.WriteLine();
+                    if (i.M_CurrentItem != j.M_CurrentItem) {
+                        Console.Write(paths[i.M_CurrentItem][j.M_CurrentItem]);
+                    }
+                }
+            }
         }
     }
 }
