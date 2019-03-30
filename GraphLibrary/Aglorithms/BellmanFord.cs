@@ -123,7 +123,7 @@ namespace GraphLibrary.Algorithms {
             }
         }
 
-        public void Run() {
+        public override int Run() {
             Init();
 
             CIt_GraphEdges ite = new CIt_GraphEdges(mGraph);
@@ -146,6 +146,7 @@ namespace GraphLibrary.Algorithms {
 #if DEBUG
             Debug();
 #endif
+            return 0;
         }
 
         private void Debug() {

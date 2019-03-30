@@ -57,6 +57,7 @@
     <None Include="Aglorithms\DFS\GAlg_NodeOrientedDFS.cs" />
     <Compile Include="Aglorithms\BellmanFord.cs" />
     <Compile Include="Aglorithms\DFS\Info_DFS.cs" />
+    <Compile Include="Aglorithms\BreadthFirstSearch.cs" />
     <Compile Include="Generics\AbstractGraphAlgorithm.cs" />
     <Compile Include="Generics\AbstractGraphElements.cs" />
     <Compile Include="Generics\AbstractGraphIteratorFactory.cs" />

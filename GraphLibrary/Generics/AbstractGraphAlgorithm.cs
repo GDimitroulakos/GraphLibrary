@@ -72,6 +72,12 @@ namespace GraphLibrary.Generics{
         /// </summary>
         public abstract void Init();
 
+        /// <summary>
+        /// The function the executes the algorithm
+        /// </summary>
+        /// <returns></returns>
+        public abstract T Run();
+
         
         /// <summary>
         /// The Visit method refers to the action the algorithm performs to a specific node
