@@ -34,6 +34,46 @@ namespace GraphLibrary {
         }
 
         /// <summary>
+        /// Casts the graph information to the relevant type 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <returns></returns>
+        protected T CastGraphInfo<T>() {
+            return (T) Info();
+        }
+
+        /// <summary>
+        /// Casts the node information to the relevant type 
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="node"></param>
+        /// <returns></returns>
+        protected T CastNodeInfo<T>(CGraphNode node) {
+            return (T)Info(node);
+        }
+
+        /// <summary>
+        /// Casts the edge information to the relevant type
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="edge"></param>
+        /// <returns></returns>
+        protected T CastEdgeInfo<T>(CGraphEdge edge) {
+            return (T)Info(edge);
+        }
+
+        /// <summary>
+        /// Casts the edge information to the relevant type
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="source"></param>
+        /// <param name="target"></param>
+        /// <returns></returns>
+        protected T CastEdgeInfo<T>(CGraphNode source, CGraphNode target) {
+            return (T)Info(source,target);
+        }
+
+        /// <summary>
         /// Returns information concerning a node of the source graph
         /// </summary>
         /// <param name="node">The node.</param>

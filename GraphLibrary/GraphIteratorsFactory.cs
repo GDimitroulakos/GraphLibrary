@@ -31,14 +31,6 @@ namespace GraphLibrary {
         public override CIt_GraphLeafNodes CreateGraphLeafNodesIterator(){
             return new CIt_GraphLeafNodes(m_Graph);
         }
-
-        /*public override CIt_GraphDFS CreateGraphDfsIterator(){
-            return new CIt_GraphDFS(m_Graph);
-        }
-
-        public override CIt_GraphBFS CreateGraphBfsIterator(CGraphNode startNode){
-            return new CIt_GraphBFS(m_Graph,startNode);
-        }*/
     }
 
 }

@@ -50,14 +50,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Aglorithms\AlgorithmDataKeys.cs" />
-    <Compile Include="Aglorithms\BasicBlocks\GAlg_BasicBlockFinder.cs" />
-    <None Include="Aglorithms\BasicBlocks\GAlg_CondensedGraphBuilder.cs" />
-    <None Include="Aglorithms\BasicBlocks\GAlg_ExtendedBasicBlockFinder.cs" />
-    <None Include="Aglorithms\DFS\GAlg_NodeOrientedDFS.cs" />
-    <Compile Include="Aglorithms\BellmanFord.cs" />
-    <Compile Include="Aglorithms\DFS\Info_DFS.cs" />
-    <Compile Include="Aglorithms\BreadthFirstSearch.cs" />
+    <Compile Include="Algorithms\AlgorithmDataKeys.cs" />
+    <Compile Include="Algorithms\BasicBlocks\GAlg_BasicBlockFinder.cs" />
+    <None Include="Algorithms\BasicBlocks\GAlg_CondensedGraphBuilder.cs" />
+    <None Include="Algorithms\BasicBlocks\GAlg_ExtendedBasicBlockFinder.cs" />
+    <None Include="Algorithms\DFS\GAlg_NodeOrientedDFS.cs" />
+    <Compile Include="Algorithms\BellmanFord.cs" />
+    <Compile Include="Algorithms\DFS\Info_DFS.cs" />
+    <Compile Include="Algorithms\BreadthFirstSearch.cs" />
+    <Compile Include="Algorithms\DepthFirstSearch.cs" />
     <Compile Include="Generics\AbstractGraphAlgorithm.cs" />
     <Compile Include="Generics\AbstractGraphElements.cs" />
     <Compile Include="Generics\AbstractGraphIteratorFactory.cs" />

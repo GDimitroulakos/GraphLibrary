@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GraphLibrary;
+using GraphLibrary.Algorithms;
 using GraphLibrary.Generics;
 
 namespace TestBreadthFirstSearch {
@@ -42,6 +43,13 @@ namespace TestBreadthFirstSearch {
 
             Console.WriteLine("Printing BFS Results with Source Node : {0}", s.M_Label);
             foreach (CGraphNode node in bfs.BFSNodes()) {
+                Console.WriteLine("Node {0} distance: {1}", node.M_Label, bfs.Distance(node));
+            }
+
+            // Testing BreadthFirstSearchQueryInfo
+            BreadthFirstSearchQueryInfo bfsInfo =new BreadthFirstSearchQueryInfo(mgraph,bfs);
+            Console.WriteLine("Printing BFS Results with Source Node : {0}", s.M_Label);
+            foreach (CGraphNode node in bfsInfo.BFSNodes()) {
                 Console.WriteLine("Node {0} distance: {1}", node.M_Label, bfs.Distance(node));
             }
         }

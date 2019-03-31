@@ -4,7 +4,28 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace GraphLibrary {
+namespace GraphLibrary.Algorithms {
+
+
+    public class BreadthFirstSearchQueryInfo : CGraphQueryInfo {
+        public BreadthFirstSearchQueryInfo(CGraph graph, object key) : base(graph, key) {
+        }
+        public NodeColor Color(CGraphNode node) {
+            return CastNodeInfo<BFSNodeInfo>(node).MColor;
+        }
+        public void SetColor(CGraphNode node, NodeColor color) {
+            CastNodeInfo<BFSNodeInfo>(node).MColor = color;
+        }
+        public int Distance(CGraphNode node) {
+            return CastNodeInfo<BFSNodeInfo>(node).MDistance;
+        }
+        public void SetDistance(CGraphNode node, int distance) {
+            CastNodeInfo<BFSNodeInfo>(node).MDistance = distance;
+        }
+        public List<CGraphNode> BFSNodes() {
+            return CastGraphInfo<List<CGraphNode>>();
+        }
+    }
 
     public enum NodeColor {
         NC_WHITE, NC_BLACK, NC_GRAY
@@ -20,14 +41,14 @@ namespace GraphLibrary {
         // Declares the vertex from which the algorithm start
         private CGraphNode m_source;
         private CGraph m_graph;
-        private CGraphQueryInfo m_BFSData;
+        private BreadthFirstSearchQueryInfo m_BFSData;
         private Queue<CGraphNode> m_Q;
         private List<CGraphNode> m_nodeVisitList;
 
         public BreadthFirstSearch(CGraphNode mSource, CGraph mGraph) {
             m_source = mSource;
             m_graph = mGraph;
-            m_BFSData = new CGraphQueryInfo(mGraph,this);
+            m_BFSData = new BreadthFirstSearchQueryInfo(mGraph,this);
             m_Q = new Queue<CGraphNode>();
             m_nodeVisitList = new List<CGraphNode>();
         }
@@ -82,20 +103,20 @@ namespace GraphLibrary {
         // Algorithm accessors
 
         public NodeColor Color(CGraphNode node) {
-            return ((BFSNodeInfo)m_BFSData.Info(node)).MColor;
+            return m_BFSData.Color(node);
         }
         public void SetColor(CGraphNode node,NodeColor color) {
-            ((BFSNodeInfo)m_BFSData.Info(node)).MColor = color;
+            m_BFSData.SetColor(node,color);
         }
 
         public int Distance(CGraphNode node) {
-            return ((BFSNodeInfo)m_BFSData.Info(node)).MDistance;
+            return m_BFSData.Distance(node);
         }
         public void SetDistance(CGraphNode node, int distance) {
-            ((BFSNodeInfo)m_BFSData.Info(node)).MDistance = distance;
+            m_BFSData.SetDistance(node,distance);
         }
         public List<CGraphNode> BFSNodes() {
-            return ((List<CGraphNode>)m_BFSData.Info());
+            return m_BFSData.BFSNodes();
         }
         
     }

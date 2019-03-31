@@ -116,11 +116,11 @@ namespace TestBellmanFord {
             bl.FindAllPairsShortestPaths();
 
             // 4. Print Paths
-            CGraphQueryInfo shortestPath = new CGraphQueryInfo(mgraph, bl);
+            BellmanFordQueryInfo shortestPath = new BellmanFordQueryInfo(mgraph, bl);
             CIt_GraphNodes i = new CIt_GraphNodes(mgraph);
             CIt_GraphNodes j = new CIt_GraphNodes(mgraph);
             Dictionary<CGraphNode, Dictionary<CGraphNode, Path>> paths =
-                (Dictionary<CGraphNode, Dictionary<CGraphNode, Path>>)(shortestPath.Info());
+                shortestPath.ShortestPaths();
             for (i.Begin(); !i.End(); i.Next())
             {
                 Console.WriteLine();
