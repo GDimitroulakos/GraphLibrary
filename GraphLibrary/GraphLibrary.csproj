@@ -70,6 +70,7 @@
     <Compile Include="GraphLabeling.cs" />
     <Compile Include="GraphPrinters.cs" />
     <Compile Include="GraphQueryInfo.cs" />
+    <Compile Include="Options.cs" />
     <Compile Include="Printers\GraphVizPrinter\GraphVizLabeling.cs" />
     <Compile Include="Printers\GraphVizPrinter\GraphVizPrinter.cs" />
     <Compile Include="GraphAlgorithm.cs" />

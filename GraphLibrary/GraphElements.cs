@@ -493,25 +493,33 @@ namespace GraphLibrary{
         ///  and edge mapping between the initial individual graphs and the resulting graph
         /// </summary>
         public class CMergeGraphOperation {
+            public enum MergeOptions { MO_PRESERVELABELS=1}
             private CGraph m_resultGraph;
             private List<CGraph> m_initialGraphs;
             private Dictionary<CGraphNode, CGraphNode> m_nodeMapping;
             private Dictionary<CGraphEdge, CGraphEdge> m_edgeMapping;
 
+            private Options<MergeOptions> m_mergeOptions;
             /// <summary>
             /// The MergeGraphOperation constructor can take optionally the resulting
-            /// graph which can be any CGraph descentant object. In cases where the 
-            /// resulting graph is a descentand of the CGraph class it is mandatory
+            /// graph which can be any CGraph descendant object. In cases where the 
+            /// resulting graph is a descendant of the CGraph class it is mandatory
             /// that the designer provide an object of the resulting graph otherwise
             /// the mergeGraph method will produce a CGraph-typed result. It is the
             /// designer's responsibility to provide an empty object if he wants
             /// </summary>
             /// <param name="resultGraph"></param>
-            public CMergeGraphOperation(CGraph resultGraph=null) {
+            public CMergeGraphOperation(CGraph resultGraph=null, Options<MergeOptions> mergeOptions = null) {
                 m_resultGraph = resultGraph;
                 m_initialGraphs = new List<CGraph>();
                 m_nodeMapping = new Dictionary<CGraphNode, CGraphNode>();
                 m_edgeMapping = new Dictionary<CGraphEdge, CGraphEdge>();
+                if ( mergeOptions != null) {
+                    m_mergeOptions = mergeOptions;
+                }
+                else {
+                    m_mergeOptions = new Options<MergeOptions>();
+                }
             }
 
             /// <summary>
@@ -531,10 +539,10 @@ namespace GraphLibrary{
             /// <summary>
             /// Merges the existing one with the graph given as a parameter
             /// </summary>
-            /// <param name="graph"></param>
+            /// <param name="graph">The given graph</param>
             /// <returns></returns>
             public CGraph MergeGraph(CGraph graph) {
-
+                CGraphNode newnode;
                 // 1. Create graph
                 if (m_resultGraph == null) {
                     m_resultGraph = CreateGraph();
@@ -544,9 +552,13 @@ namespace GraphLibrary{
                 CIt_GraphNodes it = new CIt_GraphNodes(graph);
 
                 for (it.Begin(); !it.End(); it.Next()) {
+                    if (m_mergeOptions.IsSet(MergeOptions.MO_PRESERVELABELS)) {
+                        newnode = m_resultGraph.CreateGraphNode<CGraphNode>(it.M_CurrentItem.M_Label);
+                    }
+                    else {
+                        newnode = m_resultGraph.CreateGraphNode<CGraphNode>();
+                    }
 
-                    CGraphNode newnode = m_resultGraph.CreateGraphNode<CGraphNode>();
-                    
                     // Correspondence between merged graph "newnode" and the given 
                     // graph node. Map[givengraph.node] -> merged.node
                     m_nodeMapping[it.M_CurrentItem] = newnode;
@@ -803,8 +815,8 @@ namespace GraphLibrary{
         /// </summary>
         /// <param name="g">The graph to be merged with the existing</param>
         /// <returns></returns>
-        public CMergeGraphOperation Merge(CGraph g) {
-            CMergeGraphOperation op = new CMergeGraphOperation(this);
+        public CMergeGraphOperation Merge(CGraph g, Options<CMergeGraphOperation.MergeOptions> options=null) {
+            CMergeGraphOperation op = new CMergeGraphOperation(this,options);
             
             // Merge nodes and edges
             op.MergeGraph(g);
@@ -877,8 +889,49 @@ namespace GraphLibrary{
             newnode.SetLabel(GenerateNodeLabel(newnode));
             return newnode;
         }
+        /// <summary>
+        /// prefixes the label of a given element with a given prefix
+        /// </summary>
+        /// <param name="prefix"></param>
+        /// <param name="element"></param>
+        public void PrefixElementLabel(string prefix,CGraphPrimitive element) {
+            element.SetLabel(prefix+element.M_Label);
+        }
+        /// <summary>
+        /// Prefixes the given element type elements with the given prefix
+        /// </summary>
+        /// <param name="prefix"></param>
+        /// <param name="elementType">type of elements to prefix</param>
+        public void PrefixGraphElementLabels(string prefix, GraphElementType elementType) {
+            switch (elementType) {
+                case GraphElementType.ET_EDGE:
+                    CIt_GraphEdges ite = new CIt_GraphEdges(this);
+                    for (ite.Begin(); !ite.End(); ite.Next()){
+                        PrefixElementLabel(prefix, ite.M_CurrentItem);
+                    }
+                    break;
+                case GraphElementType.ET_NODE:
+                    CIt_GraphNodes itn=new CIt_GraphNodes(this);
+                    for (itn.Begin(); !itn.End(); itn.Next()) {
+                        PrefixElementLabel(prefix,itn.M_CurrentItem);
+                    }
+                    break;
+                case GraphElementType.ET_GRAPH:
+                    PrefixElementLabel(prefix,this);
+                    break;
+            }
+        }
+        /// <summary>
+        /// postfixes the label of a given element with a given postfix
+        /// </summary>
+        /// <param name="postfix"></param>
+        /// <param name="element"></param>
+        public void PostfixElementLabel(string postfix, CGraphPrimitive element)
+        {
+            element.SetLabel(element.M_Label + postfix);
+        }
 
-       /// <summary>
+        /// <summary>
         /// Generates a label for a Node. 
         /// </summary>
         /// <param name="node"></param>
@@ -1082,7 +1135,7 @@ namespace GraphLibrary{
                     node.SetLabel(labeller);
                 }
             }else if (labelContructor != null && m_nodeLabels.ContainsKey(labelContructor)) {
-				// This case gives the key for the labbeling provider thus labelContractor is the 
+				// This case gives the key for the labeling provider thus labelContractor is the 
 				// key to access the CGraphLabeling<CGraphNode> node 
                 // labelContructor is a user defined object which is used as a key. 
 				// Check SetGraphNodeLabelling method about how to insert a new label contructor
