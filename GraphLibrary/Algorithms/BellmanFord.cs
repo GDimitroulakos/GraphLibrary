@@ -74,13 +74,38 @@ namespace GraphLibrary.Algorithms {
 
     }
 
+    public class BellmanFordQueryInfo : CGraphQueryInfo {
+        public BellmanFordQueryInfo(CGraph graph, object key) : base(graph, key) {
+        }
+
+        public int? Distance(CGraphNode node) {
+            return CastNodeInfo<NodePathInfo>(node).MDistance;
+        }
+
+        public void SetDistance(CGraphNode node, int distance) {
+            CastNodeInfo<NodePathInfo>(node).MDistance = distance;
+        }
+        public void SetPredecessor(CGraphNode node, CGraphNode predecessor) {
+            CastNodeInfo<NodePathInfo>(node).MPredecessor = predecessor;
+        }
+
+        public CGraphNode Predecessor(CGraphNode node) {
+            return CastNodeInfo<NodePathInfo>(node).MPredecessor;
+        }
+
+        public int Weight(CGraphNode source, CGraphNode target) {
+            return CastEdgeInfo<int>(source, target);
+        }
+
+        public Dictionary<CGraphNode, Dictionary<CGraphNode, Path>> ShortestPaths() {
+            return CastGraphInfo<Dictionary<CGraphNode, Dictionary<CGraphNode, Path>>>();
+        }
+    }
 
     public class BellmanFord :CGraphAlgorithm<int> {
-        private CGraphQueryInfo m_graphPathInfo;
-        private CGraphQueryInfo m_graphWeightInfo;
-        private CGraphQueryInfo m_ShortestPathsInfo;
+        private CGraphQueryInfo m_inputGraphWeightInfo;
+        private BellmanFordQueryInfo m_outputShortestPathsInfo;
         private CGraph mGraph;
-        private int m_weightsKey;
         private CGraphNode m_source;
         public const int  m_PATHINFO =0;
         public const int m_SHORTESTPATHSINFO = 1;
@@ -91,10 +116,9 @@ namespace GraphLibrary.Algorithms {
         public BellmanFord(CGraph graph,CGraphNode source, int graphWeightsKey) {
             mGraph = graph;
             m_source = source;
-            this[m_PATHINFO] = m_graphPathInfo =  new CGraphQueryInfo(graph,this);
-            m_graphWeightInfo = new CGraphQueryInfo(graph,graphWeightsKey);
-            m_ShortestPathsInfo =new CGraphQueryInfo(graph,this);
-            m_ShortestPathsInfo.CreateInfo(m_shortestPaths);
+            this[m_PATHINFO] = m_outputShortestPathsInfo =  new BellmanFordQueryInfo(graph,this);
+            m_inputGraphWeightInfo = new CGraphQueryInfo(graph,graphWeightsKey);
+            m_outputShortestPathsInfo.CreateInfo(m_shortestPaths);
         }
 
         public void FindAllPairsShortestPaths() {
@@ -113,17 +137,17 @@ namespace GraphLibrary.Algorithms {
 
             for (itn.Begin(); !itn.End(); itn.Next()) {
                 if (itn.M_CurrentItem != m_source) {
-                    m_graphPathInfo.CreateInfo(itn.M_CurrentItem,
-                        new PathInfo() {MDistance = null, MPredecessor = null});
+                    m_outputShortestPathsInfo.CreateInfo(itn.M_CurrentItem,
+                        new NodePathInfo() {MDistance = null, MPredecessor = null});
                 }
                 else {
-                    m_graphPathInfo.CreateInfo(itn.M_CurrentItem,
-                        new PathInfo() { MDistance = 0, MPredecessor = null});
+                    m_outputShortestPathsInfo.CreateInfo(itn.M_CurrentItem,
+                        new NodePathInfo() { MDistance = 0, MPredecessor = null});
                 }
             }
         }
 
-        public void Run() {
+        public override int Run() {
             Init();
 
             CIt_GraphEdges ite = new CIt_GraphEdges(mGraph);
@@ -146,6 +170,7 @@ namespace GraphLibrary.Algorithms {
 #if DEBUG
             Debug();
 #endif
+            return 0;
         }
 
         private void Debug() {
@@ -214,22 +239,26 @@ namespace GraphLibrary.Algorithms {
         }
 
         protected int? Distance(CGraphNode node) {
-            return ((PathInfo) (m_graphPathInfo.Info(node))).MDistance;
+            return m_outputShortestPathsInfo.Distance(node);
         }
 
         protected void SetDistance(CGraphNode node, int distance) {
-            ((PathInfo) (m_graphPathInfo.Info(node))).MDistance = distance;
+            m_outputShortestPathsInfo.SetDistance(node,distance);
         }
         protected void SetPredecessor(CGraphNode node, CGraphNode predecessor) {
-            ((PathInfo)(m_graphPathInfo.Info(node))).MPredecessor = predecessor;
+            m_outputShortestPathsInfo.SetPredecessor(node,predecessor);
         }
 
         protected CGraphNode Predecessor(CGraphNode node) {
-            return ((PathInfo) (m_graphPathInfo.Info(node))).MPredecessor;
+            return m_outputShortestPathsInfo.Predecessor(node);
         }
-        
+
+        protected Dictionary<CGraphNode, Dictionary<CGraphNode, Path>> ShortestPaths() {
+            return m_outputShortestPathsInfo.ShortestPaths();
+        } 
+
         protected int Weight(CGraphNode source, CGraphNode target) {
-            return (int) (m_graphWeightInfo.Info(source, target));
+            return (int) (m_inputGraphWeightInfo.Info(source, target));
         }
 
 
@@ -238,11 +267,11 @@ namespace GraphLibrary.Algorithms {
 
 
 
-    public class PathInfo {
+    public class NodePathInfo {
         private int? m_distance;
         private CGraphNode m_predecessor;
 
-        public PathInfo() {
+        public NodePathInfo() {
         }
 
         public int? MDistance {

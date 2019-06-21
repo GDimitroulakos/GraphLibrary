@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestGraphLibrary", "TestGra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBellmanFord", "TestBellmanFord\TestBellmanFord.csproj", "{2643DF98-58A6-4A81-8215-32B1FB5573DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBreadthFirstSearch", "TestBreadthFirstSearch\TestBreadthFirstSearch.csproj", "{30D05EFE-4FA6-43B1-9142-47B35BCA3BEF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDepthFirstSearch", "TestDepthFirstSearch\TestDepthFirstSearch.csproj", "{1B542489-8793-4263-8D1A-ED28859FE5D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{2643DF98-58A6-4A81-8215-32B1FB5573DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2643DF98-58A6-4A81-8215-32B1FB5573DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2643DF98-58A6-4A81-8215-32B1FB5573DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30D05EFE-4FA6-43B1-9142-47B35BCA3BEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30D05EFE-4FA6-43B1-9142-47B35BCA3BEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30D05EFE-4FA6-43B1-9142-47B35BCA3BEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30D05EFE-4FA6-43B1-9142-47B35BCA3BEF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1B542489-8793-4263-8D1A-ED28859FE5D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1B542489-8793-4263-8D1A-ED28859FE5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1B542489-8793-4263-8D1A-ED28859FE5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1B542489-8793-4263-8D1A-ED28859FE5D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
