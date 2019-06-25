@@ -28,9 +28,6 @@ namespace GraphLibrary {
         public CGraphQueryInfo(CGraph graph, object key) {
             m_graph = graph;
             m_infoKey = key;
-
-            
-
         }
 
         /// <summary>
@@ -38,7 +35,7 @@ namespace GraphLibrary {
         /// </summary>
         /// <typeparam name="T"></typeparam>
         /// <returns></returns>
-        protected T CastGraphInfo<T>() {
+        public T CastGraphInfo<T>() {
             return (T) Info();
         }
 
@@ -48,7 +45,7 @@ namespace GraphLibrary {
         /// <typeparam name="T"></typeparam>
         /// <param name="node"></param>
         /// <returns></returns>
-        protected T CastNodeInfo<T>(CGraphNode node) {
+        public T CastNodeInfo<T>(CGraphNode node) {
             return (T)Info(node);
         }
 
@@ -58,7 +55,7 @@ namespace GraphLibrary {
         /// <typeparam name="T"></typeparam>
         /// <param name="edge"></param>
         /// <returns></returns>
-        protected T CastEdgeInfo<T>(CGraphEdge edge) {
+        public T CastEdgeInfo<T>(CGraphEdge edge) {
             return (T)Info(edge);
         }
 
@@ -69,7 +66,7 @@ namespace GraphLibrary {
         /// <param name="source"></param>
         /// <param name="target"></param>
         /// <returns></returns>
-        protected T CastEdgeInfo<T>(CGraphNode source, CGraphNode target) {
+        public T CastEdgeInfo<T>(CGraphNode source, CGraphNode target) {
             return (T)Info(source,target);
         }
 
@@ -86,10 +83,10 @@ namespace GraphLibrary {
         public override object TempInfo(CGraphNode node){
             return node[node];
         }
-
-
+        
         /// <summary>
-        /// Returns the information of the specified edge
+        /// Returns the information of the specified edge. If the information
+        /// is not there it returns null instead of dropping an exception
         /// </summary>
         /// <param name="edge">The edge.</param>
         /// <param name="key">The key that will extract the information from the specified node's dictionary. If
@@ -104,7 +101,8 @@ namespace GraphLibrary {
 
         /// <summary>
         /// Returns the information of the edge between the given source
-        /// and target nodes of the source graph.
+        /// and target nodes of the source graph. If the information is
+        /// not there it returns null instead of dropping an exception
         /// </summary>
         /// <param name="source">The source.</param>
         /// <param name="target">The target.</param>
@@ -119,7 +117,9 @@ namespace GraphLibrary {
             return edge[edge];
         }
         /// <summary>
-        /// Returns information from the source graph under the specified key
+        /// Returns information from the source graph under the specified key.
+        /// If the information is not there it returns null instead of dropping
+        /// an exception
         /// </summary>
         /// <param name="key">The key object</param>
         /// <returns>The information object</returns>

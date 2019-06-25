@@ -98,4 +98,6 @@ namespace GraphLibrary.Generics {
         public abstract void CreateTempInfo(Node source, Node target, object info);
 
     }
+
+    
 }

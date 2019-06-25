@@ -19,19 +19,19 @@ namespace GraphLibrary
         public int M_Options => m_options;
 
         public void Set(T option) {
-            m_options = ToInt<T>(option) | m_options;
+            m_options = ToInt(option) | m_options;
         }
         public void Reset(T option) {
-            m_options = ~ToInt<T>(option) & m_options;
+            m_options = ~ToInt(option) & m_options;
         }
 
         public bool IsSet(T option) {
             int temp;
-            temp=(m_options & ToInt<T>(option)) & ToInt<T>(option);
+            temp=(m_options & ToInt(option)) & ToInt(option);
             return Convert.ToBoolean(temp);
         }
 
-        private int ToInt<T>(T options) {
+        private int ToInt(T options) {
             return Convert.ToInt32(options);
         }
     }

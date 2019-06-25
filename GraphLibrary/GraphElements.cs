@@ -599,9 +599,9 @@ namespace GraphLibrary{
                             m_edgeMapping[graphEdge][key] = graphEdge[key];  // deep copy;
                         }
                     break;
-                    case GraphElementType.ET_GRAPH:
-                        m_resultGraph[key] = graph[key];        // deep copy;;;
-                    break;
+                    //case GraphElementType.ET_GRAPH:
+                    //    m_resultGraph[key] = graph[key];        // deep copy;;;
+                   // break;
                 }
             }
         }
@@ -951,7 +951,7 @@ namespace GraphLibrary{
         /// </summary>
         /// <param name="label">The label.</param>
         /// <returns>The new node</returns>
-        public N CreateGraphNode<N>(string label) where N : CGraphNode, new() {
+        public virtual N CreateGraphNode<N>(string label) where N : CGraphNode, new() {
             N newnode = new N(){M_OwnerGraph = this};
             m_graphNodes.Add(newnode);
             newnode.SetLabel(label);
@@ -1168,7 +1168,7 @@ namespace GraphLibrary{
         /// <param name="edgetype">The edgetype.</param>
         /// <returns> A reference to the new edge</returns>
         /// <exception cref="System.NullReferenceException">At least one of the input nodes has a null reference</exception>
-        public E AddGraphEdge<E,N>(N source, N target,
+        public virtual E AddGraphEdge<E,N>(N source, N target,
             GraphType edgetype=GraphType.GT_DIRECTED ) where E : CGraphEdge ,new()
                                                        where N : CGraphNode {
             E newGraphEdge;
@@ -1229,7 +1229,7 @@ namespace GraphLibrary{
         /// <param name="label">The label.</param>
         /// <param name="edgetype">The edgetype.</param>
         /// <returns></returns>
-        public E AddGraphEdge<E,N>(N source, N target, string label=null,
+        public virtual E AddGraphEdge<E,N>(N source, N target, string label=null,
             GraphType edgetype = GraphType.GT_DIRECTED) where E : CGraphEdge,new()
                                                         where N : CGraphNode {
             E newEdge= AddGraphEdge<E,N>(source,target,edgetype);
