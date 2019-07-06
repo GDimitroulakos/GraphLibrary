@@ -247,25 +247,7 @@ namespace GraphLibrary{
                 return predecessors;
             }
         }
-
-        /// <summary>
-        /// Represents the owner graph of the node
-        /// </summary>
-        /// <value>
-        /// Is the owner graph
-        /// </value>
-        public CGraph M_OwnerGraph{
-            get { return m_graph; }
-            internal set {
-                if (m_graph == null || m_graph == value) {
-                    m_graph = value;
-                }
-                else {
-                    throw new Exception("nodes cannot be reowned");
-                }
-            }
-        }
-
+        
         #endregion
         
         /// <summary>
@@ -459,19 +441,6 @@ namespace GraphLibrary{
         }
 
         #endregion
-
-        
-        /// <summary>
-        /// Represents the graph that owns the node
-        /// </summary>
-        /// <value>
-        /// The owner graph.
-        /// </value>
-        public CGraph M_OwnerGraph {
-            get { return m_graph; }
-            set { m_graph = value; }
-        }
-        
     }
 
     #endregion

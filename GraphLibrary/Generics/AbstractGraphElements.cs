@@ -1,5 +1,6 @@
 ﻿
 
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -39,6 +40,24 @@ namespace GraphLibrary.Generics {
         /// A reference to the graph owning the element
         /// </summary>
         protected CGraph m_graph;
+
+        /// <summary>
+        /// Represents the owner graph of the node
+        /// </summary>
+        /// <value>
+        /// Is the owner graph
+        /// </value>
+        public CGraph M_OwnerGraph {
+            get { return m_graph; }
+            internal set {
+                if (m_graph == null || m_graph == value) {
+                    m_graph = value;
+                }
+                else {
+                    throw new Exception("elements cannot be reowned");
+                }
+            }
+        }
 
         public GraphElementType M_ElementType {get; private set; }
 

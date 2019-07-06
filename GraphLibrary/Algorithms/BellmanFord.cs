@@ -74,36 +74,36 @@ namespace GraphLibrary.Algorithms {
 
     }
 
-    public class BellmanFordQueryInfo : CGraphQueryInfo {
+    public class BellmanFordQueryInfo : CGraphQueryInfo<NodePathInfo,int?, Dictionary<CGraphNode, Dictionary<CGraphNode, Path>>> {
         public BellmanFordQueryInfo(CGraph graph, object key) : base(graph, key) {
         }
 
         public int? Distance(CGraphNode node) {
-            return CastNodeInfo<NodePathInfo>(node).MDistance;
+            return Info(node).MDistance;
         }
 
         public void SetDistance(CGraphNode node, int distance) {
-            CastNodeInfo<NodePathInfo>(node).MDistance = distance;
+            Info(node).MDistance = distance;
         }
         public void SetPredecessor(CGraphNode node, CGraphNode predecessor) {
-            CastNodeInfo<NodePathInfo>(node).MPredecessor = predecessor;
+            Info(node).MPredecessor = predecessor;
         }
 
         public CGraphNode Predecessor(CGraphNode node) {
-            return CastNodeInfo<NodePathInfo>(node).MPredecessor;
+            return Info(node).MPredecessor;
         }
 
-        public int Weight(CGraphNode source, CGraphNode target) {
-            return CastEdgeInfo<int>(source, target);
+        public int? Weight(CGraphNode source, CGraphNode target) {
+            return Info(source, target);
         }
 
         public Dictionary<CGraphNode, Dictionary<CGraphNode, Path>> ShortestPaths() {
-            return CastGraphInfo<Dictionary<CGraphNode, Dictionary<CGraphNode, Path>>>();
+            return Info();
         }
     }
 
     public class BellmanFord :CGraphAlgorithm<int> {
-        private CGraphQueryInfo m_inputGraphWeightInfo;
+        private CGraphQueryInfo<object,int,object> m_inputGraphWeightInfo;
         private BellmanFordQueryInfo m_outputShortestPathsInfo;
         private CGraph mGraph;
         private CGraphNode m_source;
@@ -117,7 +117,7 @@ namespace GraphLibrary.Algorithms {
             mGraph = graph;
             m_source = source;
             this[m_PATHINFO] = m_outputShortestPathsInfo =  new BellmanFordQueryInfo(graph,this);
-            m_inputGraphWeightInfo = new CGraphQueryInfo(graph,graphWeightsKey);
+            m_inputGraphWeightInfo = new CGraphQueryInfo<object, int, object>(graph,graphWeightsKey);
             m_outputShortestPathsInfo.CreateInfo(m_shortestPaths);
         }
 

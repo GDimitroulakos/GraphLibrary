@@ -7,29 +7,28 @@ using System.Threading.Tasks;
 namespace GraphLibrary.Algorithms {
 
 
-    public class DepthFirstSearchQueryInfo : CGraphQueryInfo {
+    public class DepthFirstSearchQueryInfo : CGraphQueryInfo<DepthFirstSearchNodeInfo,object,object> {
         public DepthFirstSearchQueryInfo(CGraph graph, object key) : base(graph, key) {
         }
         
         
-        
         public NodeColor Color(CGraphNode node) {
-            return CastNodeInfo<DepthFirstSearchNodeInfo>(node).MColor;
+            return Info(node).MColor;
         }
         public void SetColor(CGraphNode node,NodeColor color) {
-            CastNodeInfo<DepthFirstSearchNodeInfo>(node).MColor = color ;
+            Info(node).MColor = color ;
         }
         public int Arrival(CGraphNode node) {
-            return CastNodeInfo<DepthFirstSearchNodeInfo>(node).MArrival;
+            return Info(node).MArrival;
         }
         public void SetArrival(CGraphNode node, int arrival) {
-            CastNodeInfo<DepthFirstSearchNodeInfo>(node).MArrival = arrival;
+            Info(node).MArrival = arrival;
         }
         public int Departure(CGraphNode node) {
-            return CastNodeInfo<DepthFirstSearchNodeInfo>(node).MDeparture;
+            return Info(node).MDeparture;
         }
         public void SetDeparture(CGraphNode node, int departure) {
-            CastNodeInfo<DepthFirstSearchNodeInfo>(node).MDeparture = departure;
+            Info(node).MDeparture = departure;
         }
     }
     

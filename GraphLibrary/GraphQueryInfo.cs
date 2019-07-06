@@ -1,4 +1,5 @@
-﻿using GraphLibrary.Generics;
+﻿using System;
+using GraphLibrary.Generics;
 
 
 
@@ -8,7 +9,7 @@ namespace GraphLibrary {
     /// Query info from the CGraph class for a specific graph and key 
     /// </summary>
     /// <seealso cref="CGraph" />
-    public class CGraphQueryInfo : AbstractGraphQueryInfo<CGraphNode,CGraphEdge> {
+    public class CGraphQueryInfo<IN,IE,IG> : AbstractGraphQueryInfo<CGraphNode, CGraphEdge,IN,IE,IG> {
 
         /// <summary>
         /// The original graph where the algorithm is applied
@@ -30,46 +31,7 @@ namespace GraphLibrary {
             m_infoKey = key;
         }
 
-        /// <summary>
-        /// Casts the graph information to the relevant type 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <returns></returns>
-        public T CastGraphInfo<T>() {
-            return (T) Info();
-        }
-
-        /// <summary>
-        /// Casts the node information to the relevant type 
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="node"></param>
-        /// <returns></returns>
-        public T CastNodeInfo<T>(CGraphNode node) {
-            return (T)Info(node);
-        }
-
-        /// <summary>
-        /// Casts the edge information to the relevant type
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="edge"></param>
-        /// <returns></returns>
-        public T CastEdgeInfo<T>(CGraphEdge edge) {
-            return (T)Info(edge);
-        }
-
-        /// <summary>
-        /// Casts the edge information to the relevant type
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="source"></param>
-        /// <param name="target"></param>
-        /// <returns></returns>
-        public T CastEdgeInfo<T>(CGraphNode source, CGraphNode target) {
-            return (T)Info(source,target);
-        }
-
+        
         /// <summary>
         /// Returns information concerning a node of the source graph
         /// </summary>
@@ -77,11 +39,17 @@ namespace GraphLibrary {
         /// <param name="key">The key that will extract the information from the specified node's dictionary. If
         /// null is given then the current Query Info object is used as a key</param>
         /// <returns></returns>
-        public override object Info(CGraphNode node) {
-            return node[m_infoKey];
+        public override IN Info(CGraphNode node) {
+            if (node.M_OwnerGraph == m_graph) {
+                return (IN) node[m_infoKey];
+            }
+            throw new Exception("The given node does not belong to the graph");
         }
-        public override object TempInfo(CGraphNode node){
-            return node[node];
+        public override IN TempInfo(CGraphNode node){
+            if (node.M_OwnerGraph == m_graph) {
+                return (IN) node[node];
+            }
+            throw new Exception("The given node does not belong to the graph");
         }
         
         /// <summary>
@@ -92,11 +60,17 @@ namespace GraphLibrary {
         /// <param name="key">The key that will extract the information from the specified node's dictionary. If
         /// null is given then the current Query Info object is used as a key</param>
         /// <returns></returns>
-        public override object Info(CGraphEdge edge){
-            return edge[m_infoKey];
+        public override IE Info(CGraphEdge edge){
+            if (edge.M_OwnerGraph == m_graph) {
+                return (IE) edge[m_infoKey];
+            }
+            throw new Exception("The given edge does not belong to the graph");
         }
-        public override object TempInfo(CGraphEdge edge){
-            return edge[edge];
+        public override IE TempInfo(CGraphEdge edge){
+            if (edge.M_OwnerGraph == m_graph) {
+                return (IE) edge[edge];
+            }
+            throw new Exception("The given edge does not belong to the graph");
         }
 
         /// <summary>
@@ -109,12 +83,18 @@ namespace GraphLibrary {
         /// <param name="key">The key that will extract the information from the specified node's dictionary.If
         /// null is given then the current Query Info object is used as a key</param>
         /// <returns></returns>
-        public override object Info(CGraphNode source, CGraphNode target){
-            return m_graph.Edge(source, target)[m_infoKey];
+        public override IE Info(CGraphNode source, CGraphNode target) {
+            if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+                return (IE) m_graph.Edge(source, target)[m_infoKey];
+            }
+            throw new Exception("The given edge does not belong to the graph");
         }
-        public override object TempInfo(CGraphNode source, CGraphNode target) {
-            CGraphEdge edge = m_graph.Edge(source, target);
-            return edge[edge];
+        public override IE TempInfo(CGraphNode source, CGraphNode target) {
+            if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+                CGraphEdge edge = m_graph.Edge(source, target);
+                return (IE) edge[edge];
+            }
+            throw new Exception("The given edge does not belong to the graph");
         }
         /// <summary>
         /// Returns information from the source graph under the specified key.
@@ -123,11 +103,11 @@ namespace GraphLibrary {
         /// </summary>
         /// <param name="key">The key object</param>
         /// <returns>The information object</returns>
-        public override object Info() {
-            return m_graph[m_infoKey];
+        public override IG Info() {
+            return (IG)m_graph[m_infoKey];
         }
-        public override object TempInfo() {
-            return m_graph[m_graph];
+        public override IG TempInfo() {
+            return (IG)m_graph[m_graph];
         }
         /// <summary>
         
@@ -140,11 +120,22 @@ namespace GraphLibrary {
         /// <param name="key">The key that will extract the information from the specified node's dictionary. If
         /// null is given then the current Query Info object is used as a key. Thus the QueryInfo object can
         /// be used as an information creator/exploitator</param>
-        public override void CreateInfo(CGraphNode node, object info ){
-            node[m_infoKey] = info;
+        public override void CreateInfo(CGraphNode node, IN info ){
+            if (node.M_OwnerGraph == m_graph) {
+                node[m_infoKey] = info;
+            }
+            else {
+                throw new Exception("The given node does not belong to the graph");
+            }
         }
-        public override void CreateTempInfo(CGraphNode node, object info ){
-            node[node] = info;
+
+        public override void CreateTempInfo(CGraphNode node, IN info ){
+            if (node.M_OwnerGraph == m_graph) {
+                node[node] = info;
+            }
+            else {
+                throw new Exception("The given node does not belong to the graph");
+            }
         }
 
         /// <summary>
@@ -155,11 +146,22 @@ namespace GraphLibrary {
         /// <param name="info">The information object.</param>
         /// <param name="key">The key that will extract the information from the specified node's dictionary. If
         /// null is given then the current Query Info object is used as a key</param>
-        public override void CreateInfo(CGraphEdge edge, object info ){
-            edge[m_infoKey] = info;
+        public override void CreateInfo(CGraphEdge edge, IE info ){
+            if (edge.M_OwnerGraph == m_graph) {
+                edge[m_infoKey] = info;
+            }
+            else {
+                throw new Exception("The given edge does not belong to the graph");
+            }
+
         }
-        public override void CreateTempInfo(CGraphEdge edge, object info ){
-            edge[edge] = info;
+        public override void CreateTempInfo(CGraphEdge edge, IE info ){
+            if (edge.M_OwnerGraph == m_graph) {
+                edge[edge] = info;
+            }
+            else {
+                throw new Exception("The given edge does not belong to the graph");
+            }
         }
 
         /// <summary>
@@ -171,12 +173,22 @@ namespace GraphLibrary {
         /// <param name="info">The information.</param>
         /// <param name="key">The key that will extract the information from the specified node's dictionary. If
         /// null is given then the current Query Info object is used as a key</param>
-        public override void CreateInfo(CGraphNode source, CGraphNode target, object info ){
-           m_graph.Edge(source, target)[m_infoKey] = info;
+        public override void CreateInfo(CGraphNode source, CGraphNode target, IE info ){
+            if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+                m_graph.Edge(source, target)[m_infoKey] = info;
+            }
+            else {
+                throw new Exception("One or two of the given nodes does not belong to the graph");
+            }
         }
-        public override void CreateTempInfo(CGraphNode source, CGraphNode target, object info ){
-            CGraphEdge edge = m_graph.Edge(source, target);
-            edge[edge] = info;
+        public override void CreateTempInfo(CGraphNode source, CGraphNode target, IE info ){
+            if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+                CGraphEdge edge = m_graph.Edge(source, target);
+                edge[edge] = info;
+            }
+            else {
+                throw new Exception("One or two of the given nodes does not belong to the graph");
+            }
         }
 
         /// <summary>
@@ -184,10 +196,10 @@ namespace GraphLibrary {
         /// </summary>
         /// <param name="info">The information object</param>
         /// <param name="key">The key object</param>
-        public override void CreateInfo(object info) {
+        public override void CreateInfo(IG info) {
             m_graph[m_infoKey] = info;
         }
-        public override void CreateTempInfo(object info) {
+        public override void CreateTempInfo(IG info) {
             m_graph[m_graph] = info;
         }
 

@@ -7,23 +7,23 @@ using System.Threading.Tasks;
 namespace GraphLibrary.Algorithms {
 
 
-    public class BreadthFirstSearchQueryInfo : CGraphQueryInfo {
+    public class BreadthFirstSearchQueryInfo : CGraphQueryInfo<BFSNodeInfo,object, List<CGraphNode>> {
         public BreadthFirstSearchQueryInfo(CGraph graph, object key) : base(graph, key) {
         }
         public NodeColor Color(CGraphNode node) {
-            return CastNodeInfo<BFSNodeInfo>(node).MColor;
+            return Info(node).MColor;
         }
         public void SetColor(CGraphNode node, NodeColor color) {
-            CastNodeInfo<BFSNodeInfo>(node).MColor = color;
+            Info(node).MColor = color;
         }
         public int Distance(CGraphNode node) {
-            return CastNodeInfo<BFSNodeInfo>(node).MDistance;
+            return Info(node).MDistance;
         }
         public void SetDistance(CGraphNode node, int distance) {
-            CastNodeInfo<BFSNodeInfo>(node).MDistance = distance;
+            Info(node).MDistance = distance;
         }
         public List<CGraphNode> BFSNodes() {
-            return CastGraphInfo<List<CGraphNode>>();
+            return Info();
         }
     }
 
