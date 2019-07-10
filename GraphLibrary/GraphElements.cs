@@ -721,7 +721,7 @@ namespace GraphLibrary{
         /// <summary>
         /// Contains a list of graph printers that initiate by the call to Generate method
         /// </summary>
-        internal List<CGraphPrinter> m_graphPrinters = null;
+        protected List<CGraphPrinter> m_graphPrinters = null;
 
        /// <summary>
         /// Initializes a new instance of the <see cref="CGraph"/> class.

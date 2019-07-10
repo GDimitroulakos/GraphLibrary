@@ -6,6 +6,11 @@ using GraphLibrary.Generics;
 
 namespace GraphLibrary {
 
+    public abstract class CGraphMultiPrinter : AbstractMultiGraphPrinter<CGraph> {
+        protected CGraphMultiPrinter(string filePath) : base(filePath) {
+        }
+    }
+
     /// <summary>
     /// This class is the parent class of all classes that print CGraph objects
     /// Hence the class know the interface of CGraph. (Its build for CGraph).
