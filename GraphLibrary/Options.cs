@@ -11,12 +11,18 @@ namespace GraphLibrary
     /// can host at most 32 options
     /// </summary>
     public class Options<T> {
-        private int m_options=0;
+        private int? m_options = 0;
 
-        public Options() {
+        public Options(int? initOptions) {
+            m_options = initOptions ?? 0;
         }
 
-        public int M_Options => m_options;
+        public Options(T initOptions) {
+            Set(initOptions);
+        }
+
+        public int? M_Options => m_options;
+
 
         public void Set(T option) {
             m_options = ToInt(option) | m_options;
@@ -26,11 +32,10 @@ namespace GraphLibrary
         }
 
         public bool IsSet(T option) {
-            int temp;
-            temp=(m_options & ToInt(option)) & ToInt(option);
+            int? temp;
+            temp = (m_options & ToInt(option)) & ToInt(option);
             return Convert.ToBoolean(temp);
         }
-
         private int ToInt(T options) {
             return Convert.ToInt32(options);
         }

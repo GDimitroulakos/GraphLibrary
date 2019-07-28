@@ -25,8 +25,9 @@ namespace GraphLibrary.Generics {
         // The function returns a string that is extracted intact to the file
         public event Func<object,string> e_prelude;
         public event Func<object,string> e_epilogue;
-        public event Func<object,string> e_intermediate;
-        
+        public event Func<object,string> e_intermediate_after;
+        public event Func<object, string> e_intermediate_before;
+
 
         protected AbstractMultiGraphPrinter(string filePath) {
             m_filePath = filePath;
@@ -52,9 +53,10 @@ namespace GraphLibrary.Generics {
             // Prologue
             outf.WriteLine(e_prelude?.Invoke(null));
             foreach (AbstractGraphPrinter<TGraph> graphPrinter in m_graphPrinters) {
+                outf.WriteLine(e_intermediate_before?.Invoke(graphPrinter));
                 outf.WriteLine(graphPrinter.Print());
                 // Intermediate glue code
-                outf.WriteLine(e_intermediate?.Invoke(graphPrinter));
+                outf.WriteLine(e_intermediate_after?.Invoke(graphPrinter));
             }
             // Epilogue
             outf.WriteLine(e_epilogue?.Invoke(null));

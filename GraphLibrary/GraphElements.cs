@@ -462,7 +462,7 @@ namespace GraphLibrary{
         ///  and edge mapping between the initial individual graphs and the resulting graph
         /// </summary>
         public class CMergeGraphOperation {
-            public enum MergeOptions { MO_PRESERVELABELS=1}
+            public enum MergeOptions { MO_DEFAULT=0,MO_PRESERVELABELS=1}
             private CGraph m_resultGraph;
             private List<CGraph> m_initialGraphs;
             private Dictionary<CGraphNode, CGraphNode> m_nodeMapping;
@@ -478,16 +478,13 @@ namespace GraphLibrary{
             /// designer's responsibility to provide an empty object if he wants
             /// </summary>
             /// <param name="resultGraph"></param>
-            public CMergeGraphOperation(CGraph resultGraph=null, Options<MergeOptions> mergeOptions = null) {
+            public CMergeGraphOperation(CGraph resultGraph=null, int? mergeOptions =null) {
                 m_resultGraph = resultGraph;
                 m_initialGraphs = new List<CGraph>();
                 m_nodeMapping = new Dictionary<CGraphNode, CGraphNode>();
                 m_edgeMapping = new Dictionary<CGraphEdge, CGraphEdge>();
                 if ( mergeOptions != null) {
-                    m_mergeOptions = mergeOptions;
-                }
-                else {
-                    m_mergeOptions = new Options<MergeOptions>();
+                    m_mergeOptions = new Options<MergeOptions>(mergeOptions);
                 }
             }
 
@@ -784,8 +781,8 @@ namespace GraphLibrary{
         /// </summary>
         /// <param name="g">The graph to be merged with the existing</param>
         /// <returns></returns>
-        public CMergeGraphOperation Merge(CGraph g, Options<CMergeGraphOperation.MergeOptions> options=null) {
-            CMergeGraphOperation op = new CMergeGraphOperation(this,options);
+        public CMergeGraphOperation Merge(CGraph g, CMergeGraphOperation.MergeOptions options) {
+            CMergeGraphOperation op = new CMergeGraphOperation(this,(int?)options);
             
             // Merge nodes and edges
             op.MergeGraph(g);
