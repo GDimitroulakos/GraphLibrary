@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -51,6 +52,7 @@ namespace GraphLibrary{
     /// 
     /// Uniqueness : A node can be a member a single graph ( Simpliest case )
     /// </summary>
+    [Serializable]
     public class CGraphNode : CGraphPrimitive{
         /// <summary>
         /// Stores the outgoing edges 
@@ -306,6 +308,7 @@ namespace GraphLibrary{
     /// provides given the port or node at the one side of the edge the corresponding
     /// port or node at the side.
     /// </summary>
+    [Serializable]
     public class CGraphEdge : CGraphPrimitive {
         #region MemberVariables
 
@@ -454,6 +457,7 @@ namespace GraphLibrary{
     /// The Graph holds the list of nodes and the list of edges as well as the type of
     /// graph ( directed / undirected ). 
     /// </summary>
+    [Serializable]
     public class CGraph : CGraphPrimitive {
 
        
@@ -687,6 +691,7 @@ namespace GraphLibrary{
         /// itself indicating that the graph is labelled by on its own in which case
         /// the key for accessing the node labels is the "this" pointer
         /// </summary>
+        [NonSerialized]
         private Dictionary<object, CGraphLabeling<CGraphNode>> m_nodeLabels;
 
         /// <summary>
@@ -696,6 +701,7 @@ namespace GraphLibrary{
         /// itself indicating that the graph is labelled by on its own in which case
         /// the key for accessing the node labels is the "this" pointer
         /// </summary>
+        [NonSerialized]
         private Dictionary<object, CGraphLabeling<CGraphEdge>> m_edgeLabels;
 
         /// <summary>
@@ -718,9 +724,10 @@ namespace GraphLibrary{
         /// <summary>
         /// Contains a list of graph printers that initiate by the call to Generate method
         /// </summary>
+        [NonSerialized]
         protected List<CGraphPrinter> m_graphPrinters = null;
 
-       /// <summary>
+        /// <summary>
         /// Initializes a new instance of the <see cref="CGraph"/> class.
         /// </summary>
         protected CGraph() :base(GraphElementType.ET_GRAPH){
@@ -742,6 +749,29 @@ namespace GraphLibrary{
 
             // Create native graph label
             SetLabel("G" + m_graphSerialNumber.ToString());
+        }
+
+        public void SerializeInBinary(string filename) {
+            BinaryFormatter saver = new BinaryFormatter();
+
+            using (Stream stream = new FileStream(filename, FileMode.Create, FileAccess.Write)) {
+                saver.Serialize(stream,this);
+            }
+        }
+
+        public CGraph DeserializeInBinary(string filename) {
+            BinaryFormatter saver = new BinaryFormatter();
+
+            using (Stream stream = new FileStream(filename, FileMode.Open, FileAccess.Read)) {
+              return (CGraph)saver.Deserialize(stream);
+            }
+        }
+
+        [OnDeserializing()]
+        internal void OnDeserializingMethod(StreamingContext context) {
+            m_graphPrinters = new List<CGraphPrinter>();
+            m_nodeLabels = new Dictionary<object, CGraphLabeling<CGraphNode>>();
+            m_edgeLabels = new Dictionary<object, CGraphLabeling<CGraphEdge>>();
         }
 
         /// <summary>

@@ -33,6 +33,7 @@ namespace GraphLibrary.Generics {
     /// This interface contains primitive operations common 
     /// to any graph element ( node, edge, graph )
     /// </summary>
+    [Serializable]
     public abstract class CGraphPrimitive{
         int M_SerialNumber { get; }
 
@@ -49,7 +50,7 @@ namespace GraphLibrary.Generics {
         /// </value>
         public CGraph M_OwnerGraph {
             get { return m_graph; }
-            internal set {
+            set {
                 if (m_graph == null || m_graph == value) {
                     m_graph = value;
                 }
@@ -59,7 +60,7 @@ namespace GraphLibrary.Generics {
             }
         }
 
-        public GraphElementType M_ElementType {get; private set; }
+        public GraphElementType M_ElementType {get; set; }
 
         /// <summary>
         /// Each element has a label which can be set either centrally from the CGraph
@@ -70,7 +71,7 @@ namespace GraphLibrary.Generics {
         /// <see cref="CGraphNode.ToString()"/>. This property is realized in the 
         /// descentant classes for nodes, edges and graphs correspondingly
         /// </summary>
-        public string M_Label { get; protected set; }
+        public string M_Label { get; set; }
 
         /// <summary>
         /// Represents permanent output that is stored by a graph processing

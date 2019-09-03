@@ -37,7 +37,7 @@ namespace TestBreadthFirstSearch {
             BreadthFirstSearch bfs = new BreadthFirstSearch(s,mgraph);
 
             // 2. Associate weights with the edges of the graph
-            CGraphQueryInfo bfsData = new CGraphQueryInfo(mgraph, bfs);
+            CGraphQueryInfo<int, int, int> bfsData = new CGraphQueryInfo<int, int, int>(mgraph, bfs);
 
             bfs.Run();
 

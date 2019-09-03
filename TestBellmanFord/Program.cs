@@ -67,7 +67,7 @@ namespace TestBellmanFord {
 
 
             // 2. Associate weights with the edges of the graph
-            CGraphQueryInfo weights = new CGraphQueryInfo(mgraph, 255);
+            CGraphQueryInfo<int, int, int> weights = new CGraphQueryInfo<int,int,int>(mgraph, 255);
 
             weights.CreateInfo(x1, x2, 1);
             weights.CreateInfo(x2, x1, 1);
@@ -158,7 +158,7 @@ namespace TestBellmanFord {
             mgraph.AddGraphEdge<CGraphEdge, CGraphNode>(s, y, GraphType.GT_DIRECTED);
 
             // 2. Associate weights with the edges of the graph
-            CGraphQueryInfo weights = new CGraphQueryInfo(mgraph, 255);
+            CGraphQueryInfo<int, int, int> weights = new CGraphQueryInfo<int, int, int>(mgraph, 255);
 
             weights.CreateInfo(y, x, -3);
             weights.CreateInfo(x, t, -2);
@@ -177,7 +177,7 @@ namespace TestBellmanFord {
             bl.FindAllPairsShortestPaths();
 
             // 4. Print Paths
-            CGraphQueryInfo shortestPath = new CGraphQueryInfo(mgraph, bl);
+            CGraphQueryInfo<int, int, Dictionary<CGraphNode, Dictionary<CGraphNode, Path>>> shortestPath = new CGraphQueryInfo<int, int, Dictionary<CGraphNode, Dictionary<CGraphNode, Path>>>(mgraph, bl);
             CIt_GraphNodes i = new CIt_GraphNodes(mgraph);
             CIt_GraphNodes j = new CIt_GraphNodes(mgraph);
             Dictionary<CGraphNode, Dictionary<CGraphNode, Path>> paths =

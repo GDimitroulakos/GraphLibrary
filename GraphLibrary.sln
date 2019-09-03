@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.421
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphLibrary", "GraphLibrary\GraphLibrary.csproj", "{D0E52A9B-DFDA-4EC2-90C5-8C3BB41FE782}"
 EndProject
@@ -12,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBreadthFirstSearch", "TestBreadthFirstSearch\TestBreadthFirstSearch.csproj", "{30D05EFE-4FA6-43B1-9142-47B35BCA3BEF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDepthFirstSearch", "TestDepthFirstSearch\TestDepthFirstSearch.csproj", "{1B542489-8793-4263-8D1A-ED28859FE5D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSerialization", "TestSerialization\TestSerialization.csproj", "{840F9E21-B511-4576-9FF0-C1361B9A53CE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{1B542489-8793-4263-8D1A-ED28859FE5D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B542489-8793-4263-8D1A-ED28859FE5D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B542489-8793-4263-8D1A-ED28859FE5D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{840F9E21-B511-4576-9FF0-C1361B9A53CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{840F9E21-B511-4576-9FF0-C1361B9A53CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{840F9E21-B511-4576-9FF0-C1361B9A53CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{840F9E21-B511-4576-9FF0-C1361B9A53CE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
