@@ -59,7 +59,7 @@ namespace GraphLibrary{
                     //2b. NOT EXIST
                     // 5. Issue a Warning. OVERWRITE the label for the given element
 
-                    Console.WriteLine("Warning!!!. Label ovewritted");
+                    //Console.WriteLine("Warning!!!. Label ovewritted");
 
                     oldLabel = m_LabelsIndexedByElements[element];
 

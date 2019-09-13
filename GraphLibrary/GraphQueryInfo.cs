@@ -9,6 +9,7 @@ namespace GraphLibrary {
     /// Query info from the CGraph class for a specific graph and key 
     /// </summary>
     /// <seealso cref="CGraph" />
+    [Serializable]
     public class CGraphQueryInfo<IN,IE,IG> : AbstractGraphQueryInfo<CGraphNode, CGraphEdge,IN,IE,IG> {
 
         /// <summary>

@@ -19,6 +19,7 @@ namespace GraphLibrary.Generics {
     /// </summary>
     /// <typeparam name="Node">The type of the node.</typeparam>
     /// <typeparam name="Edge">The type of the edge.</typeparam>
+    [Serializable]
     public abstract class AbstractGraphQueryInfo<Node, Edge, IN,IE,IG> {
         
 
