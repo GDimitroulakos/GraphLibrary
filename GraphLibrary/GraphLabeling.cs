@@ -32,7 +32,6 @@ namespace GraphLibrary{
 
                 m_LabelsIndexedByElements.Remove(element);
                 m_ElementsIndexedByLabels.Remove(label);
-
             }
         }
 

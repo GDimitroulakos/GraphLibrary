@@ -8,7 +8,7 @@ using GraphLibrary.Generics;
 
 // TODO 1: Verify DFS BFS iterators
 
-namespace GraphLibrary{
+namespace GraphLibrary {
 
     #region Outgoing Edges Iterator
     /// <summary>
@@ -106,7 +106,7 @@ namespace GraphLibrary{
         /// <returns></returns>
         public override CGraphNode Begin() {
             m_it = 0;
-            m_iterations=0;
+            m_iterations = 0;
             m_currentItem = m_node.Successor(m_it++);
             return m_currentItem;
         }
@@ -133,9 +133,9 @@ namespace GraphLibrary{
             return m_currentItem = m_node.Successor(m_it++);
         }
     }
-#endregion
+    #endregion
 
-#region Predecessors Iterator
+    #region Predecessors Iterator
     /// <summary>
     /// Iterates over the predecessor nodes of a node
     /// </summary>
@@ -154,8 +154,7 @@ namespace GraphLibrary{
         /// Constructor. Takes the node to which it refers
         /// </summary>
         /// <param name="node">Node to which the iterator is applied</param>
-        public CIt_Predecessors(CGraphNode node)
-        {
+        public CIt_Predecessors(CGraphNode node) {
             m_node = node;
         }
 
@@ -163,7 +162,7 @@ namespace GraphLibrary{
         /// Points to the first valid item if to null if there is no one
         /// </summary>
         /// <returns></returns>
-        public override CGraphNode Begin(){
+        public override CGraphNode Begin() {
             m_it = 0;
             m_iterations = 0;
             m_currentItem = m_node.Predeccessor(m_it++);
@@ -176,8 +175,8 @@ namespace GraphLibrary{
         /// iterator points to a proper item
         /// </summary>
         /// <returns></returns>
-        public override  bool End(){
-            if (m_currentItem == null){
+        public override bool End() {
+            if (m_currentItem == null) {
                 return true;
             }
             return false;
@@ -192,20 +191,20 @@ namespace GraphLibrary{
             return m_currentItem = m_node.Predeccessor(m_it++);
         }
     }
-#endregion
+    #endregion
 
-#region Graph Edges Iterator
+    #region Graph Edges Iterator
     /// <summary>
     /// Iterates over the graph edges
     /// </summary>
-    public class CIt_GraphEdges : AbstractGraphIterator<CGraphEdge>{
+    public class CIt_GraphEdges : AbstractGraphIterator<CGraphEdge> {
 
         /// <summary>
         /// Graph over which we iteratting
         /// </summary>
         CGraph m_graph;
 
-       /// <summary>
+        /// <summary>
         /// Current iterator index
         /// </summary>
         int m_it;
@@ -222,7 +221,7 @@ namespace GraphLibrary{
         /// Points to the first valid item if to null if there is no one
         /// </summary>
         /// <returns></returns>
-        public override CGraphEdge Begin(){
+        public override CGraphEdge Begin() {
             m_it = 0;
             m_iterations = 0;
             if (m_graph.M_NumberOfEdges > 0) {
@@ -240,8 +239,7 @@ namespace GraphLibrary{
         /// iterator points to a proper item
         /// </summary>
         /// <returns></returns>
-        public override bool End()
-        {
+        public override bool End() {
             if (m_currentItem == null) {
                 return true;
             }
@@ -252,60 +250,83 @@ namespace GraphLibrary{
         /// Points to the next valid item or to null if there isn't one
         /// </summary>
         /// <returns>Returns the current item</returns
-        public override CGraphEdge Next()
-        {
+        public override CGraphEdge Next() {
             m_it++;
             m_iterations++;
-            if (m_it < m_graph.M_NumberOfEdges ){
+            if (m_it < m_graph.M_NumberOfEdges) {
                 m_currentItem = m_graph.Edge(m_it);
             }
-            else{
+            else {
                 m_currentItem = null;
             }
             return m_currentItem;
         }
     }
 
-#endregion
+    #endregion
 
-#region Graph Nodes Iterator
+    #region Graph Nodes Iterator
     /// <summary>
     /// Iterates over the graph nodes
     /// </summary>
-    public class CIt_GraphNodes : AbstractGraphIterator<CGraphNode>{
+    public class CIt_GraphNodes : AbstractGraphIterator<CGraphNode> {
 
         /// <summary>
-        /// Graph over which we iteratting
+        /// Graph over which we iterating
         /// </summary>
         CGraph m_graph;
 
-       /// <summary>
+        /// <summary>
+        /// The initial graph given for iteration
+        /// </summary>
+        private CGraph m_initialGraph;
+
+        /// <summary>
         /// Current iterator index
         /// </summary>
         int m_it;
 
+        private bool m_lastItem;
+
+        // Becomes true when current item is the last item
+        public bool M_LastItem => m_lastItem;
+
         /// <summary>
         /// Constructor
         /// </summary>
-        /// <param name="graph"></param>
-        public CIt_GraphNodes(CGraph graph) {
-            m_graph = graph;
+        /// <param name="graph">The given graph</param>
+        /// <param name="freeze">This parameter determines if the iteration will happen on the given graph or a clone of it. In case the graph is changing during the iteration and the objective is to iterate on the initial graph then set freeze to true</param>
+        public CIt_GraphNodes(CGraph graph, bool freeze=false) {
+            if (!freeze) {
+                m_graph = graph;
+            }
+            else {
+                // Iteration happens on the clone which can't be changed externally
+                m_graph = CGraph.CloneGraph(graph);
+                // The graph that is given from externally and can be change
+                // during iteration
+                m_initialGraph = graph;
+            }
         }
 
         /// <summary>
         /// Points to the first valid item if to null if there is no one
         /// </summary>
         /// <returns></returns>
-        public override CGraphNode Begin()
-        {
+        public override CGraphNode Begin() {
             m_it = 0;
             m_iterations = 0;
+            m_lastItem = false;
             if (m_graph.M_NumberOfNodes > 0) {
                 m_currentItem = m_graph.Node(m_it);
+                if (m_graph.M_NumberOfNodes == 1) {
+                    m_lastItem = true;
+                }
             }
             else {
                 m_currentItem = null;
             }
+
             return m_currentItem;
         }
 
@@ -315,8 +336,7 @@ namespace GraphLibrary{
         /// iterator points to a proper item
         /// </summary>
         /// <returns></returns>
-        public override bool End()
-        {
+        public override bool End() {
             if (m_currentItem == null) {
                 return true;
             }
@@ -327,14 +347,16 @@ namespace GraphLibrary{
         /// Points to the next valid item or to null if there isn't one
         /// </summary>
         /// <returns>Returns the current item</returns
-        public override CGraphNode Next()
-        {
+        public override CGraphNode Next() {
             m_it++;
             m_iterations++;
-            if (m_it < m_graph.M_NumberOfNodes ){
+            if (m_it < m_graph.M_NumberOfNodes) {
                 m_currentItem = m_graph.Node(m_it);
+                if (m_it == m_graph.M_NumberOfNodes - 1) {
+                    m_lastItem = true;
+                }
             }
-            else{
+            else {
                 m_currentItem = null;
             }
             return m_currentItem;
@@ -342,7 +364,7 @@ namespace GraphLibrary{
     }
     #endregion
 
- #region Graph Root Nodes Iterator
+    #region Graph Root Nodes Iterator
     /// <summary>
     /// Iterates over the graph's nodes not having predecessors
     /// </summary>
@@ -353,10 +375,10 @@ namespace GraphLibrary{
         /// </summary>
         private CGraph m_graph;
 
-       /// <summary>
+        /// <summary>
         /// iterator
         /// </summary>
-        int m_it=0;
+        int m_it = 0;
 
         public CIt_GraphRootNodes(CGraph mGraph) {
             m_graph = mGraph;
@@ -373,13 +395,12 @@ namespace GraphLibrary{
         /// implemented in the subclasses
         /// </summary>
         /// <returns></returns>
-        public override CGraphNode Begin()
-        {
+        public override CGraphNode Begin() {
             m_it = 0;
             m_iterations = 0;
             m_currentItem = null;
-            while (m_it<m_graph.M_NumberOfNodes &&                      // while not search all the nodes AND...
-                   m_graph.Node(m_it).M_NumberOfPredecessors != 0 ) {   // while not discover nodes without predecessors
+            while (m_it < m_graph.M_NumberOfNodes &&                      // while not search all the nodes AND...
+                   m_graph.Node(m_it).M_NumberOfPredecessors != 0) {   // while not discover nodes without predecessors
                 m_it++;
             }
             if (m_it < m_graph.M_NumberOfNodes) {
@@ -399,8 +420,7 @@ namespace GraphLibrary{
         /// item set after the call to Next() method (Next() method set m_currentItem to null)
         /// </summary>
         /// <returns></returns>
-        public override bool End()
-        {
+        public override bool End() {
             if (m_currentItem == null) {
                 return true;
             }
@@ -415,12 +435,11 @@ namespace GraphLibrary{
         /// The transition logic from item to item is implemented from the subclasses.
         /// </summary>
         /// <returns></returns>
-        public override CGraphNode Next()
-        {
+        public override CGraphNode Next() {
             m_it++;
             m_iterations++;
             while (m_it < m_graph.M_NumberOfNodes &&                       // while not search all the nodes AND...
-                   m_graph.Node(m_it).M_NumberOfPredecessors != 0){        // while not discover nodes without predecessors
+                   m_graph.Node(m_it).M_NumberOfPredecessors != 0) {        // while not discover nodes without predecessors
                 m_it++;
             }
             if (m_it < m_graph.M_NumberOfNodes) {
@@ -433,13 +452,13 @@ namespace GraphLibrary{
             return m_currentItem;
         }
     }
-#endregion
+    #endregion
 
-#region Graph Leaf Nodes Iterator
+    #region Graph Leaf Nodes Iterator
     /// <summary>
     /// Iterates over the graph's nodes not having successors
     /// </summary>
-    public class CIt_GraphLeafNodes : AbstractGraphIterator<CGraphNode>{
+    public class CIt_GraphLeafNodes : AbstractGraphIterator<CGraphNode> {
 
         /// <summary>
         /// Reference to the graph
@@ -455,7 +474,7 @@ namespace GraphLibrary{
         /// Initializes a new instance of the <see cref="CIt_GraphLeafNodes"/> class.
         /// </summary>
         /// <param name="mGraph">The m graph.</param>
-        public CIt_GraphLeafNodes(CGraph mGraph){
+        public CIt_GraphLeafNodes(CGraph mGraph) {
             m_graph = mGraph;
         }
 
@@ -470,16 +489,15 @@ namespace GraphLibrary{
         /// implemented in the subclasses
         /// </summary>
         /// <returns></returns>
-        public override CGraphNode Begin()
-        {
+        public override CGraphNode Begin() {
             m_it = 0;
             m_iterations = 0;
             m_currentItem = null;
             while (m_it < m_graph.M_NumberOfNodes &&                      // while not search all the nodes AND...
-                   m_graph.Node(m_it).M_NumberOfSuccessors != 0){         // while not discover nodes without successors
+                   m_graph.Node(m_it).M_NumberOfSuccessors != 0) {         // while not discover nodes without successors
                 m_it++;
             }
-            if (m_it < m_graph.M_NumberOfNodes){
+            if (m_it < m_graph.M_NumberOfNodes) {
                 m_currentItem = m_graph.Node(m_it);
                 return m_currentItem;
             }
@@ -496,9 +514,8 @@ namespace GraphLibrary{
         /// item set after the call to Next() method (Next() method set m_currentItem to null)
         /// </summary>
         /// <returns></returns>
-        public override bool End()
-        {
-            if (m_currentItem == null){
+        public override bool End() {
+            if (m_currentItem == null) {
                 return true;
             }
             return false;
@@ -512,21 +529,20 @@ namespace GraphLibrary{
         /// The transition logic from item to item is implemented from the subclasses.
         /// </summary>
         /// <returns></returns>
-        public override CGraphNode Next()
-        {
+        public override CGraphNode Next() {
             m_it++;
             m_iterations++;
             while (m_it < m_graph.M_NumberOfNodes &&                       // while not search all the nodes AND...
-                   m_graph.Node(m_it).M_NumberOfSuccessors != 0){        // while not discover nodes without successors
+                   m_graph.Node(m_it).M_NumberOfSuccessors != 0) {        // while not discover nodes without successors
                 m_it++;
             }
-            if (m_it < m_graph.M_NumberOfNodes){
+            if (m_it < m_graph.M_NumberOfNodes) {
                 m_currentItem = m_graph.Node(m_it);
                 return m_currentItem;
             }
             return m_currentItem;
         }
     }
-#endregion
+    #endregion
 
 }

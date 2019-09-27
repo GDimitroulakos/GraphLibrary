@@ -10,12 +10,7 @@ namespace GraphLibrary {
     /// </summary>
     /// <seealso cref="CGraph" />
     [Serializable]
-    public class CGraphQueryInfo<IN,IE,IG> : AbstractGraphQueryInfo<CGraphNode, CGraphEdge,IN,IE,IG> {
-
-        /// <summary>
-        /// The original graph where the algorithm is applied
-        /// </summary>
-        protected CGraph m_graph;
+    public class CGraphQueryInfo<IN,IE,IG> : AbstractGraphQueryInfo<CGraph,CGraphNode, CGraphEdge,IN,IE,IG> {
 
         /// <summary>
         /// Key to access the information
@@ -32,25 +27,40 @@ namespace GraphLibrary {
             m_infoKey = key;
         }
 
-        
+
         /// <summary>
         /// Returns information concerning a node of the source graph
         /// </summary>
         /// <param name="node">The node.</param>
-        /// <param name="key">The key that will extract the information from the specified node's dictionary. If
-        /// null is given then the current Query Info object is used as a key</param>
+        /// <param name="checkOwnership">Checks if the node belongs to the same graph</param>
         /// <returns></returns>
-        public override IN Info(CGraphNode node) {
-            if (node.M_OwnerGraph == m_graph) {
-                return (IN) node[m_infoKey];
+        public override IN Info(CGraphNode node, bool checkOwnership = true) {
+            
+            if (!checkOwnership) {
+                return (IN)node[m_infoKey];
             }
-            throw new Exception("The given node does not belong to the graph");
+            else {
+                if (node.M_OwnerGraph == m_graph) {
+                    return (IN)node[m_infoKey];
+                }
+                else {
+                    throw new Exception("The given node does not belong to the graph");
+                }
+            }
         }
-        public override IN TempInfo(CGraphNode node){
-            if (node.M_OwnerGraph == m_graph) {
-                return (IN) node[node];
+        public override IN TempInfo(CGraphNode node, bool checkOwnership = true) {
+
+            if (!checkOwnership) {
+                return (IN)node[node];
             }
-            throw new Exception("The given node does not belong to the graph");
+            else {
+                if (node.M_OwnerGraph == m_graph) {
+                    return (IN)node[node];
+                }
+                else {
+                    throw new Exception("The given node does not belong to the graph");
+                }
+            }
         }
         
         /// <summary>
@@ -61,17 +71,33 @@ namespace GraphLibrary {
         /// <param name="key">The key that will extract the information from the specified node's dictionary. If
         /// null is given then the current Query Info object is used as a key</param>
         /// <returns></returns>
-        public override IE Info(CGraphEdge edge){
-            if (edge.M_OwnerGraph == m_graph) {
-                return (IE) edge[m_infoKey];
+        public override IE Info(CGraphEdge edge, bool checkOwnership = true) {
+
+            if (!checkOwnership) {
+                return (IE)edge[m_infoKey];
             }
-            throw new Exception("The given edge does not belong to the graph");
+            else {
+                if (edge.M_OwnerGraph == m_graph) {
+                    return (IE)edge[m_infoKey];
+                }
+                else {
+                    throw new Exception("The given edge does not belong to the graph");
+                }
+            }
         }
-        public override IE TempInfo(CGraphEdge edge){
-            if (edge.M_OwnerGraph == m_graph) {
-                return (IE) edge[edge];
+        public override IE TempInfo(CGraphEdge edge, bool checkOwnership = true) {
+
+            if (!checkOwnership) {
+                return (IE)edge[edge];
             }
-            throw new Exception("The given edge does not belong to the graph");
+            else {
+                if (edge.M_OwnerGraph == m_graph) {
+                    return (IE)edge[edge];
+                }
+                else {
+                    throw new Exception("The given edge does not belong to the graph");
+                }
+            }
         }
 
         /// <summary>
@@ -84,18 +110,34 @@ namespace GraphLibrary {
         /// <param name="key">The key that will extract the information from the specified node's dictionary.If
         /// null is given then the current Query Info object is used as a key</param>
         /// <returns></returns>
-        public override IE Info(CGraphNode source, CGraphNode target) {
-            if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
-                return (IE) m_graph.Edge(source, target)[m_infoKey];
+        public override IE Info(CGraphNode source, CGraphNode target, bool checkOwnership = true) {
+
+            if (!checkOwnership) {
+                return (IE)m_graph.Edge(source, target)[m_infoKey];
             }
-            throw new Exception("The given edge does not belong to the graph");
+            else {
+                if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+                    return (IE)m_graph.Edge(source, target)[m_infoKey];
+                }
+                else {
+                    throw new Exception("The given edge does not belong to the graph");
+                }
+            }
         }
-        public override IE TempInfo(CGraphNode source, CGraphNode target) {
-            if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+        public override IE TempInfo(CGraphNode source, CGraphNode target, bool checkOwnership = true) {
+            if (!checkOwnership) {
                 CGraphEdge edge = m_graph.Edge(source, target);
-                return (IE) edge[edge];
+                return (IE)edge[edge];
             }
-            throw new Exception("The given edge does not belong to the graph");
+            else {
+                if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+                    CGraphEdge edge = m_graph.Edge(source, target);
+                    return (IE)edge[edge];
+                }
+                else {
+                    throw new Exception("The given edge does not belong to the graph");
+                }
+            }
         }
         /// <summary>
         /// Returns information from the source graph under the specified key.
@@ -121,21 +163,31 @@ namespace GraphLibrary {
         /// <param name="key">The key that will extract the information from the specified node's dictionary. If
         /// null is given then the current Query Info object is used as a key. Thus the QueryInfo object can
         /// be used as an information creator/exploitator</param>
-        public override void CreateInfo(CGraphNode node, IN info ){
-            if (node.M_OwnerGraph == m_graph) {
+        public override void CreateInfo(CGraphNode node, IN info, bool checkOwnership = true) {
+            if (!checkOwnership) {
                 node[m_infoKey] = info;
             }
             else {
-                throw new Exception("The given node does not belong to the graph");
+                if (node.M_OwnerGraph == m_graph) {
+                    node[m_infoKey] = info;
+                }
+                else {
+                    throw new Exception("The given node does not belong to the graph");
+                }
             }
         }
 
-        public override void CreateTempInfo(CGraphNode node, IN info ){
-            if (node.M_OwnerGraph == m_graph) {
+        public override void CreateTempInfo(CGraphNode node, IN info, bool checkOwnership = true) {
+            if (!checkOwnership) {
                 node[node] = info;
             }
             else {
-                throw new Exception("The given node does not belong to the graph");
+                if (node.M_OwnerGraph == m_graph) {
+                    node[node] = info;
+                }
+                else {
+                    throw new Exception("The given node does not belong to the graph");
+                }
             }
         }
 
@@ -147,21 +199,30 @@ namespace GraphLibrary {
         /// <param name="info">The information object.</param>
         /// <param name="key">The key that will extract the information from the specified node's dictionary. If
         /// null is given then the current Query Info object is used as a key</param>
-        public override void CreateInfo(CGraphEdge edge, IE info ){
-            if (edge.M_OwnerGraph == m_graph) {
+        public override void CreateInfo(CGraphEdge edge, IE info, bool checkOwnership = true) {
+            if (!checkOwnership) {
                 edge[m_infoKey] = info;
             }
             else {
-                throw new Exception("The given edge does not belong to the graph");
+                if (edge.M_OwnerGraph == m_graph) {
+                    edge[m_infoKey] = info;
+                }
+                else {
+                    throw new Exception("The given edge does not belong to the graph");
+                }
             }
-
         }
-        public override void CreateTempInfo(CGraphEdge edge, IE info ){
-            if (edge.M_OwnerGraph == m_graph) {
+        public override void CreateTempInfo(CGraphEdge edge, IE info, bool checkOwnership = true) {
+            if (!checkOwnership) {
                 edge[edge] = info;
             }
             else {
-                throw new Exception("The given edge does not belong to the graph");
+                if (edge.M_OwnerGraph == m_graph) {
+                    edge[edge] = info;
+                }
+                else {
+                    throw new Exception("The given edge does not belong to the graph");
+                }
             }
         }
 
@@ -174,21 +235,34 @@ namespace GraphLibrary {
         /// <param name="info">The information.</param>
         /// <param name="key">The key that will extract the information from the specified node's dictionary. If
         /// null is given then the current Query Info object is used as a key</param>
-        public override void CreateInfo(CGraphNode source, CGraphNode target, IE info ){
-            if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+        public override void CreateInfo(CGraphNode source, CGraphNode target, IE info, bool checkOwnership = true) {
+
+            if (!checkOwnership) {
                 m_graph.Edge(source, target)[m_infoKey] = info;
             }
             else {
-                throw new Exception("One or two of the given nodes does not belong to the graph");
+                if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+                    m_graph.Edge(source, target)[m_infoKey] = info;
+                }
+                else {
+                    throw new Exception("The given edge does not belong to the graph");
+                }
             }
         }
-        public override void CreateTempInfo(CGraphNode source, CGraphNode target, IE info ){
-            if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+        public override void CreateTempInfo(CGraphNode source, CGraphNode target, IE info, bool checkOwnership = true) {
+
+            if (!checkOwnership) {
                 CGraphEdge edge = m_graph.Edge(source, target);
                 edge[edge] = info;
             }
             else {
-                throw new Exception("One or two of the given nodes does not belong to the graph");
+                if (source.M_OwnerGraph == m_graph && target.M_OwnerGraph == m_graph) {
+                    CGraphEdge edge = m_graph.Edge(source, target);
+                    edge[edge] = info;
+                }
+                else {
+                    throw new Exception("The given edge does not belong to the graph");
+                }
             }
         }
 
@@ -203,15 +277,7 @@ namespace GraphLibrary {
         public override void CreateTempInfo(IG info) {
             m_graph[m_graph] = info;
         }
-
-        /// <summary>
-        /// Sets the source graph reference. It is mandatory
-        /// before source graph queries begin
-        /// </summary>
-        public CGraph M_Graph {
-            get { return m_graph; }
-        }
-
+        
         public object M_InfoKey {
             get { return m_infoKey; }
         }

@@ -20,10 +20,22 @@ namespace GraphLibrary.Generics {
     /// <typeparam name="Node">The type of the node.</typeparam>
     /// <typeparam name="Edge">The type of the edge.</typeparam>
     [Serializable]
-    public abstract class AbstractGraphQueryInfo<Node, Edge, IN,IE,IG> {
-        
+    public abstract class AbstractGraphQueryInfo<GRAPH, Node, Edge, IN,IE,IG> {
 
-       /// <summary>
+        /// <summary>
+        /// The original graph where the algorithm is applied
+        /// </summary>
+        protected GRAPH m_graph;
+
+        /// <summary>
+        /// Sets the source graph reference. It is mandatory
+        /// before source graph queries begin
+        /// </summary>
+        public GRAPH M_Graph {
+            get { return m_graph; }
+        }
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="AbstractGraphQueryInfo{Node, Edge}"/> class.
         /// </summary>
         public AbstractGraphQueryInfo() {
@@ -41,16 +53,16 @@ namespace GraphLibrary.Generics {
         /// </summary>
         /// <param name="node">The node of the source graph</param>
         /// <returns></returns>
-        public abstract IN Info(Node node );
-        public abstract IN TempInfo(Node node);
+        public abstract IN Info(Node node, bool checkOwnership = true);
+        public abstract IN TempInfo(Node node, bool checkOwnership = true);
 
         /// <summary>
         /// Returns the information of the specified edge of the source graph
         /// </summary>
         /// <param name="edge">The edge of the source graph</param>
         /// <returns></returns>
-        public abstract IE Info(Edge edge);
-        public abstract IE TempInfo(Edge edge);
+        public abstract IE Info(Edge edge, bool checkOwnership = true);
+        public abstract IE TempInfo(Edge edge, bool checkOwnership = true);
 
         /// <summary>
         /// Returns the information of the edge between the given source
@@ -59,8 +71,8 @@ namespace GraphLibrary.Generics {
         /// <param name="source">The source node on the source graph</param>
         /// <param name="target">The target node on the source graph</param>
         /// <returns></returns>
-        public abstract IE Info(Node source, Node target);
-        public abstract IE TempInfo(Node source, Node target);
+        public abstract IE Info(Node source, Node target, bool checkOwnership = true);
+        public abstract IE TempInfo(Node source, Node target, bool checkOwnership = true);
 
         /// <summary>
         /// Create an information object for the source graph under the 
@@ -76,17 +88,17 @@ namespace GraphLibrary.Generics {
         /// </summary>
         /// <param name="node">The node on the source graph.</param>
         /// <param name="info">The information object</param>
-        public abstract void CreateInfo(Node node, IN info);
-        public abstract void CreateTempInfo(Node node, IN info);
+        public abstract void CreateInfo(Node node, IN info, bool checkOwnership = true);
+        public abstract void CreateTempInfo(Node node, IN info, bool checkOwnership = true);
 
         /// <summary>
         /// Stores the information at the specified edge of the source graph. If information already
         /// exists, it is overwritten
         /// </summary>
-        /// <param name="edge">The edge on thesource graph</param>
+        /// <param name="edge">The edge on the source graph</param>
         /// <param name="info">The information object</param>
-        public abstract void CreateInfo(Edge edge, IE info );
-        public abstract void CreateTempInfo(Edge edge, IE info);
+        public abstract void CreateInfo(Edge edge, IE info , bool checkOwnership = true);
+        public abstract void CreateTempInfo(Edge edge, IE info, bool checkOwnership = true);
 
         /// <summary>
         /// Stores the information at the specified edge of the source graph. If information already
@@ -95,8 +107,8 @@ namespace GraphLibrary.Generics {
         /// <param name="source">The source node on the source graph</param>
         /// <param name="target">The target node on the source graph</param>
         /// <param name="info">The information object</param>
-        public abstract void CreateInfo(Node source, Node target, IE info);
-        public abstract void CreateTempInfo(Node source, Node target, IE info);
+        public abstract void CreateInfo(Node source, Node target, IE info, bool checkOwnership = true);
+        public abstract void CreateTempInfo(Node source, Node target, IE info, bool checkOwnership = true);
 
     }
 

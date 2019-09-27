@@ -73,8 +73,8 @@ namespace GraphLibrary{
         /// Stores the predecessor nodes of the current node
         /// </summary>
         private List<CGraphNode> m_Predecessors;
-        
-        /// <summary>
+
+        // <summary>
         /// Initializes a new instance of the <see cref="CGraphNode"/> class.
         /// It is called by the graph class
         /// </summary>
@@ -458,7 +458,7 @@ namespace GraphLibrary{
     /// graph ( directed / undirected ). 
     /// </summary>
     [Serializable]
-    public class CGraph : CGraphPrimitive {
+    public class CGraph : CGraphPrimitive, ICloneable {
 
        
         /// <summary>
@@ -622,7 +622,7 @@ namespace GraphLibrary{
                 for (it1.Begin(); !it1.End(); it1.Next()) {
                     // Create the node and associate it with the node of the initial graph from which it came.
                     if (edgePredicates==null || (edgePredicates!=null && edgePredicates.Contains(it1.M_CurrentItem))) {
-                        m_nodeMapping[it1.M_CurrentItem] = m_graphClone.CreateGraphNode<CGraphNode>();
+                        m_nodeMapping[it1.M_CurrentItem] = m_graphClone.CreateGraphNode<CGraphNode>(it1.M_CurrentItem.M_Label);
                     }
                 }
 
@@ -652,7 +652,7 @@ namespace GraphLibrary{
                 switch (elementType) {
                     case GraphElementType.ET_NODE:
                         foreach (CGraphNode graphNode in m_initialGraph.m_graphNodes) {
-                            m_nodeMapping[graphNode][key] = graphNode[key];   // deep copy????
+                            m_nodeMapping[graphNode][key] = graphNode[key];   // deep copy???? deep copy requires clone constructor for the information object. Thus it is decided to create a shallow copy
                         }
                     break;
                     case GraphElementType.ET_EDGE:
@@ -728,6 +728,15 @@ namespace GraphLibrary{
         protected List<CGraphPrinter> m_graphPrinters = null;
 
         /// <summary>
+        /// Holds the type of info under a given key for nodes, edges and the graph.
+        /// </summary>
+        internal Dictionary<object, Type> m_nkeyToInfoTypeRecord = new Dictionary<object, Type>();
+        internal Dictionary<object, Type> m_ekeyToInfoTypeRecord = new Dictionary<object, Type>();
+        internal Dictionary<object, Type> m_gkeyToInfoTypeRecord = new Dictionary<object, Type>();
+
+
+
+        /// <summary>
         /// Initializes a new instance of the <see cref="CGraph"/> class.
         /// </summary>
         protected CGraph() :base(GraphElementType.ET_GRAPH){
@@ -738,6 +747,7 @@ namespace GraphLibrary{
             m_edgeLabels = new Dictionary<object, CGraphLabeling<CGraphEdge>>();
             m_graphLabels = new Dictionary<object, string>();
             m_graphType = GraphType.GT_DIRECTED;
+            m_graph = this;
 
             // Create native node labeller
             SetGraphNodeLabelling(this,new CGraphLabeling<CGraphNode>(this));
@@ -749,6 +759,10 @@ namespace GraphLibrary{
 
             // Create native graph label
             SetLabel("G" + m_graphSerialNumber.ToString());
+        }
+
+        protected CGraph(CGraph graph): this() {
+            
         }
 
         public void SerializeInBinary(string filename) {
@@ -784,6 +798,47 @@ namespace GraphLibrary{
         public static CGraph CreateGraph() {
             CGraph newGraph = new CGraph();
             return newGraph;
+        }
+
+        /// <summary>
+        /// This method clones the given graph
+        /// </summary>
+        /// <param name="graph"></param>
+        /// <returns></returns>
+        public static CGraph CloneGraph(CGraph graph) {
+            CGraph clone;
+            CCloneGraphOperation cloneop = new CCloneGraphOperation();
+            clone = cloneop.CloneGraph(graph);
+            foreach (object key in graph.m_nkeyToInfoTypeRecord.Keys) {
+                cloneop.CloneGraphInfo(GraphElementType.ET_NODE,key);
+            }
+            foreach (object key in graph.m_ekeyToInfoTypeRecord.Keys) {
+                cloneop.CloneGraphInfo(GraphElementType.ET_EDGE, key);
+            }
+            foreach (object key in graph.m_gkeyToInfoTypeRecord.Keys) {
+                cloneop.CloneGraphInfo(GraphElementType.ET_GRAPH, key);
+            }
+            return clone;
+        }
+
+        /// <summary>
+        /// This method clone the graph itself
+        /// </summary>
+        /// <returns></returns>
+        public object Clone() {
+            CGraph clone;
+            CCloneGraphOperation cloneop = new CCloneGraphOperation();
+            clone = cloneop.CloneGraph(this);
+            foreach (object key in m_nkeyToInfoTypeRecord.Keys) {
+                cloneop.CloneGraphInfo(GraphElementType.ET_NODE, key);
+            }
+            foreach (object key in m_ekeyToInfoTypeRecord.Keys) {
+                cloneop.CloneGraphInfo(GraphElementType.ET_EDGE, key);
+            }
+            foreach (object key in m_gkeyToInfoTypeRecord.Keys) {
+                cloneop.CloneGraphInfo(GraphElementType.ET_GRAPH, key);
+            }
+            return clone;
         }
 
         /// <summary>
@@ -1605,6 +1660,7 @@ namespace GraphLibrary{
         }
 
         public int M_SerialNumber { get { return m_graphSerialNumber; } }
+        
     }
     #endregion
 
