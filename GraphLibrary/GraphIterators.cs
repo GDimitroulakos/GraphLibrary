@@ -302,7 +302,7 @@ namespace GraphLibrary {
             }
             else {
                 // Iteration happens on the clone which can't be changed externally
-                m_graph = CGraph.CloneGraph(graph);
+                m_graph = CGraph.TemporalClone(graph);
                 // The graph that is given from externally and can be change
                 // during iteration
                 m_initialGraph = graph;
