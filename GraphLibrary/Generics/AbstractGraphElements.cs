@@ -114,40 +114,64 @@ namespace GraphLibrary.Generics {
                 // information already existing in the node and the second check if the information
                 // assigned is the same with the information stored in the other nodes in the graph.
                 // Check if the is already placed in the graph object
-                if (!m_keyToInfoTypeRecord.ContainsKey(index) ||
-                    // Check if the key is there and the existing value has the same 
-                    // type as the one assigned through the operator...
-                    m_keyToInfoTypeRecord.ContainsKey(index) &&
-                    value.GetType() == m_keyToInfoTypeRecord[index]) {
-                    m_keyToInfoTypeRecord[index] = value.GetType();
+                if (value != null) {
+                    if (!m_keyToInfoTypeRecord.ContainsKey(index) ||
+                        // If the key is there and the existing value has the same 
+                        // type as the one assigned through the operator...
+                        m_keyToInfoTypeRecord.ContainsKey(index) &&
+                        value.GetType() == m_keyToInfoTypeRecord[index]) {
+
+                        // Record the type of information given for the current element
+                        m_keyToInfoTypeRecord[index] = value.GetType(); 
+
+                        switch (M_ElementType) {
+                            case GraphElementType.ET_NODE:
+                                if (m_graph.m_nkeyToInfoTypeRecord.ContainsKey(index) &&
+                                    m_graph.m_nkeyToInfoTypeRecord[index] != value.GetType()) {
+                                    Console.WriteLine(
+                                        "Warning!!! incompatible of information type assigned to one of the graph nodes.");
+                                }
+                                m_graph.m_nkeyToInfoTypeRecord[index] = m_keyToInfoTypeRecord[index];
+                                break;
+                            case GraphElementType.ET_EDGE:
+                                if (m_graph.m_ekeyToInfoTypeRecord.ContainsKey(index) &&
+                                    m_graph.m_ekeyToInfoTypeRecord[index] != value.GetType()) {
+                                    Console.WriteLine(
+                                        "Warning!!! incompatible type of information assigned to one of the graph edges.");
+                                }
+                                m_graph.m_ekeyToInfoTypeRecord[index] = m_keyToInfoTypeRecord[index];
+                                break;
+                            case GraphElementType.ET_GRAPH:
+                                if (m_graph.m_gkeyToInfoTypeRecord.ContainsKey(index) &&
+                                    m_graph.m_gkeyToInfoTypeRecord[index] != value.GetType()) {
+                                    Console.WriteLine(
+                                        "Warning!!! incompatible type of information assigned to the graph");
+                                }
+                                m_graph.m_gkeyToInfoTypeRecord[index] = m_keyToInfoTypeRecord[index];
+                                break;
+                        }
+                    }
+                    else {
+                        Console.WriteLine("existing {0} != given {1}", m_keyToInfoTypeRecord[index].ToString(),
+                            value.GetType().ToString());
+                        throw new Exception("Incompatible info type for the given node information key!!!");
+                    }
+                }
+                else {
+                    m_keyToInfoTypeRecord[index] = null;
                     switch (M_ElementType) {
                         case GraphElementType.ET_NODE:
-                            if (m_graph.m_nkeyToInfoTypeRecord.ContainsKey(index) && m_graph.m_nkeyToInfoTypeRecord[index] != value.GetType()) {
-                                Console.WriteLine("Warning!!! incompatible of information type assigned to one of the graph nodes.");
-                            }
-                            m_graph.m_nkeyToInfoTypeRecord[index] = value.GetType();
                             m_graph.m_nkeyToInfoTypeRecord[index] = m_keyToInfoTypeRecord[index];
                             break;
                         case GraphElementType.ET_EDGE:
-                            if (m_graph.m_ekeyToInfoTypeRecord.ContainsKey(index) && m_graph.m_ekeyToInfoTypeRecord[index] != value.GetType()) {
-                                Console.WriteLine("Warning!!! incompatible type of information assigned to one of the graph edges.");
-                            }
-                            m_graph.m_ekeyToInfoTypeRecord[index] = value.GetType();
                             m_graph.m_ekeyToInfoTypeRecord[index] = m_keyToInfoTypeRecord[index];
                             break;
                         case GraphElementType.ET_GRAPH:
-                            if (m_graph.m_gkeyToInfoTypeRecord.ContainsKey(index) && m_graph.m_gkeyToInfoTypeRecord[index] != value.GetType()) {
-                                Console.WriteLine("Warning!!! incompatible type of information assigned to the graph");
-                            }
-                            m_graph.m_gkeyToInfoTypeRecord[index] = value.GetType();
                             m_graph.m_gkeyToInfoTypeRecord[index] = m_keyToInfoTypeRecord[index];
                             break;
                     }
                 }
-                else {
-                    Console.WriteLine("existing {0} != given {1}", m_keyToInfoTypeRecord[index].ToString(), value.GetType().ToString());
-                    throw new Exception("Incompatible info type for the given node information key!!!");
-                }
+
                 m_algorithmOutput[index] = value;
             }
         }

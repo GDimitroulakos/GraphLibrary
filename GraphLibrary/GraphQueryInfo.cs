@@ -6,7 +6,13 @@ using GraphLibrary.Generics;
 namespace GraphLibrary {
 
     /// <summary>
-    /// Query info from the CGraph class for a specific graph and key 
+    /// Query info from the CGraph class for a specific graph and key
+    /// IN, IE, IG are the type of information stored in the nodes, edges and graph
+    /// correspondingly. The class contains a key to access the information. When the
+    /// information is publicly available to any object the same make the key a public
+    /// constant ( i.e string ). When the information refers to a particular algorithm
+    /// that concerns only specific objects use as a key the instance of the class
+    /// that produces the information
     /// </summary>
     /// <seealso cref="CGraph" />
     [Serializable]
