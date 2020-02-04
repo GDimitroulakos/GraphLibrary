@@ -491,7 +491,8 @@ namespace GraphLibrary {
             }
 
             /// <summary>
-            /// Returns the new node from the oldNewNode of the original graph
+            /// Returns the node in the new graph that corresponds to
+            /// the originalNode of the original graph
             /// </summary>
             /// <param name="oldNewNode"></param>
             /// <returns></returns>
