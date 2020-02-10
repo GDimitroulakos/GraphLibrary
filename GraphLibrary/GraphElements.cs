@@ -394,8 +394,7 @@ namespace GraphLibrary {
         public string ToString(object labeler) {
             return m_graph.GetEdgeLabel(labeler, this);
         }
-
-
+        
         #region Graph Edge Properties
 
         /// <summary>

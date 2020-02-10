@@ -3,6 +3,7 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using GraphLibrary.Generics;
 
 namespace GraphLibrary.Generics {
 
@@ -230,7 +231,13 @@ namespace GraphLibrary.Generics {
             return sBuilder.ToString();
         }
 
-        public abstract string ToInfoString(object infokey);
+        public virtual string ToInfoString(object infokey) {
+            if (m_algorithmOutput.ContainsKey(infokey)) {
+                return m_algorithmOutput[infokey].ToString();
+            }
+            return null;
+        }
+    
     }
 
 

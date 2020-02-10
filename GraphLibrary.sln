@@ -10,8 +10,14 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBellmanFord", "TestBellmanFord\TestBellmanFord.csproj", "{2643DF98-58A6-4A81-8215-32B1FB5573DB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestBreadthFirstSearch", "TestBreadthFirstSearch\TestBreadthFirstSearch.csproj", "{30D05EFE-4FA6-43B1-9142-47B35BCA3BEF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D0E52A9B-DFDA-4EC2-90C5-8C3BB41FE782} = {D0E52A9B-DFDA-4EC2-90C5-8C3BB41FE782}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestDepthFirstSearch", "TestDepthFirstSearch\TestDepthFirstSearch.csproj", "{1B542489-8793-4263-8D1A-ED28859FE5D6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D0E52A9B-DFDA-4EC2-90C5-8C3BB41FE782} = {D0E52A9B-DFDA-4EC2-90C5-8C3BB41FE782}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestSerialization", "TestSerialization\TestSerialization.csproj", "{840F9E21-B511-4576-9FF0-C1361B9A53CE}"
 EndProject
