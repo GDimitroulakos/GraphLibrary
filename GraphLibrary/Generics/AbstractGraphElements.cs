@@ -229,6 +229,8 @@ namespace GraphLibrary.Generics {
             }
             return sBuilder.ToString();
         }
+
+        public abstract string ToInfoString(object infokey);
     }
 
 
